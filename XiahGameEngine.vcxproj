@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MASTER|Win32">
+      <Configuration>MASTER</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>18.0</VCProjectVersion>
+    <ProjectName>XiahGameEngine_win</ProjectName>
+    <ProjectGuid>{5822FDFB-45ED-48C8-ABAC-CFFBEA532281}</ProjectGuid>
+    <RootNamespace>XiahGameEngine</RootNamespace>
+    <SccProjectName>SAK</SccProjectName>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccProvider>SAK</SccProvider>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MASTER|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='MASTER|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>18.0.11512.103</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\lib\</OutDir>
+    <IntDir>Debug\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules />
+    <CodeAnalysisRuleAssemblies />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\lib\</OutDir>
+    <IntDir>Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules />
+    <CodeAnalysisRuleAssemblies />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MASTER|Win32'">
+    <OutDir>..\lib\</OutDir>
+    <IntDir>Master\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules />
+    <CodeAnalysisRuleAssemblies />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../FMOD\inc;\JPEGLIB;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;XIAHGAMEENGINE_EXPORTS;DETECT_LEAKS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4018;4267;4244;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalOptions>/source-charset:.949 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <OutputFile>..\Exe\XiahGameEngined.dll</OutputFile>
+      <AdditionalLibraryDirectories>../FMOD\lib;\jpeglib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>libc.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)$(ProjectName).pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <ImportLibrary>$(OutDir)XiahGameEngined.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <AdditionalIncludeDirectories>../FMOD\inc;\JPEGLIB;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;XIAHGAMEENGINE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4018;4267;4244;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalOptions>/source-charset:.949 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <OutputFile>..\Exe\XiahGameEngine.dll</OutputFile>
+      <AdditionalLibraryDirectories>../FMOD\lib;\jpeglib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>..\Exe\XiahGameEngine.pdb</ProgramDatabaseFile>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapExports>false</MapExports>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <ImportLibrary>$(OutDir)XiahGameEngine.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MASTER|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>false</OmitFramePointers>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <AdditionalIncludeDirectories>../\FMOD\inc;\jpeglib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;XIAHGAMEENGINE_EXPORTS;MASTER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat />
+      <DisableSpecificWarnings>4018;4267;4244;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalOptions>/source-charset:.949 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <OutputFile>..\Exe\XiahGameEngine.dll</OutputFile>
+      <AdditionalLibraryDirectories>../FMOD\lib;\jpeglib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ProgramDatabaseFile>..\Exe\XiahGameEngine.pdb</ProgramDatabaseFile>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapExports>false</MapExports>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <ImportLibrary>$(OutDir)XiahGameEngine.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="BasicValueType.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="CharMan.h" />
+    <ClInclude Include="CharRender.h" />
+    <ClInclude Include="cjoystic.h" />
+    <ClInclude Include="ColorValueType.h" />
+    <ClInclude Include="cpu\amd3dx.h" />
+    <ClInclude Include="cpu\cpu.h" />
+    <ClInclude Include="cpu\optimize.h" />
+    <ClInclude Include="D3DDevice.h" />
+    <ClInclude Include="Debug_EngineInfo.h" />
+    <ClInclude Include="DSoundDevice.h" />
+    <ClInclude Include="EffectCommonDef.h" />
+    <ClInclude Include="EffectRes.h" />
+    <ClInclude Include="FrameTimer.h" />
+    <ClInclude Include="grass.h" />
+    <ClInclude Include="HCHFile.h" />
+    <ClInclude Include="HitEffect.h" />
+    <ClInclude Include="Interface\IPopUp.h" />
+    <ClInclude Include="Light.h" />
+    <ClInclude Include="LineParticle.h" />
+    <ClInclude Include="MapData.h" />
+    <ClInclude Include="MapDecal.h" />
+    <ClInclude Include="MapObjectData.h" />
+    <ClInclude Include="MapRender.h" />
+    <ClInclude Include="math\Face3.h" />
+    <ClInclude Include="math\Frustum.h" />
+    <ClInclude Include="math\MathBase.h" />
+    <ClInclude Include="math\MathLib.h" />
+    <ClInclude Include="math\MathPrimitive.h" />
+    <ClInclude Include="math\Matrix4x4.h" />
+    <ClInclude Include="math\Plane3.h" />
+    <ClInclude Include="math\Quaternion.h" />
+    <ClInclude Include="math\Vector2.h" />
+    <ClInclude Include="math\Vector3.h" />
+    <ClInclude Include="math\Vector4.h" />
+    <ClInclude Include="NewInterface\CUIBasisDialog.h" />
+    <ClInclude Include="NewInterface\CUIBasisDialogMediator.h" />
+    <ClInclude Include="NewInterface\CUIButton.h" />
+    <ClInclude Include="NewInterface\CUICheckBox.h" />
+    <ClInclude Include="NewInterface\CUIComboBox.h" />
+    <ClInclude Include="NewInterface\CUIControl.h" />
+    <ClInclude Include="NewInterface\CUIDialogClient.h" />
+    <ClInclude Include="NewInterface\CUIEditCtrl.h" />
+    <ClInclude Include="NewInterface\CUIFileLoad.h" />
+    <ClInclude Include="NewInterface\CUIFrame.h" />
+    <ClInclude Include="NewInterface\CUIListBox.h" />
+    <ClInclude Include="NewInterface\CUIManager.h" />
+    <ClInclude Include="NewInterface\CUIProgressCtrl.h" />
+    <ClInclude Include="NewInterface\CUIScrollBar.h" />
+    <ClInclude Include="NewInterface\CUISliderCtrl.h" />
+    <ClInclude Include="NewInterface\CUISpinCtrl.h" />
+    <ClInclude Include="NewInterface\CUIStaticList.h" />
+    <ClInclude Include="NewInterface\CUIStaticText.h" />
+    <ClInclude Include="NewInterface\CUITabCtrl.h" />
+    <ClInclude Include="NewInterface\CUIToolTip.h" />
+    <ClInclude Include="NewInterface\CUITreeCtrl.h" />
+    <ClInclude Include="RainSnow.h" />
+    <ClInclude Include="RenderObject.h" />
+    <ClInclude Include="SKY.h" />
+    <ClInclude Include="SoundPak.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="SwordTrace.h" />
+    <CustomBuild Include="Text2D.h" />
+    <ClInclude Include="TextEffect.h" />
+    <ClInclude Include="Thunder.h" />
+    <ClInclude Include="Trigger.h" />
+    <ClInclude Include="VertexType.h" />
+    <ClInclude Include="Waterfall.h" />
+    <ClInclude Include="XiahBGM.h" />
+    <ClInclude Include="XiahDebug.h" />
+    <ClInclude Include="XiahGameEngine.h" />
+    <ClInclude Include="XiahGameEngineBase.h" />
+    <ClInclude Include="XiahGameEngine_InternalBase.h" />
+    <ClInclude Include="XiahInput.h" />
+    <ClInclude Include="XiahPak.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="math\Face3.inl" />
+    <None Include="math\Frustum.inl" />
+    <None Include="math\MathPrimitive.inl" />
+    <None Include="math\Matrix4x4.inl" />
+    <None Include="math\Plane3.inl" />
+    <None Include="math\Quaternion.inl" />
+    <None Include="math\Vector2.inl" />
+    <None Include="math\Vector3.inl" />
+    <None Include="math\Vector4.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="CharMan.cpp" />
+    <ClCompile Include="CharRender.cpp" />
+    <ClCompile Include="cjoystic.cpp" />
+    <ClCompile Include="cpu\cpu.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MASTER|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+      <AdditionalOptions>/source-charset:.949 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="cpu\optimize.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MASTER|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+      <AdditionalOptions>/source-charset:.949 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="D3DDevice.cpp" />
+    <ClCompile Include="Debug_EngineInfo.cpp" />
+    <ClCompile Include="DSoundDevice.cpp" />
+    <ClCompile Include="EffectRes.cpp" />
+    <ClCompile Include="FrameTimer.cpp" />
+    <ClCompile Include="grass.cpp" />
+    <ClCompile Include="HCHFile.cpp" />
+    <ClCompile Include="HitEffect.cpp" />
+    <ClCompile Include="Interface\IPopUp.cpp" />
+    <ClCompile Include="Light.cpp" />
+    <ClCompile Include="LineParticle.cpp" />
+    <ClCompile Include="MapData.cpp" />
+    <ClCompile Include="MapDecal.cpp" />
+    <ClCompile Include="MapObjectData.cpp" />
+    <ClCompile Include="MapRender.cpp" />
+    <ClCompile Include="math\MathBase.cpp" />
+    <ClCompile Include="NewInterface\CUIBasisDialog.cpp" />
+    <ClCompile Include="NewInterface\CUIBasisDialogMediator.cpp" />
+    <ClCompile Include="NewInterface\CUIButton.cpp" />
+    <ClCompile Include="NewInterface\CUICheckBox.cpp" />
+    <ClCompile Include="NewInterface\CUIComboBox.cpp" />
+    <ClCompile Include="NewInterface\CUIControl.cpp" />
+    <ClCompile Include="NewInterface\CUIDialogClient.cpp" />
+    <ClCompile Include="NewInterface\CUIEditCtrl.cpp" />
+    <ClCompile Include="NewInterface\CUIFileLoad.cpp" />
+    <ClCompile Include="NewInterface\CUIFrame.cpp" />
+    <ClCompile Include="NewInterface\CUIListBox.cpp" />
+    <ClCompile Include="NewInterface\CUIManager.cpp" />
+    <ClCompile Include="NewInterface\CUIProgressCtrl.cpp" />
+    <ClCompile Include="NewInterface\CUIScrollBar.cpp" />
+    <ClCompile Include="NewInterface\CUISliderCtrl.cpp" />
+    <ClCompile Include="NewInterface\CUISpinCtrl.cpp" />
+    <ClCompile Include="NewInterface\CUIStaticList.cpp" />
+    <ClCompile Include="NewInterface\CUIStaticText.cpp" />
+    <ClCompile Include="NewInterface\CUITabCtrl.cpp" />
+    <ClCompile Include="NewInterface\CUIToolTip.cpp" />
+    <ClCompile Include="NewInterface\CUITreeCtrl.cpp" />
+    <ClCompile Include="RainSnow.cpp" />
+    <ClCompile Include="RenderObject.cpp" />
+    <ClCompile Include="SKY.cpp" />
+    <ClCompile Include="SoundPak.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MASTER|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <AdditionalOptions>/source-charset:.949 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="SwordTrace.cpp" />
+    <ClCompile Include="Text2D.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <AdditionalOptions>/source-charset:.949 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="TextEffect.cpp" />
+    <ClCompile Include="Thunder.cpp" />
+    <ClCompile Include="tracealloc.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='MASTER|Win32'">true</ExcludedFromBuild>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MASTER|Win32'">
+      </PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <AdditionalOptions>/source-charset:.949 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Trigger.cpp" />
+    <ClCompile Include="Waterfall.cpp" />
+    <ClCompile Include="XiahBGM.cpp" />
+    <ClCompile Include="XiahDebug.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='MASTER|Win32'">true</ExcludedFromBuild>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+      <AdditionalOptions>/source-charset:.949 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="XiahGameEngine.cpp" />
+    <ClCompile Include="XiahGameEngine_DLLMain.cpp" />
+    <ClCompile Include="XiahInput.cpp" />
+    <ClCompile Include="XiahPak.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties DevPartner_IsInstrumented="1" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

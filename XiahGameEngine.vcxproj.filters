@@ -1,0 +1,502 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Math">
+      <UniqueIdentifier>{4f3bce73-73ee-4a34-858e-ac0b5db48c78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math\cpu">
+      <UniqueIdentifier>{0d5ea55b-1c0c-4f7e-97bc-521299981be9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{debf163a-f709-429f-936b-3d7abfa1ba0e}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="AppBase">
+      <UniqueIdentifier>{babd5fe7-ee3f-4d58-88a3-fb72fe5b7546}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3DBase">
+      <UniqueIdentifier>{2028320a-638c-4193-b6e2-255e0e93ec1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Document">
+      <UniqueIdentifier>{7a09e7ab-bb8e-4603-9d83-c0e62929b7ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface">
+      <UniqueIdentifier>{0fb1a1f3-a45a-446d-bd3d-23416611dbd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{6c3e6c0d-1824-416e-80c9-e6e04e86bac7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Export">
+      <UniqueIdentifier>{8bcc0bb5-f39f-44ad-b3d5-11aaec6ad4dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SoundBase">
+      <UniqueIdentifier>{2a828f20-3ed8-4d26-bc14-e44d7e6adf2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Character">
+      <UniqueIdentifier>{8941da8c-fc0c-43ca-8c48-e163025eaedd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Input">
+      <UniqueIdentifier>{8423aed7-9fb4-46d2-ad3a-6c14cdf8c84b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Map">
+      <UniqueIdentifier>{c3f0eaca-8908-4da0-b314-1dd9f2c8983d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Effect">
+      <UniqueIdentifier>{b725f391-03a9-4cf0-a792-93bb1d89bad3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NewInterface">
+      <UniqueIdentifier>{db18eab9-0f67-41c6-accd-50fdd3939539}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="math\Face3.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\Frustum.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\MathBase.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\MathLib.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\MathPrimitive.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\Matrix4x4.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\Plane3.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\Quaternion.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\Vector2.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\Vector3.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\Vector4.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="cpu\amd3dx.h">
+      <Filter>Math\cpu</Filter>
+    </ClInclude>
+    <ClInclude Include="cpu\cpu.h">
+      <Filter>Math\cpu</Filter>
+    </ClInclude>
+    <ClInclude Include="cpu\optimize.h">
+      <Filter>Math\cpu</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicValueType.h">
+      <Filter>AppBase</Filter>
+    </ClInclude>
+    <ClInclude Include="Debug_EngineInfo.h">
+      <Filter>AppBase</Filter>
+    </ClInclude>
+    <ClInclude Include="FrameTimer.h">
+      <Filter>AppBase</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>AppBase</Filter>
+    </ClInclude>
+    <ClInclude Include="Trigger.h">
+      <Filter>AppBase</Filter>
+    </ClInclude>
+    <ClInclude Include="XiahDebug.h">
+      <Filter>AppBase</Filter>
+    </ClInclude>
+    <ClInclude Include="XiahGameEngine_InternalBase.h">
+      <Filter>AppBase</Filter>
+    </ClInclude>
+    <ClInclude Include="XiahGameEngineBase.h">
+      <Filter>AppBase</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>3DBase</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorValueType.h">
+      <Filter>3DBase</Filter>
+    </ClInclude>
+    <ClInclude Include="D3DDevice.h">
+      <Filter>3DBase</Filter>
+    </ClInclude>
+    <ClInclude Include="Light.h">
+      <Filter>3DBase</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderObject.h">
+      <Filter>3DBase</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEffect.h">
+      <Filter>3DBase</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexType.h">
+      <Filter>3DBase</Filter>
+    </ClInclude>
+    <ClInclude Include="Interface\IPopUp.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="XiahPak.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="XiahGameEngine.h">
+      <Filter>Export</Filter>
+    </ClInclude>
+    <ClInclude Include="DSoundDevice.h">
+      <Filter>SoundBase</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundPak.h">
+      <Filter>SoundBase</Filter>
+    </ClInclude>
+    <ClInclude Include="XiahBGM.h">
+      <Filter>SoundBase</Filter>
+    </ClInclude>
+    <ClInclude Include="CharMan.h">
+      <Filter>Character</Filter>
+    </ClInclude>
+    <ClInclude Include="CharRender.h">
+      <Filter>Character</Filter>
+    </ClInclude>
+    <ClInclude Include="cjoystic.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="XiahInput.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="grass.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="MapData.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="MapDecal.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="MapObjectData.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="MapRender.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="SKY.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectCommonDef.h">
+      <Filter>Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectRes.h">
+      <Filter>Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="HCHFile.h">
+      <Filter>Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="HitEffect.h">
+      <Filter>Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="LineParticle.h">
+      <Filter>Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="RainSnow.h">
+      <Filter>Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="SwordTrace.h">
+      <Filter>Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="Thunder.h">
+      <Filter>Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="Waterfall.h">
+      <Filter>Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\CUIBasisDialog.h">
+      <Filter>NewInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\CUIBasisDialogMediator.h">
+      <Filter>NewInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\CUIButton.h">
+      <Filter>NewInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\CUICheckBox.h">
+      <Filter>NewInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\CUIComboBox.h">
+      <Filter>NewInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\CUIControl.h">
+      <Filter>NewInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\CUIDialogClient.h">
+      <Filter>NewInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\CUIEditCtrl.h">
+      <Filter>NewInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\CUIFileLoad.h">
+      <Filter>NewInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\CUIFrame.h">
+      <Filter>NewInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\CUIListBox.h">
+      <Filter>NewInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\CUIManager.h">
+      <Filter>NewInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\CUIProgressCtrl.h">
+      <Filter>NewInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\CUIScrollBar.h">
+      <Filter>NewInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\CUISliderCtrl.h">
+      <Filter>NewInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\CUISpinCtrl.h">
+      <Filter>NewInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\CUIStaticList.h">
+      <Filter>NewInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\CUIStaticText.h">
+      <Filter>NewInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\CUITabCtrl.h">
+      <Filter>NewInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\CUIToolTip.h">
+      <Filter>NewInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\CUITreeCtrl.h">
+      <Filter>NewInterface</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="math\Face3.inl">
+      <Filter>Math</Filter>
+    </None>
+    <None Include="math\Frustum.inl">
+      <Filter>Math</Filter>
+    </None>
+    <None Include="math\MathPrimitive.inl">
+      <Filter>Math</Filter>
+    </None>
+    <None Include="math\Matrix4x4.inl">
+      <Filter>Math</Filter>
+    </None>
+    <None Include="math\Plane3.inl">
+      <Filter>Math</Filter>
+    </None>
+    <None Include="math\Quaternion.inl">
+      <Filter>Math</Filter>
+    </None>
+    <None Include="math\Vector2.inl">
+      <Filter>Math</Filter>
+    </None>
+    <None Include="math\Vector3.inl">
+      <Filter>Math</Filter>
+    </None>
+    <None Include="math\Vector4.inl">
+      <Filter>Math</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="math\MathBase.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="cpu\cpu.cpp">
+      <Filter>Math\cpu</Filter>
+    </ClCompile>
+    <ClCompile Include="cpu\optimize.cpp">
+      <Filter>Math\cpu</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug_EngineInfo.cpp">
+      <Filter>AppBase</Filter>
+    </ClCompile>
+    <ClCompile Include="FrameTimer.cpp">
+      <Filter>AppBase</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>AppBase</Filter>
+    </ClCompile>
+    <ClCompile Include="tracealloc.cpp">
+      <Filter>AppBase</Filter>
+    </ClCompile>
+    <ClCompile Include="Trigger.cpp">
+      <Filter>AppBase</Filter>
+    </ClCompile>
+    <ClCompile Include="XiahDebug.cpp">
+      <Filter>AppBase</Filter>
+    </ClCompile>
+    <ClCompile Include="XiahGameEngine.cpp">
+      <Filter>AppBase</Filter>
+    </ClCompile>
+    <ClCompile Include="XiahGameEngine_DLLMain.cpp">
+      <Filter>AppBase</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>3DBase</Filter>
+    </ClCompile>
+    <ClCompile Include="D3DDevice.cpp">
+      <Filter>3DBase</Filter>
+    </ClCompile>
+    <ClCompile Include="Light.cpp">
+      <Filter>3DBase</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderObject.cpp">
+      <Filter>3DBase</Filter>
+    </ClCompile>
+    <ClCompile Include="Text2D.cpp">
+      <Filter>3DBase</Filter>
+    </ClCompile>
+    <ClCompile Include="TextEffect.cpp">
+      <Filter>3DBase</Filter>
+    </ClCompile>
+    <ClCompile Include="Interface\IPopUp.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="XiahPak.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="DSoundDevice.cpp">
+      <Filter>SoundBase</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundPak.cpp">
+      <Filter>SoundBase</Filter>
+    </ClCompile>
+    <ClCompile Include="XiahBGM.cpp">
+      <Filter>SoundBase</Filter>
+    </ClCompile>
+    <ClCompile Include="CharMan.cpp">
+      <Filter>Character</Filter>
+    </ClCompile>
+    <ClCompile Include="CharRender.cpp">
+      <Filter>Character</Filter>
+    </ClCompile>
+    <ClCompile Include="cjoystic.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="XiahInput.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="grass.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="MapData.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="MapDecal.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="MapObjectData.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="MapRender.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="SKY.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="EffectRes.cpp">
+      <Filter>Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="HCHFile.cpp">
+      <Filter>Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="HitEffect.cpp">
+      <Filter>Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="LineParticle.cpp">
+      <Filter>Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="RainSnow.cpp">
+      <Filter>Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="SwordTrace.cpp">
+      <Filter>Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="Thunder.cpp">
+      <Filter>Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="Waterfall.cpp">
+      <Filter>Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\CUIBasisDialog.cpp">
+      <Filter>NewInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\CUIBasisDialogMediator.cpp">
+      <Filter>NewInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\CUIButton.cpp">
+      <Filter>NewInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\CUICheckBox.cpp">
+      <Filter>NewInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\CUIComboBox.cpp">
+      <Filter>NewInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\CUIControl.cpp">
+      <Filter>NewInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\CUIDialogClient.cpp">
+      <Filter>NewInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\CUIEditCtrl.cpp">
+      <Filter>NewInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\CUIFileLoad.cpp">
+      <Filter>NewInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\CUIFrame.cpp">
+      <Filter>NewInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\CUIListBox.cpp">
+      <Filter>NewInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\CUIManager.cpp">
+      <Filter>NewInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\CUIProgressCtrl.cpp">
+      <Filter>NewInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\CUIScrollBar.cpp">
+      <Filter>NewInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\CUISliderCtrl.cpp">
+      <Filter>NewInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\CUISpinCtrl.cpp">
+      <Filter>NewInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\CUIStaticList.cpp">
+      <Filter>NewInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\CUIStaticText.cpp">
+      <Filter>NewInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\CUITabCtrl.cpp">
+      <Filter>NewInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\CUIToolTip.cpp">
+      <Filter>NewInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\CUITreeCtrl.cpp">
+      <Filter>NewInterface</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt">
+      <Filter>Document</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Text2D.h">
+      <Filter>3DBase</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

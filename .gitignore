@@ -1,0 +1,46 @@
+# Build and Compilation Folders
+.vs/
+.vscode/
+build/
+out/
+bin/
+obj/
+dist/
+Debug/
+Release/
+x64/
+x86/
+
+# C/C++ Compiled Files
+*.obj
+*.exe
+*.pdb
+*.ilk
+*.idb
+*.lib
+*.dll
+*.exp
+*.pch
+*.tlog
+*.suo
+*.user
+*.sdf
+*.aps
+
+# Python
+*.py
+__pycache__/
+*.py[cod]
+*.class
+*.spec
+
+# Logs and Archives
+*.log
+*.tmp
+*.bak
+*.pcap
+*.pcapng
+*.zip
+*.rar
+*.7z
+server_log*.txt
