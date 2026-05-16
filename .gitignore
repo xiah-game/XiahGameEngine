@@ -1,4 +1,4 @@
-# Build and Compilation Folders
+﻿# Build and Compilation Folders
 .vs/
 .vscode/
 build/
@@ -13,12 +13,9 @@ x86/
 
 # C/C++ Compiled Files
 *.obj
-*.exe
 *.pdb
 *.ilk
 *.idb
-*.lib
-*.dll
 *.exp
 *.pch
 *.tlog
@@ -28,11 +25,9 @@ x86/
 *.aps
 
 # Python
-*.py
 __pycache__/
 *.py[cod]
 *.class
-*.spec
 
 # Logs and Archives
 *.log
