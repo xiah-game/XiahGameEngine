@@ -1514,6 +1514,7 @@ void CEffect::StartEffectToRender(_EFFECTRENDER* pEffectRender)
 
 XIAHGE_API void CEffect::UpdateEffect(DWORD dTime)
 {
+
 	// test
 //	dTime = 60;
 
@@ -4862,9 +4863,17 @@ void CEffect::DeleteEffectPackagePairList()
 				m_CurPackagePairList.remove( pPackagePair );
 			}
 
-			DeleteEffectRender( pPackage->pEffectRender );
-			m_EffectRenderList.remove( pPackage->pEffectRender );
-			m_CurEffectRenderList.remove( pPackage->pEffectRender );
+			_EFFECTRENDER* pER = pPackage->pEffectRender;
+			if( pER != NULL && !IsBadReadPtr(pER, sizeof(_EFFECTRENDER)) )
+			{
+				DeleteEffectRender( pER );
+				m_EffectRenderList.remove( pER );
+				m_CurEffectRenderList.remove( pER );
+			}
+			else
+			{
+				DBG_LogFile( _T("DeleteEffectPackagePairList: SKIPPED invalid pEffectRender!") );
+			}
 		}// for
 
 	}// for( m_DeleteEffectPackagePairList )
@@ -4889,7 +4898,7 @@ void CEffect::EffectPackagePairMemoryReturn(_EFFECTPACKAGEPAIR* pPackagePair)
 	{
 		_EFFECTPACKAGE* pPack = *eppit;
 
-		if( pPack->pEffectRender )
+		if( pPack->pEffectRender && !IsBadReadPtr(pPack->pEffectRender, sizeof(_EFFECTRENDER)) )
 		{
 			DeleteEffectRender( pPack->pEffectRender );
 

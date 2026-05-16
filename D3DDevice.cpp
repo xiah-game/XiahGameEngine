@@ -446,7 +446,7 @@ namespace XiahGameEngine
 	..............................................................................................................
 	*************************************************************************************************************/
 
-	#define MAX_FONT_COUNT	10
+	#define MAX_FONT_COUNT	50
 
 	sFont	g_FontList[MAX_FONT_COUNT];
 	int		g_nFontCount;
@@ -478,6 +478,12 @@ namespace XiahGameEngine
 	//---------------------------------------------------------------------------------------
 	sFont* CreateFont(sString strFontName,int FontHeight)
 	{
+		if( g_nFontCount >= MAX_FONT_COUNT )
+		{
+			DBG_LogFile( _T("CreateFont: FONT POOL FULL! g_nFontCount=%d, MAX=%d. Reusing font[0]."), g_nFontCount, MAX_FONT_COUNT );
+			return &g_FontList[0]; // fallback: reuse first font
+		}
+
 		sFont* pFont = &g_FontList[ g_nFontCount];
 
 		pFont->m_hFont = ::CreateFont( FontHeight, 0, 0, 0, 0, 0, 0, 0, DEFAULT_CHARSET, 
