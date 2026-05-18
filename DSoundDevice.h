@@ -2,7 +2,7 @@
 
 namespace XiahGameEngine
 {
-	#define MAX_VOLUME_TBL	10
+	#define MAX_VOLUME_TBL	11
 	extern XIAHGE_API int g_VolTbl[MAX_VOLUME_TBL];
 
 	extern XIAHGE_API BOOL InitializeSound();

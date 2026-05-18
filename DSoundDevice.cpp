@@ -8,7 +8,7 @@
 namespace XiahGameEngine
 {
 	// GROBAL VOLUME TABLE
-	int g_VolTbl[MAX_VOLUME_TBL] = { 0, 25, 50, 75, 100, 125, 150, 175, 200, 255 };
+	int g_VolTbl[MAX_VOLUME_TBL] = { 0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 255 };
 
 	//---------------------------------------------------------------------------------------
 	XIAHGE_API BOOL InitializeSound()
