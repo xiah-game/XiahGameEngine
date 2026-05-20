@@ -1,4 +1,4 @@
-#include "stdafx.h"
+﻿#include "stdafx.h"
 #include "SKY.h"
 #include "XiahPak.h"
 #include <time.h>

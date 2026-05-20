@@ -85,20 +85,21 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>../FMOD\inc;\JPEGLIB;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;XIAHGAMEENGINE_EXPORTS;DETECT_LEAKS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../FMOD\inc;\JPEGLIB;$(DXSDK_DIR)Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;XIAHGAMEENGINE_EXPORTS;DETECT_LEAKS;_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <DisableSpecificWarnings>4018;4267;4244;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
-      <AdditionalOptions>/source-charset:.949 %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4018;4267;4244;4996;4838;4005;4477;4819;4566;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalOptions>/source-charset:.949 /execution-charset:.936 /Zc:forScope- %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <OutputFile>..\Exe\XiahGameEngined.dll</OutputFile>
-      <AdditionalLibraryDirectories>../FMOD\lib;\jpeglib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../FMOD\lib;\jpeglib;$(DXSDK_DIR)Lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>libc.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -116,20 +117,21 @@
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <OmitFramePointers>true</OmitFramePointers>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
-      <AdditionalIncludeDirectories>../FMOD\inc;\JPEGLIB;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;XIAHGAMEENGINE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../FMOD\inc;\JPEGLIB;$(DXSDK_DIR)Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;XIAHGAMEENGINE_EXPORTS;_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <DisableSpecificWarnings>4018;4267;4244;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
-      <AdditionalOptions>/source-charset:.949 %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4018;4267;4244;4996;4838;4005;4477;4819;4566;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalOptions>/source-charset:.949 /execution-charset:.936 /Zc:forScope- %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <OutputFile>..\Exe\XiahGameEngine.dll</OutputFile>
-      <AdditionalLibraryDirectories>../FMOD\lib;\jpeglib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../FMOD\lib;\jpeglib;$(DXSDK_DIR)Lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>..\Exe\XiahGameEngine.pdb</ProgramDatabaseFile>
       <GenerateMapFile>true</GenerateMapFile>
@@ -150,8 +152,8 @@
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <OmitFramePointers>false</OmitFramePointers>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
-      <AdditionalIncludeDirectories>../\FMOD\inc;\jpeglib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;XIAHGAMEENGINE_EXPORTS;MASTER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../\FMOD\inc;\jpeglib;$(DXSDK_DIR)Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;XIAHGAMEENGINE_EXPORTS;MASTER;_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <BufferSecurityCheck>false</BufferSecurityCheck>
@@ -160,12 +162,13 @@
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat />
-      <DisableSpecificWarnings>4018;4267;4244;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
-      <AdditionalOptions>/source-charset:.949 %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4018;4267;4244;4996;4838;4005;4477;4819;4566;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalOptions>/source-charset:.949 /execution-charset:.936 /Zc:forScope- %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <OutputFile>..\Exe\XiahGameEngine.dll</OutputFile>
-      <AdditionalLibraryDirectories>../FMOD\lib;\jpeglib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../FMOD\lib;\jpeglib;$(DXSDK_DIR)Lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <ProgramDatabaseFile>..\Exe\XiahGameEngine.pdb</ProgramDatabaseFile>
       <GenerateMapFile>true</GenerateMapFile>
@@ -278,7 +281,6 @@
       </PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
       </PrecompiledHeader>
-      <AdditionalOptions>/source-charset:.949 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="cpu\optimize.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -287,7 +289,6 @@
       </PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
       </PrecompiledHeader>
-      <AdditionalOptions>/source-charset:.949 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="D3DDevice.cpp" />
     <ClCompile Include="Debug_EngineInfo.cpp" />
@@ -334,12 +335,10 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MASTER|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-      <AdditionalOptions>/source-charset:.949 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="SwordTrace.cpp" />
     <ClCompile Include="Text2D.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
-      <AdditionalOptions>/source-charset:.949 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="TextEffect.cpp" />
     <ClCompile Include="Thunder.cpp" />
@@ -351,7 +350,6 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MASTER|Win32'">
       </PrecompiledHeader>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <AdditionalOptions>/source-charset:.949 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="Trigger.cpp" />
     <ClCompile Include="Waterfall.cpp" />
@@ -362,7 +360,6 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='MASTER|Win32'">true</ExcludedFromBuild>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
       </PrecompiledHeader>
-      <AdditionalOptions>/source-charset:.949 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="XiahGameEngine.cpp" />
     <ClCompile Include="XiahGameEngine_DLLMain.cpp" />

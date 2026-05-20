@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include "XiahPak.h"
 #include "DSoundDevice.h"
 
@@ -8,11 +8,11 @@
 
 #include <assert.h>
 
-#define XIAH_PAKSTRING _T("Xiah Pak¸ğµâ")
+#define XIAH_PAKSTRING _T("Xiah Pakëª¨ë“ˆ")
 #define XIAH_PAK_VERSION (1)
 
-#define MAX_RES	10000
-#define MAX_RES_FILE_SIZE	(4 * 1024 * 1024)	// ÃÖ´ë 3¸Ş°¡
+#define MAX_RES	30000
+#define MAX_RES_FILE_SIZE	(16 * 1024 * 1024)	// ìµœëŒ€ 16ë©”ê°€
 
 
 namespace XiahGameEngine
@@ -20,10 +20,10 @@ namespace XiahGameEngine
 	namespace XiahPak
 	{
 
-		// Global µ¥ÀÌÅÍ
+		// Global ë°ì´í„°
 		BYTE g_TempBuffer[ MAX_RES_FILE_SIZE];
 
-		// CRes°´Ã¼
+		// CResê°ì²´
 		class CRes
 		{
 		public:
@@ -53,7 +53,7 @@ namespace XiahGameEngine
 				m_bRealized = FALSE;
 			}
 
-			// ÆÄÀÏ·Î ºÎÅÍ ResourceÀĞ¾î¼­ Å¸ÀÔ¿¡ µû¶ó °´Ã¼¸¦ »ı¼ºÇÑ´Ù.
+			// íŒŒì¼ë¡œ ë¶€í„° Resourceì½ì–´ì„œ íƒ€ì…ì— ë”°ë¼ ê°ì²´ë¥¼ ìƒì„±í•œë‹¤.
 			BOOL Realize(BOOL bPreserveQuality)
 			{
 				if( m_bRealized)
@@ -61,13 +61,13 @@ namespace XiahGameEngine
 
 				if( m_nSize > MAX_RES_FILE_SIZE)
 				{
-					throw _T("´ÜÀÏ ÆÄÀÏÀÇ »çÀÌÁî°¡ 3¸Ş°¡¸¦ ÃÊ°úÇÕ´Ï´Ù.");
+					throw _T("ë‹¨ì¼ íŒŒì¼ì˜ ì‚¬ì´ì¦ˆê°€ 16ë©”ê°€ë¥¼ ì´ˆê³¼í•©ë‹ˆë‹¤.");
 					return FALSE;
 				}
 
 				if( SetFilePointer( m_hFileHandle, m_nOffset, NULL, FILE_BEGIN) == INVALID_SET_FILE_POINTER)
 				{
-					throw _T("ÆÄÀÏ Offset°ªÀÌ Àß¸ø µÇ¾ú½À´Ï´Ù");
+					throw _T("íŒŒì¼ Offsetê°’ì´ ì˜ëª» ë˜ì—ˆìŠµë‹ˆë‹¤");
 					return FALSE;
 				}
 
@@ -75,7 +75,7 @@ namespace XiahGameEngine
 
 				if( !ReadFile( m_hFileHandle, g_TempBuffer, m_nSize, &nReadByte, NULL))
 				{
-					throw _T("ÆÄÀÏÀ» ÀĞ´Âµ¥ ½ÇÆĞÇÏ¿´½À´Ï´Ù");
+					throw _T("íŒŒì¼ì„ ì½ëŠ”ë° ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤");
 					return FALSE;
 				}
 
@@ -137,7 +137,7 @@ namespace XiahGameEngine
 					break;
 
 				default:
-					throw _T("¾Ë ¼ö ¾ø´Â Resource TypeÀÔ´Ï´Ù");
+					throw _T("ì•Œ ìˆ˜ ì—†ëŠ” Resource Typeì…ë‹ˆë‹¤");
 					return FALSE;
 				}
 
@@ -162,19 +162,19 @@ namespace XiahGameEngine
 			FSOUND_SAMPLE*		m_pSoundHandle;
 		};
 
-		// µ¿ÀûÀ¸·Î new,delete¾ÊÇÏ±â À§ÇØ ¸¸µé¾úÀ½, »çÀÌÁî ÃÊ°ú ÇÒ ¼öµµ ÀÖÀ½
+		// ë™ì ìœ¼ë¡œ new,deleteì•Ší•˜ê¸° ìœ„í•´ ë§Œë“¤ì—ˆìŒ, ì‚¬ì´ì¦ˆ ì´ˆê³¼ í•  ìˆ˜ë„ ìˆìŒ
 		CRes g_ResData[ MAX_RES];
 
 		typedef std::hash_map<int,CRes*>	RESINDEXLIST;
 		typedef std::vector<HANDLE>			FILEHANDLELIST;
 		
-		RESINDEXLIST	g_FreeResList;	// Çì´õ¸¸ °®°í ÀÖ´Â ³Ñµé
-		RESINDEXLIST	g_RealResList;	// RealizeµÈ Resourceµé
+		RESINDEXLIST	g_FreeResList;	// í—¤ë”ë§Œ ê°–ê³  ìˆëŠ” ë„˜ë“¤
+		RESINDEXLIST	g_RealResList;	// Realizeëœ Resourceë“¤
 		FILEHANDLELIST  g_FileHandleList;
 
 		XIAHGE_API BOOL InitializeXiahPak(LPCTSTR *pPakFileList, unsigned long count)
 		{
-			// PakÆÄÀÏÀ» ÀĞ¾î µéÀÎ´Ù.
+			// PakíŒŒì¼ì„ ì½ì–´ ë“¤ì¸ë‹¤.
 			try
 			{
 				unsigned long i;
@@ -184,7 +184,7 @@ namespace XiahGameEngine
 
 				DWORD nReadByte;
 
-				int nReadValue[3000];
+				std::vector<int> readBuf;
 
 				for(i = 0; i < count; ++i)
 				{
@@ -197,7 +197,7 @@ namespace XiahGameEngine
 													NULL);
 
 					if( hFileHandle == INVALID_HANDLE_VALUE)
-						throw _T("PakÆÄÀÏÀÌ ¾ø½À´Ï´Ù");
+						throw _T("PakíŒŒì¼ì´ ì—†ìŠµë‹ˆë‹¤");
 
 #ifdef _DEBUG
 					DBG_Put(_T("Res %s"),  pPakFileList[ i]);
@@ -205,26 +205,33 @@ namespace XiahGameEngine
 
 					DWORD nTemp;
 
-					// ¹öÀü °Ë»ç
+					// ë²„ì „ ê²€ì‚¬
 					if( !ReadFile( hFileHandle, &nTemp, 4, &nReadByte, NULL))
-						throw _T("PakÆÄÀÏ ÀĞ±â ¿¡·¯");
+						throw _T("PakíŒŒì¼ ì½ê¸° ì—ëŸ¬");
 
 					if( nTemp != XIAH_PAK_VERSION)
-						throw _T("PakÆÄÀÏ ¹öÀüÀÌ ´Ù¸§ÀÔ´Ï´Ù.");
+						throw _T("PakíŒŒì¼ ë²„ì „ì´ ë‹¤ë¦„ì…ë‹ˆë‹¤.");
 
-					// Çì´õ ÀĞ±â
+					// í—¤ë” ì½ê¸°
 					if( !ReadFile( hFileHandle, &nTemp, 4, &nReadByte, NULL))
-						throw _T("PakÆÄÀÏ ÀĞ±â ¿¡·¯");
+						throw _T("PakíŒŒì¼ ì½ê¸° ì—ëŸ¬");
 					
-					// test code
-					if(!ReadFile(hFileHandle, &nReadValue, nTemp*16, &nReadByte, NULL))
-						throw _T("PakÆÄÀÏ ÀĞ±â ¿¡·¯");
+					// ë™ì  ë²„í¼: í—¤ë” í•­ëª© 1ê°œ = 16ë°”ì´íŠ¸(int 4ê°œ). ê¸°ì¡´ ê³ ì •ë°°ì—´(3000)
+					// ì€ ë‹¨ì¼ íŒ¨í‚¤ì§€ ë‚´ í•­ëª© ìˆ˜ê°€ 750ì„ ë„˜ìœ¼ë©´ ìŠ¤íƒ ì˜¤ë²„í”Œë¡œ ìœ„í—˜.
+					if( nTemp > MAX_RES)
+						throw _T("PakíŒŒì¼ í—¤ë” í•­ëª© ìˆ˜ê°€ ë¹„ì •ìƒ");
+
+					readBuf.resize( nTemp * 4);
+					int *nReadValue = nTemp ? &readBuf[0] : NULL;
+
+					if( nTemp && !ReadFile(hFileHandle, nReadValue, nTemp*16, &nReadByte, NULL))
+						throw _T("PakíŒŒì¼ ì½ê¸° ì—ëŸ¬");
 
 					register int z = -1;
 					for(j=0; j < nTemp; ++j)
 					{
 						if( nResCount >= MAX_RES)
-							throw _T("Pak Res Header Handle°¹¼ö°¡ ¸ğÀÚ¶ø´Ï´Ù");
+							throw _T("Pak Res Header Handleê°¯ìˆ˜ê°€ ëª¨ìëë‹ˆë‹¤");
 
 						CRes* pRes = &g_ResData[nResCount];
 
@@ -241,7 +248,7 @@ namespace XiahGameEngine
 
 						if( g_FreeResList.find( pRes->m_nID) != g_FreeResList.end())
 						{
-							DBG_Put(_T("Res ID Áßº¹ ¿¡·¯ : %d"), pRes->m_nID);
+							DBG_Put(_T("Res ID ì¤‘ë³µ ì—ëŸ¬ : %d"), pRes->m_nID);
 						}
 						else
 						{
@@ -311,7 +318,7 @@ namespace XiahGameEngine
 			{
 				CRes *pRes = it->second;
 				
-				// Real¿Å°Ü ÁØ´Ù
+				// Realì˜®ê²¨ ì¤€ë‹¤
 				try
 				{
 					pRes->Realize(bPreserveQuality);
@@ -342,7 +349,7 @@ namespace XiahGameEngine
 			return pRes->m_pTextureHandle;		
 		}
 
-		// PAK¿¡¼­ SOUND¸¦ °¡Á®¿Â´Ù.
+		// PAKì—ì„œ SOUNDë¥¼ ê°€ì ¸ì˜¨ë‹¤.
 		// FMOD
 		XIAHGE_API FSOUND_SAMPLE	*GetSound(int nResID, BOOL bPreserveQuality)
 		{

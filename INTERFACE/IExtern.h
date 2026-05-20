@@ -13,28 +13,28 @@
 // size
 #ifdef _CHINA_
 								
-	#define SMALL_FONT			GetFont( _T("ÀŒÃÂ"), 11)
-	#define DEFAULT_FONT		GetFont( _T("ÀŒÃÂ"), 12)
-	#define ITEMNAME_FONT		GetFont( _T("ÀŒÃÂ"), 14)
+	#define SMALL_FONT			GetFont( _T("√ã√é√å√•"), 11)
+	#define DEFAULT_FONT		GetFont( _T("√ã√é√å√•"), 12)
+	#define ITEMNAME_FONT		GetFont( _T("√ã√é√å√•"), 14)
 
-	#define SMALL_FONT2			GetFont( _T("ÀŒÃÂ"), 11)
-	#define DEFAULT_FONT2		GetFont( _T("ÀŒÃÂ"), 12)
-	#define ITEMNAME_FONT2		GetFont( _T("ÀŒÃÂ"), 14)
+	#define SMALL_FONT2			GetFont( _T("√ã√é√å√•"), 11)
+	#define DEFAULT_FONT2		GetFont( _T("√ã√é√å√•"), 12)
+	#define ITEMNAME_FONT2		GetFont( _T("√ã√é√å√•"), 14)
 
-	#define DEFAULT_FONT_NAME		_T("ÀŒÃÂ")
-	#define DEFAULT_FONT_NAME_2		_T("ÀŒÃÂ")
+	#define DEFAULT_FONT_NAME		_T("√ã√é√å√•")
+	#define DEFAULT_FONT_NAME_2		_T("√ã√é√å√•")
 
 #else
-	#define SMALL_FONT			GetFont( _T("±º∏≤√º"), 11)
-	#define DEFAULT_FONT		GetFont( _T("±º∏≤√º"), 12)
-	#define ITEMNAME_FONT		GetFont( _T("±º∏≤√º"), 14)
+	#define SMALL_FONT			GetFont( _T("SimSun"), 11)
+	#define DEFAULT_FONT		GetFont( _T("SimSun"), 12)
+	#define ITEMNAME_FONT		GetFont( _T("SimSun"), 14)
 
-	#define SMALL_FONT2			GetFont( _T("±º∏≤"), 11)
-	#define DEFAULT_FONT2		GetFont( _T("±º∏≤"), 12)
-	#define ITEMNAME_FONT2		GetFont( _T("±º∏≤"), 14)
+	#define SMALL_FONT2			GetFont( _T("SimSun"), 11)
+	#define DEFAULT_FONT2		GetFont( _T("SimSun"), 12)
+	#define ITEMNAME_FONT2		GetFont( _T("SimSun"), 14)
 
-	#define DEFAULT_FONT_NAME		_T("±º∏≤")
-	#define DEFAULT_FONT_NAME_2		_T("±º∏≤√º")
+	#define DEFAULT_FONT_NAME		_T("SimSun")
+	#define DEFAULT_FONT_NAME_2		_T("SimSun")
 #endif
 
 // color

@@ -1,4 +1,4 @@
-#include "StdAfx.h"
+﻿#include "StdAfx.h"
 #include "IPopUp.h"
 #include "../XiahPak.h"
 #include "IExtern.h"

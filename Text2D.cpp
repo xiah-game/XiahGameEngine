@@ -1,4 +1,4 @@
-#include "stdafx.h"
+﻿#include "stdafx.h"
 #include "D3DDevice.h"
 #include "Text2D.h"
 #include "io.h"

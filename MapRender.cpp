@@ -1,4 +1,4 @@
-#include "stdafx.h"
+﻿#include "stdafx.h"
 #include "MapData.h"
 #include "MapRender.h"
 #include "MapObjectData.h"

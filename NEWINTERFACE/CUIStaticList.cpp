@@ -1,8 +1,8 @@
 /********************************************************************
 	created:	2004/03/01
 	created:	1:3:2004   21:09
-	filename: 	c:\documents and settings\administrator\¹ÙÅÁ È­¸é\tempui\tempui\cuistaticlist.cpp
-	file path:	c:\documents and settings\administrator\¹ÙÅÁ È­¸é\tempui\tempui
+	filename: 	c:\documents and settings\administrator\å®‹ä½“ È­¸é\tempui\tempui\cuistaticlist.cpp
+	file path:	c:\documents and settings\administrator\å®‹ä½“ È­¸é\tempui\tempui
 	file base:	cuistaticlist
 	file ext:	cpp
 	author:		

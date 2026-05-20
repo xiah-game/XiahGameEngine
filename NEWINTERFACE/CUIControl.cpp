@@ -269,73 +269,73 @@ namespace XiahGameEngine
 			{
 			case 0:  // ¿¬³ë¶û
 				m_pText2D->SetText(  &m_rtPos.GetLocal(), DEFAULT_ALIGN,
-					(LPCTSTR)szText, GetFont( _T("±¼¸²"), 12), D3DCOLOR_XRGB( 255, 255, 255));
+					(LPCTSTR)szText, GetFont( _T("å®‹ä½“"), 12), D3DCOLOR_XRGB( 255, 255, 255));
 				break;
 
 			case 1: // »¡°£»ö
 				m_pText2D->SetText(  &m_rtPos.GetLocal(), DEFAULT_ALIGN,
-					(LPCTSTR)szText, GetFont( _T("±¼¸²"), 12), D3DCOLOR_XRGB( 255, 0, 0));
+					(LPCTSTR)szText, GetFont( _T("å®‹ä½“"), 12), D3DCOLOR_XRGB( 255, 0, 0));
 				break;
 			case 2:
 				m_pText2D->SetText(  &m_rtPos.GetLocal(), TEXT2D_ALIGN_HLEFT,
-					(LPCTSTR)szText, GetFont( _T("±¼¸²"), 12), D3DCOLOR_XRGB( 255, 0, 0));
+					(LPCTSTR)szText, GetFont( _T("å®‹ä½“"), 12), D3DCOLOR_XRGB( 255, 0, 0));
 				break;
 			case 3:	
 				m_pText2D->SetText(  &m_rtPos.GetLocal(), TEXT2D_ALIGN_HLEFT,
-					(LPCTSTR)szText, GetFont( _T("±¼¸²"), 12), D3DCOLOR_XRGB( 255, 255, 0));
+					(LPCTSTR)szText, GetFont( _T("å®‹ä½“"), 12), D3DCOLOR_XRGB( 255, 255, 0));
 				break;
 			case 4:
 				m_pText2D->SetText(  &m_rtPos.GetLocal(), TEXT2D_ALIGN_HRIGHT,
-					(LPCTSTR)szText, GetFont( _T("±¼¸²"), 12), D3DCOLOR_XRGB(255, 255, 255));
+					(LPCTSTR)szText, GetFont( _T("å®‹ä½“"), 12), D3DCOLOR_XRGB(255, 255, 255));
 				break;
 			case 5:
 				m_pText2D->SetText(  &m_rtPos.GetLocal(), TEXT2D_ALIGN_HLEFT,
-					(LPCTSTR)szText, GetFont( _T("±¼¸²"), 12), D3DCOLOR_XRGB(255, 255, 255));
+					(LPCTSTR)szText, GetFont( _T("å®‹ä½“"), 12), D3DCOLOR_XRGB(255, 255, 255));
 				break;
 			case 6:	// È¸»ö
 				m_pText2D->SetText(  &m_rtPos.GetLocal(), DEFAULT_ALIGN,
-					(LPCTSTR)szText, GetFont( _T("±¼¸²"), 12), D3DCOLOR_XRGB(180, 180, 180));
+					(LPCTSTR)szText, GetFont( _T("å®‹ä½“"), 12), D3DCOLOR_XRGB(180, 180, 180));
 				break;
 			case 7:	// ¿Á¼Ç¿ë
 				{
 					m_pText2D->SetText(&m_rtPos.GetLocal(), DEFAULT_ALIGN,
-						(LPCTSTR)szText, GetFont( _T("±¼¸²"), 15), D3DCOLOR_XRGB(255, 0, 0));
+						(LPCTSTR)szText, GetFont( _T("å®‹ä½“"), 15), D3DCOLOR_XRGB(255, 0, 0));
 				}
 				break;
 			case 8:	// ¿É¼Ç ±ÝÀü
 				{
 					m_pText2D->SetText(&m_rtPos.GetLocal(), TEXT2D_ALIGN_VCENTER | TEXT2D_ALIGN_HRIGHT,
-						(LPCTSTR)szText, GetFont(_T("±¼¸²"), 12), D3DCOLOR_XRGB(255, 255, 255));
+						(LPCTSTR)szText, GetFont(_T("å®‹ä½“"), 12), D3DCOLOR_XRGB(255, 255, 255));
 				}
 				break;
 			case 9:	//±ÝÀü 100,000(ÀÏ½Ê¸¸) ´ÜÀ§	³ë¶õ»ö
 				{
                     m_pText2D->SetText(  &m_rtPos.GetLocal(), DEFAULT_ALIGN,
-                        (LPCTSTR)szText, GetFont( _T("±¼¸²"), 12), D3DCOLOR_XRGB( 255, 255, 0));
+                        (LPCTSTR)szText, GetFont( _T("å®‹ä½“"), 12), D3DCOLOR_XRGB( 255, 255, 0));
 				}
                 break;
 			case 10: //±ÝÀü 1,000,000(ÀÏ¹é¸¸) ´ÜÀ§ ¹àÀº³ì»ö
 				{
                     m_pText2D->SetText(  &m_rtPos.GetLocal(), DEFAULT_ALIGN,
-                        (LPCTSTR)szText, GetFont( _T("±¼¸²"), 12), D3DCOLOR_XRGB( 0, 255, 0));
+                        (LPCTSTR)szText, GetFont( _T("å®‹ä½“"), 12), D3DCOLOR_XRGB( 0, 255, 0));
 				}
 				break;
 			case 11: //±ÝÀü 10,000,000(ÀÏÃµ¸¸) ´ÜÀ§ ÇÏ´Ã»ö
 				{
                     m_pText2D->SetText(  &m_rtPos.GetLocal(), DEFAULT_ALIGN,
-                        (LPCTSTR)szText, GetFont( _T("±¼¸²"), 12), D3DCOLOR_XRGB( 0, 204, 255));
+                        (LPCTSTR)szText, GetFont( _T("å®‹ä½“"), 12), D3DCOLOR_XRGB( 0, 204, 255));
 				}
 				break;
 			case 12: //±ÝÀü 100,000,000(ÀÏ¾ï) ´ÜÀ§ ºÐÈ«»ö
 				{
                     m_pText2D->SetText(  &m_rtPos.GetLocal(), DEFAULT_ALIGN,
-                        (LPCTSTR)szText, GetFont( _T("±¼¸²"), 12), D3DCOLOR_XRGB( 255, 0, 255));
+                        (LPCTSTR)szText, GetFont( _T("å®‹ä½“"), 12), D3DCOLOR_XRGB( 255, 0, 255));
 				}
 				break;
 			case 13: //±ÝÀü 1,000,000,000(ÀÏ½Ê¾ï) ´ÜÀ§ ¿¬ÇÑ ÁÖÈ²»ö
 				{
                     m_pText2D->SetText(  &m_rtPos.GetLocal(), DEFAULT_ALIGN,
-                        (LPCTSTR)szText, GetFont( _T("±¼¸²"), 12), D3DCOLOR_XRGB( 255, 153, 0));
+                        (LPCTSTR)szText, GetFont( _T("å®‹ä½“"), 12), D3DCOLOR_XRGB( 255, 153, 0));
 				}
 			}
 		}
