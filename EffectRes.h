@@ -852,14 +852,14 @@ extern void Load(MyString &str, FILE *fp);
 //#endif
 
 //#ifdef	_CLIENT
-#define	EFFECTPOOL_MAX				 350
-#define PACKAGEPOOL_MAX				 350
-#define PACKAGEPAIRPOOL_MAX			 300
-#define EFFECTRENDERPOOL_MAX		 350	// effects pre-allocated memory pool for rendering
-#define PARTICLERENDERPOOL_MAX		 800	// particles pre-allocated memory pool for rendering
-#define ELEMENTRENDERPOOL_MAX		7000	// (mesh)elements pre-allocated memory pool for rendering
-#define VERTEXRENDERPOOL_MAX		 550	// (billboard) vertex and index pre-allocated memory pool for rendering
-#define LIGHTRENDERPOOL_MAX			 350
+#define	EFFECTPOOL_MAX				 3500
+#define PACKAGEPOOL_MAX				 3500
+#define PACKAGEPAIRPOOL_MAX			 3000
+#define EFFECTRENDERPOOL_MAX		 3500	// effects pre-allocated memory pool for rendering
+#define PARTICLERENDERPOOL_MAX		 8000	// particles pre-allocated memory pool for rendering
+#define ELEMENTRENDERPOOL_MAX		70000	// (mesh)elements pre-allocated memory pool for rendering
+#define VERTEXRENDERPOOL_MAX		 5500	// (billboard) vertex and index pre-allocated memory pool for rendering
+#define LIGHTRENDERPOOL_MAX			 3500
 //#endif
 
 

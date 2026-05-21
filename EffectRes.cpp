@@ -1,4 +1,4 @@
-ï»¿
+ï»?
 #include "stdafx.h"
 #include "EffectRes.h"
 #include "HchFile.h"
@@ -17,15 +17,15 @@ extern CObjectDoc*	g_pObjectDoc;
 #include "XiahPak.h"
 
 
-// ì¬xì˜ ì—„ì²­ë‚œ ë”ëŸ¬ìš´ ì½”ë“œêµ°...
-// íŒŒì¼ í•˜ë‚˜ì— ë‹¤ ì§‘ì–´ ë„£ëŠ” ì„¼ìŠ¤ ë©‹ì§€êµ°
+// ?¬x?˜ ?—„ì²??‚œ ?”?Ÿ¬?š´ ì½”ë“œêµ?...
+// ?ŒŒ?¼ ?•˜?‚˜?— ?‹¤ ì§‘ì–´ ?„£?Š” ?„¼?Š¤ ë©‹ì??êµ?
 
 namespace XiahGameEngine
 {
 #define		EFFECTLIGHT_INDEX_MAX		8
 
 #define		TYPE_TILE_EFFECT			-1
-#define		TYPE_EXPACQUIRE_EFFECT		-3	// ì´ê±¸ ì‚¬ìš©í• ì§€ ì•ˆí• ì§€ëŠ” ì¢€ë” ë‘ê³ ë³´ì.
+#define		TYPE_EXPACQUIRE_EFFECT		-3	// ?´ê±? ?‚¬?š©?• ì§? ?•ˆ?• ì§??Š” ì¢??” ?‘ê³ ë³´?.
 
 
 
@@ -250,7 +250,7 @@ XIAHGE_API CEffect::CEffect() : m_pCharFileHandle2(NULL), m_pCharFileHandle3(NUL
 	for(i=0; i<4; i++)
         m_pLevelUpEffect[i] = NULL;
 
-	// ì™œ 3ê°œë§Œ ì´ˆê¸°í™” í–ˆëƒ??
+	// ?™œ 3ê°œë§Œ ì´ˆê¸°?™” ?–ˆ?ƒ??
 	//for(i=0; i<3; i++)
 	for(i=0; i < eAppearEnumMax; ++i)
         m_pAppearEffect[i] = NULL;
@@ -265,7 +265,7 @@ XIAHGE_API CEffect::CEffect() : m_pCharFileHandle2(NULL), m_pCharFileHandle3(NUL
 	m_dwVertexBufferMakingTimeVal = 0;
 	m_dwVertexBufferMakingElapsedTime = 0;
 
-	// ì•ˆì“°ëŠ”...
+	// ?•ˆ?“°?Š”...
 	m_pLevelUpGapJaPackage = NULL;
 	m_pLevelUpTPPackage = NULL;
 	m_pLevelUpOutGongPackage = NULL;
@@ -351,7 +351,7 @@ XIAHGE_API bool CEffect::LoadEffect(FILE *fp, bool bLoadRes)
 	m_nEffectID++;
 	pEffect->m_EffectManageID = m_nEffectID;
 //	if( m_pCurEffectPackage )
-//		m_pCurEffectPackage->nEffectManageID = m_nEffectID;	// ì•„ ê·¼ë° ì´ê±° ì•ˆì“¸ì§€ë„ ëª¨ë¥´ëŠ”ë°..
+//		m_pCurEffectPackage->nEffectManageID = m_nEffectID;	// ?•„ ê·¼ë° ?´ê±? ?•ˆ?“¸ì§??„ ëª¨ë¥´?Š”?°..
 
 	pEffect->m_DBID = m_pCurEffectPackage->nEffectID;
 	m_EffectList.insert( EFFECTLIST::value_type( pEffect->m_DBID, pEffect ) );
@@ -362,7 +362,7 @@ XIAHGE_API bool CEffect::LoadEffect(FILE *fp, bool bLoadRes)
 	fread( &count, 4, 1, fp );
 	for(i=0; i<count; i++)
 	{
-		// í˜¹ì‹œ ì—ë””í„°ì—ì„œ ë§Œë“¤ì–´ ë†“ìœ¼ë©´ ì—ëŸ¬ê°€ ë‚˜ë¯€ë¡œ íŒŒì¼ë§Œ ì½ë„ë¡ í•œë‹¤. 
+		// ?˜¹?‹œ ?—?””?„°?—?„œ ë§Œë“¤?–´ ?†“?œ¼ë©? ?—?Ÿ¬ê°? ?‚˜ë¯?ë¡? ?ŒŒ?¼ë§? ?½?„ë¡? ?•œ?‹¤. 
 		int dir, PosX, PosY, PosZ, Power, Number, Size, Width, SizeB;
 		fread( &dir,	4, 1, fp );
 		fread( &PosX,	4, 1, fp );
@@ -376,7 +376,7 @@ XIAHGE_API bool CEffect::LoadEffect(FILE *fp, bool bLoadRes)
 
 		MyString texturepath;
 		XiahGameEngine::Load(texturepath, fp);
-/*		ì§€ìš°ë©´ ì•ˆë˜
+/*		ì§??š°ë©? ?•ˆ?˜
 		CWaterfall* pWaterfall = new CWaterfall;
 		pWaterfall->Load(fp, bLoadRes);
 
@@ -402,7 +402,7 @@ XIAHGE_API bool CEffect::LoadEffect(FILE *fp, bool bLoadRes)
 
 		MyString texturepath;
 		XiahGameEngine::Load(texturepath, fp);
-/*		ì§€ìš°ë©´ ì•ˆë˜
+/*		ì§??š°ë©? ?•ˆ?˜
 		CThunder* pThunder = new CThunder;
 		pThunder->Load(fp, bLoadRes);
 
@@ -425,7 +425,7 @@ XIAHGE_API bool CEffect::LoadEffect(FILE *fp, bool bLoadRes)
 		pEffect->m_LightList.push_back(pLight);
 	}
 
-	// ì´ì „ ë²„ì „ì¼ë•Œì—ëŠ” í˜„ì¬ ë²„ì „ì—ì„œ í•„ìš”í•œ ë°ì´íƒ€ë“¤ì„ ì´ˆê¸°í™”í•´ì¤€ë‹¤. 
+	// ?´? „ ë²„ì „?¼?•Œ?—?Š” ?˜„?¬ ë²„ì „?—?„œ ?•„?š”?•œ ?°?´????“¤?„ ì´ˆê¸°?™”?•´ì¤??‹¤. 
 	if( ver < VERSION_UPGRADE0303 )
 	{
 		pEffect->m_bRepeat = FALSE;
@@ -504,7 +504,7 @@ void CEffect::SaveEffect(FILE *fp)
 
 void CEffect::SaveEffect(_EFFECT* pEffect,FILE *fp)
 {
-	// ì €ì¥í• ë•Œì—ëŠ” í˜„ì¬ ë²„ì „ìœ¼ë¡œ í•´ì¤€ë‹¤.
+	// ????¥?• ?•Œ?—?Š” ?˜„?¬ ë²„ì „?œ¼ë¡? ?•´ì¤??‹¤.
 	BYTE ver = VERSION_20030904;
 	fwrite( &ver, 1, 1, fp );
 
@@ -534,7 +534,7 @@ void CEffect::SaveEffect(_EFFECT* pEffect,FILE *fp)
 //	count = pEffect->m_WaterfallList.size();
 	count = 0;
 	fwrite( &count, 4, 1, fp );
-/*  ì§€ìš°ë©´ ì•ˆë˜
+/*  ì§??š°ë©? ?•ˆ?˜
 	WATERFALLLIST::iterator wit;
 	for(wit=pEffect->m_WaterfallList.begin(); wit!=pEffect->m_WaterfallList.end(); wit++)
 	{
@@ -545,7 +545,7 @@ void CEffect::SaveEffect(_EFFECT* pEffect,FILE *fp)
 
 //	count = pEffect->m_ThunderList.size();
 	fwrite( &count, 4, 1, fp );
-/*  ì§€ìš°ë©´ ì•ˆë˜
+/*  ì§??š°ë©? ?•ˆ?˜
 	THUNDERLIST::iterator tit;
 	for(tit=pEffect->m_ThunderList.begin(); tit!=pEffect->m_ThunderList.end(); tit++)
 	{
@@ -757,8 +757,8 @@ void CEffect::LoadElement(_ELEMENT *pElementData, FILE *fp, bool bLoadRes)
 		m_pEffectResPool->GetMesh( pElementData->m_MeshPath.data() );
 	}
 
-	// ì´ê²ƒì€ í´ë¼ì´ì–¸íŠ¸ì—ë§Œ ìˆëŠ” ê²ƒìœ¼ë¡œ, ë‹¤ë¥¸ íˆ´ì— ë„£ì–´ë„ ìƒê´€ì—†ìŒ.
-	// ì €ì¥í• ë•Œ ë°ì´í„°ë¥¼ ì¤„ì´ê¸° ìœ„í•´ ì´ë ‡ê²Œ í–ˆìŒ.
+	// ?´ê²ƒì?? ?´?¼?´?–¸?Š¸?—ë§? ?ˆ?Š” ê²ƒìœ¼ë¡?, ?‹¤ë¥? ?ˆ´?— ?„£?–´?„ ?ƒê´??—†?Œ.
+	// ????¥?• ?•Œ ?°?´?„°ë¥? ì¤„ì´ê¸? ?œ„?•´ ?´? ‡ê²? ?–ˆ?Œ.
 	pElementData->m_nRenderSrc	= GetRenderBlend( (__int8)pElementData->m_nRenderSrc );
 	pElementData->m_nRenderDest	= GetRenderBlend( (__int8)pElementData->m_nRenderDest );
 	pElementData->m_nRenderOp	= GetRenderBlendOP( (__int8)pElementData->m_nRenderOp );
@@ -979,7 +979,7 @@ _ELEMENT* CEffect::CreateElement(_PARTICLE *pParticle)
 int CEffect::GetFreeEffectID()
 {
 #ifdef	_EFFECTEDITOR
-	// DBì—ì„œ ê°€ì¥ í° ì•„ì´ë””ë¥¼ ì°¾ëŠ”ë‹¤.
+	// DB?—?„œ ê°??¥ ?° ?•„?´?””ë¥? ì°¾ëŠ”?‹¤.
 	int nMax = -1;
 
 	CR_EffectInfo EffectInfo(&g_DB);
@@ -1111,12 +1111,12 @@ XIAHGE_API void CEffect::Release()
             fclose( m_pCharFileHandle );
 		m_pCharFileHandle = NULL;
 
-		// [12/10/2004] DB ì´í™íŠ¸ê°€ ë‚ ë¼ê°€ì„œ í•¨ìˆ˜ë¥¼ ë³€í˜•ì´ í•„ìš”í•˜ë‹¤.
+		// [12/10/2004] DB ?´?™?Š¸ê°? ?‚ ?¼ê°??„œ ?•¨?ˆ˜ë¥? ë³??˜•?´ ?•„?š”?•˜?‹¤.
 		if(m_pCharFileHandle2 != NULL)
 			fclose(m_pCharFileHandle2);
 		m_pCharFileHandle2 = NULL;
 
-		// DB ì´í™íŠ¸ê°€ ë‚ ë¼ê°€ì„œ í•¨ìˆ˜ë¥¼ ë³€í˜•ì´ í•„ìš”í•˜ë‹¤.
+		// DB ?´?™?Š¸ê°? ?‚ ?¼ê°??„œ ?•¨?ˆ˜ë¥? ë³??˜•?´ ?•„?š”?•˜?‹¤.
 		if(m_pCharFileHandle3 != NULL)
 			fclose(m_pCharFileHandle3);
 		m_pCharFileHandle3 = NULL;
@@ -1242,7 +1242,7 @@ void CEffect::DeleteEffect(_EFFECT* pEffect, bool bDeletePointer)
 	}
 	pEffect->m_ParticleList.clear();
 
-/*  ì§€ìš°ë©´ ì•ˆë˜
+/*  ì§??š°ë©? ?•ˆ?˜
 	// delete others... waterfall, thunder, light
 	WATERFALLLIST::iterator wit;
 	for(wit=pEffect->m_WaterfallList.begin(); wit!=pEffect->m_WaterfallList.end(); wit++)
@@ -1484,7 +1484,7 @@ void CEffect::StartEffectToRender(_EFFECTRENDER* pEffectRender)
 	}// for(pit)
 
 
-/*	ì§€ìš°ë©´ ì•ˆë˜
+/*	ì§??š°ë©? ?•ˆ?˜
 	// waterfall, thunder, light
 	_EFFECT* pEffect = pEffectRender->pEffect;
 	WATERFALLLIST::iterator wit;
@@ -1518,7 +1518,7 @@ XIAHGE_API void CEffect::UpdateEffect(DWORD dTime)
 	// test
 //	dTime = 60;
 
-	// í˜„ì¬ ì§€ì›Œì§ˆ ì´í™íŠ¸ ë¦¬ìŠ¤íŠ¸
+	// ?˜„?¬ ì§??›Œì§? ?´?™?Š¸ ë¦¬ìŠ¤?Š¸
 	DeleteEffectPackagePairList();
 
 
@@ -1541,14 +1541,14 @@ XIAHGE_API void CEffect::UpdateEffect(DWORD dTime)
 			_EFFECTRENDER* pEffectRender = pPackage->pEffectRender;
 			m_pCurEffectRender = pEffectRender;
 
-			// í™”ë©´ì— ì•ˆë³´ì´ê³  ë°˜ë³µë˜ë©´ Updateë¥¼ í•˜ì§€ ì•ŠëŠ”ë‹¤.
+			// ?™”ë©´ì— ?•ˆë³´ì´ê³? ë°˜ë³µ?˜ë©? Updateë¥? ?•˜ì§? ?•Š?Š”?‹¤.
 			if( !pPackagePair->bIsVisible && pEffectRender->pEffect->m_bRepeat )
 				break;
 
 			// Repeat
 			if( pEffectRender->pEffect->m_bRepeat && !pEffectRender->m_bPlay )
 			{
-				// ì§„í–‰ì‹œê°„ì„ 0ìœ¼ë¡œ, ê¸€êµ¬, Particleë§Œ ìƒˆë¡œ ë” ìƒì„±í•´ ì¤€ë‹¤.
+				// ì§„í–‰?‹œê°„ì„ 0?œ¼ë¡?, ê¸?êµ?, Particleë§? ?ƒˆë¡? ?” ?ƒ?„±?•´ ì¤??‹¤.
 				pEffectRender->m_bPlay = true;
 				pEffectRender->m_ElapsedTime = 0;
 				_EFFECT* pEffect = pEffectRender->pEffect;
@@ -1627,8 +1627,8 @@ XIAHGE_API void CEffect::UpdateEffect(DWORD dTime)
 					pLight->m_ElapsedTime = 0;
 				}// for( Effect light )
 				
-				// ë°˜ë³µë˜ëŠ” ì´í™íŠ¸ì˜ ì‚¬ìš´ë“œ
-				// ì§€ê¸ˆì€ ë°˜ë³µë˜ëŠ” ì´í™íŠ¸ì˜ ì‚¬ìš´ë“œëŠ” ì²¨ì—ë§Œ í•œë²ˆ í”Œë ˆì´.
+				// ë°˜ë³µ?˜?Š” ?´?™?Š¸?˜ ?‚¬?š´?“œ
+				// ì§?ê¸ˆì?? ë°˜ë³µ?˜?Š” ?´?™?Š¸?˜ ?‚¬?š´?“œ?Š” ì²¨ì—ë§? ?•œë²? ?”Œ? ˆ?´.
 				// m_EffectSound.CreateEffectSoundInstance(pPackagePair->nCharUniqID, pPackagePair->nCharID, pPackagePair->nAniType);
 			}// if( m_bRepeat )
 
@@ -1646,7 +1646,7 @@ XIAHGE_API void CEffect::UpdateEffect(DWORD dTime)
 			/*
 			// --- UPDATE effect data ---
 			*/
-			// í•´ë‹¹ ìºë¦­í„°ì˜ ì• ë‹ˆë©”ì´ì…˜ ì‹œê°„ì´ ë³€ê²½ë˜ì–´ ì´í™íŠ¸ ì‹œê°„ì„ ëŠ˜ë¦¬ê±°ë‚˜ ì¤„ë ¤ì¤€ë‹¤.
+			// ?•´?‹¹ ìºë¦­?„°?˜ ?• ?‹ˆë©”ì´?…˜ ?‹œê°„ì´ ë³?ê²½ë˜?–´ ?´?™?Š¸ ?‹œê°„ì„ ?Š˜ë¦¬ê±°?‚˜ ì¤„ë ¤ì¤??‹¤.
 			dTime = dwOriginTime;
 			if( pPackage->m_LifeTimeChange )
 			{
@@ -1692,8 +1692,8 @@ XIAHGE_API void CEffect::UpdateEffect(DWORD dTime)
 			}
 #endif
 
-			// ë§¤íŠ¸ë¦­ìŠ¤ì— ê³ ì •ë˜ì§€ ì•ŠëŠ” ì´í™íŠ¸ëŠ” ì‹œì‘ ìœ„ì¹˜ë¥¼ ë§¤íŠ¸ë¦­ìŠ¤ë¥¼ ê³±í•´ì„œ ì›”ë“œì¢Œí‘œë¡œ ì‹œì‘í•œë‹¤.
-			// ê³ ì •ë˜ëŠ” ì´í™íŠ¸ëŠ” ì‹œì‘ìœ„ì¹˜ë¥¼ ì›ì ìœ¼ë¡œ ë‘ê³  ë¹Œë³´ë“œë¥¼ ë§Œë“¤ë•Œ ë§¤íŠ¸ë¦­ìŠ¤ë¥¼ ê³±í•œë‹¤.
+			// ë§¤íŠ¸ë¦??Š¤?— ê³ ì •?˜ì§? ?•Š?Š” ?´?™?Š¸?Š” ?‹œ?‘ ?œ„ì¹˜ë?? ë§¤íŠ¸ë¦??Š¤ë¥? ê³±í•´?„œ ?›”?“œì¢Œí‘œë¡? ?‹œ?‘?•œ?‹¤.
+			// ê³ ì •?˜?Š” ?´?™?Š¸?Š” ?‹œ?‘?œ„ì¹˜ë?? ?›? ?œ¼ë¡? ?‘ê³? ë¹Œë³´?“œë¥? ë§Œë“¤?•Œ ë§¤íŠ¸ë¦??Š¤ë¥? ê³±í•œ?‹¤.
 			// Attached Bone Position
 			if( pPackage->nBoneIndex == -1 )	// Fixed Pos
 			{
@@ -1726,18 +1726,18 @@ XIAHGE_API void CEffect::UpdateEffect(DWORD dTime)
 												GetEffectData( pEffectRender->pEffect->m_Rotation[2], pEffectRender->m_ElapsedTime ));
 
 			// Move Function
-			// ì´í™íŠ¸ê°€ ì „ì²´ì ìœ¼ë¡œ ëª©í‘œë¥¼ í–¥í•´ ì›€ì§ì´ë ¤ë©´ pEffectRender->m_Positionë¥¼ ë³€í™”ì‹œì¼œì¤˜ì•¼í•œë‹¤.
+			// ?´?™?Š¸ê°? ? „ì²´ì ?œ¼ë¡? ëª©í‘œë¥? ?–¥?•´ ???ì§ì´? ¤ë©? pEffectRender->m_Positionë¥? ë³??™”?‹œì¼œì¤˜?•¼?•œ?‹¤.
 			if( !pEffectRender->pEffect->m_bTraceMove && pEffectRender->pEffect->m_bTargetMove )	// Target Move
 			{
-				// m_vTargetMovePosë¥¼ í´ë¼ì´ì–¸íŠ¸ì—ì„œ í•„ìš”í• ë•Œë§ˆë‹¤ ë³€ê²½ì‹œì¼œì¤˜ë„ ë¨.
-				// world matrix pointë¥¼ êµ¬í•´ì„œ ëª©í‘œ ìœ„ì¹˜ë‘ ë¹„êµí•´ì„œ positionì„ ë³€ê²½í•œë‹¤.
+				// m_vTargetMovePosë¥? ?´?¼?´?–¸?Š¸?—?„œ ?•„?š”?• ?•Œë§ˆë‹¤ ë³?ê²½ì‹œì¼œì¤˜?„ ?¨.
+				// world matrix pointë¥? êµ¬í•´?„œ ëª©í‘œ ?œ„ì¹˜ë‘ ë¹„êµ?•´?„œ position?„ ë³?ê²½í•œ?‹¤.
 				VECTOR vCurV = pEffectRender->m_Position + pEffectRender->m_vTargetMoveDelta;
 				vCurV = vCurV * pEffectRender->pPackagePair->WorldMatrix;
 
 				VECTOR vDir = pEffectRender->m_vTargetMovePos - vCurV;
 				float fLength = D3DXVec3Length( &vDir );
 				D3DXVec3Normalize( &vDir, &vDir );
-//				if( fLength > 4.0f )		// ìˆ«ì¹˜ëŠ” ì•Œì•„ì„œ ì¡°ì •í•˜ì…”~!
+//				if( fLength > 4.0f )		// ?ˆ«ì¹˜ëŠ” ?•Œ?•„?„œ ì¡°ì •?•˜?…”~!
 //					vDir *= fLength * 1.02f;
 //				else
 					vDir *= pEffectRender->pEffect->m_fTargetMoveSpeed;
@@ -1746,13 +1746,13 @@ XIAHGE_API void CEffect::UpdateEffect(DWORD dTime)
 				pEffectRender->m_Position += pEffectRender->m_vTargetMoveDelta;
 			}// if(m_bTargetMove)
 			else
-			if( !pEffectRender->pEffect->m_bTargetMove && pEffectRender->pEffect->m_bTraceMove && pEffectRender->pEffect->m_TraceList.size() != 0 )// ê¶¤ì  ì´ë™.
+			if( !pEffectRender->pEffect->m_bTargetMove && pEffectRender->pEffect->m_bTraceMove && pEffectRender->pEffect->m_TraceList.size() != 0 )// ê¶¤ì  ?´?™.
 			{
 				if( !pEffectRender->m_bTraceMoveTurn ) // Set Position
 				{
 					pEffectRender->m_bTraceMoveTurn = true;
 
-					// ë°˜ë³µ ì„¤ì •.
+					// ë°˜ë³µ ?„¤? •.
 					if( pEffectRender->pEffect->m_bRepeatTraceMove )
 					{
 						pEffectRender->TraceListIT++;
@@ -1762,11 +1762,11 @@ XIAHGE_API void CEffect::UpdateEffect(DWORD dTime)
 							pEffectRender->TraceListIT--;
 					}
 
-					// ë¦¬ìŠ¤íŠ¸ì˜ ì²«ë²ˆì§¸ ìœ„ì¹˜ê°€ ì²˜ìŒ ìœ„ì¹˜ì´ë‹¤.
+					// ë¦¬ìŠ¤?Š¸?˜ ì²«ë²ˆì§? ?œ„ì¹˜ê?? ì²˜ìŒ ?œ„ì¹˜ì´?‹¤.
 					if( pEffectRender->TraceListIT == pEffectRender->pEffect->m_TraceList.begin() )
 						pEffectRender->m_vTargetMoveDelta = *(pEffectRender->TraceListIT);
 
-					// ë‹¤ìŒ ëª©í‘œ ìœ„ì¹˜ ì´ë™.
+					// ?‹¤?Œ ëª©í‘œ ?œ„ì¹? ?´?™.
 					if( pEffectRender->TraceListIT != pEffectRender->pEffect->m_TraceList.end() )
 						pEffectRender->TraceListIT++;
 					// end point
@@ -1781,7 +1781,7 @@ XIAHGE_API void CEffect::UpdateEffect(DWORD dTime)
 				VECTOR vDir = pEffectRender->m_vTargetMovePos - vCurV;
 				float fLength = D3DXVec3Length( &vDir );
 				D3DXVec3Normalize( &vDir, &vDir );
-				if( fLength < 0.1f ) // ìœ„ì¹˜ ë³€ê²½
+				if( fLength < 0.1f ) // ?œ„ì¹? ë³?ê²?
 					pEffectRender->m_bTraceMoveTurn = false;
 
 				vDir *= pEffectRender->pEffect->m_fTraceMoveSpeed;
@@ -1790,20 +1790,20 @@ XIAHGE_API void CEffect::UpdateEffect(DWORD dTime)
 				pEffectRender->m_Position += pEffectRender->m_vTargetMoveDelta;
 			}// if(m_bTraceMove)
 			else
-			if( pEffectRender->pEffect->m_bTargetMove && pEffectRender->pEffect->m_bTraceMove && pEffectRender->pEffect->m_TraceList.size() != 0 )// ê¶¤ì  ì´ë™ + Target Move
+			if( pEffectRender->pEffect->m_bTargetMove && pEffectRender->pEffect->m_bTraceMove && pEffectRender->pEffect->m_TraceList.size() != 0 )// ê¶¤ì  ?´?™ + Target Move
 			{
 				if( !pEffectRender->m_bTraceMoveTurn ) // Set Position
 				{
 					pEffectRender->m_bTraceMoveTurn = true;
 
-					// ë¦¬ìŠ¤íŠ¸ì˜ ì²«ë²ˆì§¸ ìœ„ì¹˜ê°€ ì²˜ìŒ ìœ„ì¹˜ì´ë‹¤.
+					// ë¦¬ìŠ¤?Š¸?˜ ì²«ë²ˆì§? ?œ„ì¹˜ê?? ì²˜ìŒ ?œ„ì¹˜ì´?‹¤.
 					if( pEffectRender->TraceListIT == pEffectRender->pEffect->m_TraceList.begin() )
 					{
 						pEffectRender->m_vTargetMoveDelta = *(pEffectRender->TraceListIT);
 						pEffectRender->m_nTraceListIndex = 1;
 					}
 
-					// ë‹¤ìŒ ëª©í‘œ ìœ„ì¹˜ ì´ë™.
+					// ?‹¤?Œ ëª©í‘œ ?œ„ì¹? ?´?™.
 					if( pEffectRender->TraceListIT != pEffectRender->pEffect->m_TraceList.end() )
 					{
 						pEffectRender->TraceListIT++;
@@ -1829,7 +1829,7 @@ XIAHGE_API void CEffect::UpdateEffect(DWORD dTime)
 				VECTOR vDir = vCombineV - vCurV;
 				float fLength = D3DXVec3Length( &vDir );
 				D3DXVec3Normalize( &vDir, &vDir );
-				if( fLength < 0.1f ) // ìœ„ì¹˜ ë³€ê²½
+				if( fLength < 0.1f ) // ?œ„ì¹? ë³?ê²?
 					pEffectRender->m_bTraceMoveTurn = false;
 
 				vDir *= pEffectRender->pEffect->m_fTraceMoveSpeed;
@@ -1842,10 +1842,10 @@ XIAHGE_API void CEffect::UpdateEffect(DWORD dTime)
 			if( pEffectRender->m_ElapsedTime > pEffectRender->pEffect->m_LifeTime )
 				pEffectRender->m_bPlay = false;
 
-			// ì´ê±¸ material, diffuseì— ê³±í•´ì„œ ìµœì¢… íˆ¬ëª…ë„ë¥¼ ê³„ì‚°í•œë‹¤.
+			// ?´ê±? material, diffuse?— ê³±í•´?„œ ìµœì¢… ?ˆ¬ëª…ë„ë¥? ê³„ì‚°?•œ?‹¤.
 			fEffectOpacity = GetEffectData( pEffectRender->pEffect->m_Opacity, pEffectRender->m_ElapsedTime );
 
-			// ì™¸ê³µ ì§€ì† ì´í™íŠ¸ê°€ ê±°ì˜ ëë‚ ë•Œ í¬ë¯¸í•˜ê²Œ ì‚¬ë¼ì§€ë„ë¡ í•œë‹¤.
+			// ?™¸ê³? ì§??† ?´?™?Š¸ê°? ê±°ì˜ ??‚ ?•Œ ?¬ë¯¸í•˜ê²? ?‚¬?¼ì§??„ë¡? ?•œ?‹¤.
 			if( pPackagePair->dwTotalTime > 0 && 
 				pPackagePair->dwElapsedTime >= pPackagePair->dwTotalTime-5000 )
 			{
@@ -1854,7 +1854,7 @@ XIAHGE_API void CEffect::UpdateEffect(DWORD dTime)
 
 				fEffectOpacity = ( (pPackagePair->dwTotalTime - pPackagePair->dwElapsedTime)/5000.0f );
 
-				// ì •ì±…ì´ ë°”ë€Œì—ˆìŒ. ìµœì†Œí•œ í¬ë¯¸í•œ ìƒíƒœë¥¼ ìœ ì§€í•˜ê²Œ
+				// ? •ì±…ì´ ë°”ë?Œì—ˆ?Œ. ìµœì†Œ?•œ ?¬ë¯¸í•œ ?ƒ?ƒœë¥? ?œ ì§??•˜ê²?
 				if( fEffectOpacity <= 0.2f )
 					fEffectOpacity = 0.2f;
 
@@ -1878,13 +1878,13 @@ XIAHGE_API void CEffect::UpdateEffect(DWORD dTime)
 					}
 					pParticleRender->m_VertexRenderList.clear();
 
-					// 2004-02-09, ì¶”ê°€ë¨. ì´ëŸ° ì´ëŸ°ê±¸ ë¹¼ë¨¹ë‹¤ë‹ˆ.
+					// 2004-02-09, ì¶”ê???¨. ?´?Ÿ° ?´?Ÿ°ê±? ë¹¼ë¨¹?‹¤?‹ˆ.
 					ELEMENTRENDERLIST::iterator erit;
 					for(erit=pParticleRender->m_ElementList.begin(); erit!=pParticleRender->m_ElementList.end(); erit++)
 					{
 						_ELEMENTRENDER* pElementRender = *erit;
 
-						// ì†”ì§íˆ ì´ì   ì´ê±° í•„ìš” ì—†ëŠ”ë°.
+						// ?†”ì§íˆ ?´?   ?´ê±? ?•„?š” ?—†?Š”?°.
 						pElementRender->m_pTexture->m_nRefCount--;
 						if( NULL != pElementRender->m_pMesh )
 							pElementRender->m_pMesh->m_nRefCount--;
@@ -2088,15 +2088,15 @@ XIAHGE_API void CEffect::UpdateEffect(DWORD dTime)
 					pElementRender->m_Size.y = GetEffectData( pElementRender->m_pElement->m_Size[1], pElementRender->m_ElapsedTime );
 					pElementRender->m_Size.z = GetEffectData( pElementRender->m_pElement->m_Size[2], pElementRender->m_ElapsedTime );
 
-					// ê²½í—˜ì¹˜ ì´í™íŠ¸ì¼ë•ŒëŠ” íŠ¹ë³„ ëŒ€ìš°.
+					// ê²½í—˜ì¹? ?´?™?Š¸?¼?•Œ?Š” ?Š¹ë³? ????š°.
 					if( pEffectRender->pEffect->m_nEffectType == eExpAcquireEffect )
 					{
 						// important data
 						pElementRender->m_Velocity += pElementRender->m_vGravity * fTIME;
-						pElementRender->m_ExtraPosition += pElementRender->m_Velocity * fTIME;	// ì›ë˜ ìœ„ì¹˜
+						pElementRender->m_ExtraPosition += pElementRender->m_Velocity * fTIME;	// ?›?˜ ?œ„ì¹?
 
-//						VECTOR vTargetPos = pEffectRender->m_vTargetMovePos;	// ìºë¦­í„° ìœ„ì¹˜.
-						VECTOR vTargetPos = m_vTargetMovePos; // ì´í™íŠ¸ ì—ë””í„°ì—ì„œ ì‚¬ìš©í•˜ëŠ” ë³€ìˆ˜ì§€ë§Œ ì—¬ê¸°ì„œ ì‚¬ìš©í•˜ì.
+//						VECTOR vTargetPos = pEffectRender->m_vTargetMovePos;	// ìºë¦­?„° ?œ„ì¹?.
+						VECTOR vTargetPos = m_vTargetMovePos; // ?´?™?Š¸ ?—?””?„°?—?„œ ?‚¬?š©?•˜?Š” ë³??ˆ˜ì§?ë§? ?—¬ê¸°ì„œ ?‚¬?š©?•˜?.
 
 						VECTOR vToTargetPos = vTargetPos - pElementRender->m_Position;
 						float fDistance = D3DXVec3Length( &vToTargetPos );
@@ -2112,7 +2112,7 @@ XIAHGE_API void CEffect::UpdateEffect(DWORD dTime)
 						else
 							vDir *= (10.0f+(fWeight*5));
 
-						pElementRender->m_Position += vDir;		// ë¸”ëœë”© ìœ„ì¹˜.
+						pElementRender->m_Position += vDir;		// ë¸”ëœ?”© ?œ„ì¹?.
 					}
 					else
 					{
@@ -2134,7 +2134,7 @@ XIAHGE_API void CEffect::UpdateEffect(DWORD dTime)
 							D3DXMatrixIdentity( &view );
 							D3DXMatrixIdentity( &xm );
 
-							// ì›ì ì„ ì¤‘ì‹¬ìœ¼ë¡œ ë»—ì–´ë‚˜ê°€ëŠ” ë©”íŠ¸ë¦­ìŠ¤ë¥¼ ë§Œë“ ë‹¤.
+							// ?›? ?„ ì¤‘ì‹¬?œ¼ë¡? ë»—ì–´?‚˜ê°??Š” ë©”íŠ¸ë¦??Š¤ë¥? ë§Œë“ ?‹¤.
 							D3DXMatrixRotationAxis( &xm, &VECTOR(1,0,0), (3.14f/2.0f) );
 							D3DXMatrixLookAtLH( &view, &VECTOR(0,0,0), &pElementRender->m_Velocity, &m_vViewUp );
 							D3DXMatrixInverse( &view, NULL, &view );
@@ -2155,10 +2155,10 @@ XIAHGE_API void CEffect::UpdateEffect(DWORD dTime)
 							pElementRender->m_MeshTM = scale * rotate;
 						}
 
-						// í˜„ì¬ëŠ” ë¹Œë³´ë“œì™€ ë©”ì‹œì˜ ìœ„ì¹˜ë¥¼ ë”°ë¡œ ê³„ì‚°í•´ì¤˜ì•¼í•œë‹¤. ì›ë˜ ê·¸ëŸ¬í•¨
+						// ?˜„?¬?Š” ë¹Œë³´?“œ??? ë©”ì‹œ?˜ ?œ„ì¹˜ë?? ?”°ë¡? ê³„ì‚°?•´ì¤˜ì•¼?•œ?‹¤. ?›?˜ ê·¸ëŸ¬?•¨
 						if( pPackage->nBoneIndex == -1 ) // Fixed Pos
 						{
-							// World ì¢Œí‘œë¡œ ë°”ê¿”ì¤€ë‹¤.
+							// World ì¢Œí‘œë¡? ë°”ê¿”ì¤??‹¤.
 							pElementRender->m_MeshTM._41 = pElementRender->m_Position.x - pEffectRender->m_CustomPosition.x + pEffectRender->m_vMoveStartPos.x;
 							pElementRender->m_MeshTM._42 = pElementRender->m_Position.y - pEffectRender->m_CustomPosition.y + pEffectRender->m_vMoveStartPos.y;
 							pElementRender->m_MeshTM._43 = pElementRender->m_Position.z - pEffectRender->m_CustomPosition.z + pEffectRender->m_vMoveStartPos.z;
@@ -2178,7 +2178,7 @@ XIAHGE_API void CEffect::UpdateEffect(DWORD dTime)
 							}
 							else
 							{
-								// Bone ì¢Œí‘œë¡œ ë°”ê¿”ì¤€ë‹¤.
+								// Bone ì¢Œí‘œë¡? ë°”ê¿”ì¤??‹¤.
 								VECTOR vV = pElementRender->m_Position * pPackage->BoneMatrix;
 								pElementRender->m_MeshTM._41 = vV.x;
 								pElementRender->m_MeshTM._42 = vV.y;
@@ -2188,14 +2188,14 @@ XIAHGE_API void CEffect::UpdateEffect(DWORD dTime)
 //							pElementRender->m_MeshTM *= pPackage->BoneMatrix;
 						}
 
-						// mesh animation, HCH ì• ë‹ˆë©”ì´ì…˜ì„ ì´í™íŠ¸ ì´ ì§„í–‰ì‹œê°„ë™ì•ˆ 1ë²ˆ í”Œë ˆì´ì‹œí‚¨ë‹¤. 
+						// mesh animation, HCH ?• ?‹ˆë©”ì´?…˜?„ ?´?™?Š¸ ì´? ì§„í–‰?‹œê°„ë™?•ˆ 1ë²? ?”Œ? ˆ?´?‹œ?‚¨?‹¤. 
 						float fTemp = pElementRender->m_ElapsedTime / pElementRender->m_pElement->m_LifeTime;
 						pElementRender->m_nCurMeshFrame = (int)(fTemp * pElementRender->m_pMesh->m_nFrameCount );
 						
 						if( pElementRender->m_nCurMeshFrame > pElementRender->m_pMesh->m_nFrameCount-1 )
 							pElementRender->m_nCurMeshFrame = pElementRender->m_pMesh->m_nFrameCount-1;
 
-//						ë‹¨ìˆœíˆ ì• ë‹ˆë©”ì´ì…˜ ì‹œí‚¤ëŠ” ì½”ë“œ. ì´ ì½”ë“œëŠ” ê± ë‘ì.
+//						?‹¨?ˆœ?ˆ ?• ?‹ˆë©”ì´?…˜ ?‹œ?‚¤?Š” ì½”ë“œ. ?´ ì½”ë“œ?Š” ê±? ?‘?.
 //						pElementRender->m_nCurMeshFrame =(++pElementRender->m_nCurMeshFrame) % m_pMesh->m_nFrameCount;
 					}// if( pElementRender->m_pElement->m_Type == PET_Mesh )
 					
@@ -2218,10 +2218,10 @@ XIAHGE_API void CEffect::UpdateEffect(DWORD dTime)
 	DeleteEffectRenderList.clear();
 
 	// Original Code
-	// Update ë¶€ë¶„ì—ì„œ Vertex Bufferë¥¼ ë§Œë“ ë‹¤.
+	// Update ë¶?ë¶„ì—?„œ Vertex Bufferë¥? ë§Œë“ ?‹¤.
 //	MakeElementVertexToRender(dTime);
 
-	// ì´ì œëŠ” UpdateEffectëŠ” ë§¤í”„ë ˆì„ë§ˆë‹¤ í•˜ê³ , MakeElementVertexToRender()ë¥¼ ì‹œê°„ë‹¨ìœ„ë¡œ í˜¸ì¶œí•˜ì.
+	// ?´? œ?Š” UpdateEffect?Š” ë§¤í”„? ˆ?„ë§ˆë‹¤ ?•˜ê³?, MakeElementVertexToRender()ë¥? ?‹œê°„ë‹¨?œ„ë¡? ?˜¸ì¶œí•˜?.
 	m_dwVertexBufferMakingElapsedTime += dTime;
 	if( m_dwVertexBufferMakingElapsedTime >= m_dwVertexBufferMakingTimeVal )
 	{
@@ -2299,7 +2299,7 @@ void CEffect::DeleteEffectRender(_EFFECTRENDER *pEffectRender)
 	}// for( pEffectRender->m_ParticleList )
 	pEffectRender->m_ParticleList.clear();
 
-	// ì´ê±´ ëª¨ì•¼? êµ³ì´ ì—¬ê¸° ìˆì„ í•„ìš”ê°€ ì—†ì–ì•„.
+	// ?´ê±? ëª¨ì•¼? êµ³ì´ ?—¬ê¸? ?ˆ?„ ?•„?š”ê°? ?—†?–?•„.
 //	pEffectRender->pPackagePair = NULL;
 
 	// Effect Light
@@ -2418,7 +2418,7 @@ void CEffect::SpawnElement(_PARTICLERENDER *pParticleRender)
 			if( vDeltaPos.x > vHalf_size.x) vDeltaPos.x = vHalf_size.x;
 			if( vDeltaPos.y > vHalf_size.y) vDeltaPos.y = vHalf_size.y;
 			if( vDeltaPos.z > vHalf_size.z) vDeltaPos.z = vHalf_size.z;
-		}// ì•„ë˜ì˜ ì½”ë“œì—ì„œ ë³€ìˆ˜ captionì´ ë‚˜ì˜¤ì§€ ì•Šìœ¼ë©´ í˜„ì¬ ê´„í˜¸ ë¶€ë¶„ì„ ì£¼ì„ì²˜ë¦¬ í•œë‹¤. ê·¸ëŸ¼ ë‚˜ì˜¨ë‹¤. ^^
+		}// ?•„?˜?˜ ì½”ë“œ?—?„œ ë³??ˆ˜ caption?´ ?‚˜?˜¤ì§? ?•Š?œ¼ë©? ?˜„?¬ ê´„í˜¸ ë¶?ë¶„ì„ ì£¼ì„ì²˜ë¦¬ ?•œ?‹¤. ê·¸ëŸ¼ ?‚˜?˜¨?‹¤. ^^
 
 		if( pParticleRender->pParticle->m_SpawnDirectionType != PSDT_Custom )
 			SpawnDirection = pParticleRender->pParticle->m_SpawnDirectionType == PSDT_ToOut ? vDir : -vDir;
@@ -2426,14 +2426,14 @@ void CEffect::SpawnElement(_PARTICLERENDER *pParticleRender)
 	}// if( pParticleRender->pParticle->m_ElementSpawnType != PSVT_Point )
 
 	// << Animated Data set >>
-	// elementê°€ ìƒì„±ë ë•Œ ì†ë„ëŠ” ìƒˆë¡­ê²Œ ê³„ì‚°ë˜ì„œ ì£¼ì–´ì§€ê³ , Gravityë§Œ ê³„ì† ê³„ì‚°í•´ì„œ ì£¼ë©´ 
-	// í˜„ì¬ elementì˜ ì†ë„ë¥¼ ê³„ì‚°í•  ìˆ˜ ìˆë‹¤.
+	// elementê°? ?ƒ?„±? ?•Œ ?†?„?Š” ?ƒˆë¡?ê²? ê³„ì‚°?˜?„œ ì£¼ì–´ì§?ê³?, Gravityë§? ê³„ì† ê³„ì‚°?•´?„œ ì£¼ë©´ 
+	// ?˜„?¬ element?˜ ?†?„ë¥? ê³„ì‚°?•  ?ˆ˜ ?ˆ?‹¤.
 	float fX = GetEffectData( pParticleRender->pParticle->m_Gravity[0], pParticleRender->m_ElapsedTime );
 	float fY = GetEffectData( pParticleRender->pParticle->m_Gravity[1], pParticleRender->m_ElapsedTime );
 	float fZ = GetEffectData( pParticleRender->pParticle->m_Gravity[2], pParticleRender->m_ElapsedTime );
 	VECTOR vGravity = VECTOR( fX, fY, fZ );
 
-	// elementê°€ ìƒì„±ë ë•Œ ë³€í™”ë˜ëŠ” ì†ë„ê°’ì„ ì¤€ë‹¤.
+	// elementê°? ?ƒ?„±? ?•Œ ë³??™”?˜?Š” ?†?„ê°’ì„ ì¤??‹¤.
 	float fSpeed = GetEffectData( pParticleRender->pParticle->m_SpawnSpeed, pParticleRender->m_ElapsedTime );
 	SpawnDirection *= fSpeed;
 
@@ -2456,8 +2456,8 @@ void CEffect::SpawnElement(_PARTICLERENDER *pParticleRender)
 		pElementRender->m_Position = vElementPosition;
 		pElementRender->m_ExtraPosition = vElementPosition;
 
-		// ë¹Œë³´ë“œ ì—˜ë¦¬ë¨¼íŠ¸ê°€ ë§¤íŠ¸ë¦­ìŠ¤ì— ê³ ì •ë˜ì–´ ìˆì„ë•Œ ì‹œì‘ì ì„ ë§¤íŠ¸ë¦­ìŠ¤ì— ì ìš©ëœ ìœ„ì¹˜ë¡œ í•œë‹¤.
-		// Oneì€ ë§¤íŠ¸ë¦­ìŠ¤ì— ê³ ì •ì‹œí‚¬êº¼ë‹ˆê¹ Oneì´ ì•„ë‹ë•Œ.
+		// ë¹Œë³´?“œ ?—˜ë¦¬ë¨¼?Š¸ê°? ë§¤íŠ¸ë¦??Š¤?— ê³ ì •?˜?–´ ?ˆ?„?•Œ ?‹œ?‘? ?„ ë§¤íŠ¸ë¦??Š¤?— ? ?š©?œ ?œ„ì¹˜ë¡œ ?•œ?‹¤.
+		// One??? ë§¤íŠ¸ë¦??Š¤?— ê³ ì •?‹œ?‚¬êº¼ë‹ˆê¹? One?´ ?•„?‹?•Œ.
 		if( pElementRender->m_pElement->m_Type == PET_Billboard &&
 			pParticleRender->pParticle->m_ElementSpawnType != EST_One &&
 			m_pCurEffectRender->pEffect->m_bPositionFixToParentObject &&
@@ -2515,13 +2515,13 @@ void CEffect::MakeElementVertexToRender(DWORD dTime)
 	_ELEMENTVERTEX2		TotalBillboardVertex[ ELEMENT_RENDER_MAX*4 ];
 	WORD				TotalBillboardIndex[ ELEMENT_RENDER_MAX*6 ];
 
-	// quick listì— ìˆëŠ”ê²ƒë§Œ update
+	// quick list?— ?ˆ?Š”ê²ƒë§Œ update
 	EFFECTRENDERLIST::iterator erit;
 	for(erit=m_CurEffectRenderList.begin(); erit!=m_CurEffectRenderList.end(); erit++)
 	{
 		_EFFECTRENDER* pEffectRender = *erit;
 
-		// ì´í™íŠ¸ëŠ” ìˆëŠ”ë° í™”ë©´ì— ì•ˆë³´ì´ë©´ ì•ˆê·¸ë¦°ë‹¤.
+		// ?´?™?Š¸?Š” ?ˆ?Š”?° ?™”ë©´ì— ?•ˆë³´ì´ë©? ?•ˆê·¸ë¦°?‹¤.
 		if( !pEffectRender->pPackagePair->bIsVisible ) 
 		{
 			continue;
@@ -2540,7 +2540,7 @@ void CEffect::MakeElementVertexToRender(DWORD dTime)
 			{
 				_VERTEXRENDER* pVertexRender = *vrit;
 
-				// ë°”ë¡œ Lockì„ í•˜ì§€ ë§ê³ , ìš°ì„  ë°ì´íƒ€ë¶€í„° ë§Œë“¤ê³  ë³µì‚¬í•˜ì. ê·¸ë˜ì•¼ ì¡°ê¸ˆì´ë¼ë„ ë¹¨ë¦¬ì§€ì§€.
+				// ë°”ë¡œ Lock?„ ?•˜ì§? ë§ê³ , ?š°?„  ?°?´???ë¶??„° ë§Œë“¤ê³? ë³µì‚¬?•˜?. ê·¸ë˜?•¼ ì¡°ê¸ˆ?´?¼?„ ë¹¨ë¦¬ì§?ì§?.
 				int nVertexIndex = 0;
 				// scan current vertex render's element
 				ELEMENTRENDERLIST::iterator elrit;
@@ -2569,7 +2569,7 @@ void CEffect::MakeElementVertexToRender(DWORD dTime)
 					D3DXMatrixRotationAxis( &zm, &m_vView,		GetEffectData( pElementRender->m_pElement->m_Rotation[ 2], pElementRender->m_ElapsedTime) );
 
 					if( !pEffectRender->pEffect->m_bPositionFixToParentObject && !pElementRender->m_pElement->m_bEmitter )
-					{	// Effect Editorì—ì„œ ì„¤ì •ëœ ë°©í–¥ì´ World Matrixì—ì„œ ê·¸ëŒ€ë¡œ.
+					{	// Effect Editor?—?„œ ?„¤? •?œ ë°©í–¥?´ World Matrix?—?„œ ê·¸ë??ë¡?.
 						pElementRender->m_BillboardVertex[ 0].Position =  - m_vViewUp * HalfSize.y - m_vViewRight * HalfSize.x;
 						pElementRender->m_BillboardVertex[ 1].Position =  + m_vViewUp * HalfSize.y - m_vViewRight * HalfSize.x;
 						pElementRender->m_BillboardVertex[ 2].Position =  - m_vViewUp * HalfSize.y + m_vViewRight * HalfSize.x;
@@ -2592,7 +2592,7 @@ void CEffect::MakeElementVertexToRender(DWORD dTime)
 							pElementRender->m_BillboardVertex[i].Normal = -m_vView;
 						}
 					}
-					else	// Emitter, Effect Editorì—ì„œ ì„¤ì •ëœ ë°©í–¥ì´ Object Matrixì—ì„œ ê·¸ëŒ€ë¡œ.
+					else	// Emitter, Effect Editor?—?„œ ?„¤? •?œ ë°©í–¥?´ Object Matrix?—?„œ ê·¸ë??ë¡?.
 					if( pEffectRender->pEffect->m_bPositionFixToParentObject && pElementRender->m_pElement->m_bEmitter )
 					{
 						// effect matrix
@@ -2629,12 +2629,12 @@ void CEffect::MakeElementVertexToRender(DWORD dTime)
 						pElementRender->m_BillboardVertex[ 2].Position +=  (- vViewUp * HalfSize.y + vViewRight * HalfSize.x);
 						pElementRender->m_BillboardVertex[ 3].Position +=  (+ vViewUp * HalfSize.y + vViewRight * HalfSize.x);
 					}
-					else	// Object Matrixì—ëŠ” ê³ ì •ë˜ë‚˜ ì›”ë“œìƒì—ì„œ ì¤‘ë ¥ì´ ê³ ëŒ€ë¡œ ì ìš©.
+					else	// Object Matrix?—?Š” ê³ ì •?˜?‚˜ ?›”?“œ?ƒ?—?„œ ì¤‘ë ¥?´ ê³ ë??ë¡? ? ?š©.
 					if( pEffectRender->pEffect->m_bPositionFixToParentObject && !pElementRender->m_pElement->m_bEmitter )
 					{
-						// One ì¼ë•Œì™€ ì•„ë‹ë•Œë¥¼ êµ¬ë¶„
+						// One ?¼?•Œ??? ?•„?‹?•Œë¥? êµ¬ë¶„
 						if( pParticleRender->pParticle->m_ElementSpawnType == EST_One )
-						{	// í˜„ì¬ ì—˜ë¦¬ë¨¼íŠ¸ ìœ„ì¹˜ëŠ” ì›ì ì—ì„œì˜ ìœ„ì¹˜ì´ë¯€ë¡œ ë§¤íŠ¸ë¦­ìŠ¤ë¥¼ ê³±í•´ì„œ ê³„ì‚°.
+						{	// ?˜„?¬ ?—˜ë¦¬ë¨¼?Š¸ ?œ„ì¹˜ëŠ” ?›? ?—?„œ?˜ ?œ„ì¹˜ì´ë¯?ë¡? ë§¤íŠ¸ë¦??Š¤ë¥? ê³±í•´?„œ ê³„ì‚°.
 							// effect matrix
 							MATRIX matEffect;
 							if( pEffectRender->pPackage->nBoneIndex == -1 )
@@ -2664,7 +2664,7 @@ void CEffect::MakeElementVertexToRender(DWORD dTime)
 							pElementRender->m_BillboardVertex[ 2].Position +=  (- vViewUp * HalfSize.y + vViewRight * HalfSize.x);
 							pElementRender->m_BillboardVertex[ 3].Position +=  (+ vViewUp * HalfSize.y + vViewRight * HalfSize.x);
 						}
-						else// í˜„ì¬ ì—˜ë¦¬ë¨¼íŠ¸ ìœ„ì¹˜ëŠ” ì›”ë“œ ì¢Œí‘œì´ë‹¤.
+						else// ?˜„?¬ ?—˜ë¦¬ë¨¼?Š¸ ?œ„ì¹˜ëŠ” ?›”?“œ ì¢Œí‘œ?´?‹¤.
 						{
 							pElementRender->m_BillboardVertex[ 0].Position =  - m_vViewUp * HalfSize.y - m_vViewRight * HalfSize.x;
 							pElementRender->m_BillboardVertex[ 1].Position =  + m_vViewUp * HalfSize.y - m_vViewRight * HalfSize.x;
@@ -2721,8 +2721,8 @@ void CEffect::MakeElementVertexToRender(DWORD dTime)
 
 					nVertexIndex++;
 
-					// Vertex Bufferì—ì„œ Vertexê°œìˆ˜ê°€ 1000ì„ ë„˜ì§€ ì•Šê²Œ í•œë‹¤.
-					// ë¹Œë³´ë“œë‹ˆê¹, ì§ì‚¬ê°í˜•ì´ 4ê°œì˜ Vertexë¥¼ ì´ë£¬ë‹¤.
+					// Vertex Buffer?—?„œ Vertexê°œìˆ˜ê°? 1000?„ ?„˜ì§? ?•Šê²? ?•œ?‹¤.
+					// ë¹Œë³´?“œ?‹ˆê¹?, ì§ì‚¬ê°í˜•?´ 4ê°œì˜ Vertexë¥? ?´ë£¬ë‹¤.
 					if( nVertexIndex == ELEMENT_RENDER_MAX )
 						break;
 				}// for( pParticleRender->m_ElementList )
@@ -2815,7 +2815,7 @@ XIAHGE_API void CEffect::RenderEffect(DWORD dTime)
 	{
 		_EFFECTRENDER* pEffectRender = *erit;
 
-		// ì´í™íŠ¸ëŠ” ìˆëŠ”ë° í™”ë©´ì— ì•ˆë³´ì´ë©´ ì•ˆê·¸ë¦°ë‹¤.
+		// ?´?™?Š¸?Š” ?ˆ?Š”?° ?™”ë©´ì— ?•ˆë³´ì´ë©? ?•ˆê·¸ë¦°?‹¤.
 		if( !pEffectRender->pPackagePair->bIsVisible ) 
 		{
 			continue;
@@ -2849,12 +2849,12 @@ XIAHGE_API void CEffect::RenderEffect(DWORD dTime)
 				}
 
 				// render
-				// ì›ë˜ ì´ê±´ë° ì ì‹œ ë°”ê¾¼ë‹¤.
+				// ?›?˜ ?´ê±´ë° ? ?‹œ ë°”ê¾¼?‹¤.
 //				m_pDevice->SetMaterial( &pElementRender->m_Material);
 
-				// ë¹Œë³´ë“œë¥¼ VBë¡œ í•©ì³ì„œ ê·¸ë¦¬ëŠ” ë°”ëŒì— ë§¤í„°ë¦¬ì–¼ë¡œ íˆ¬ëª…ë„ë¥¼ ì¡°ì ˆí•´ë²„ë¦¬ë©´ 
-				// ë¹Œë³´ë“œ í†µì§¸ë¡œ ì ìš©ëœë‹¤. ê·¸ë˜ì„œ ì—˜ë¦¬ë¨¼íŠ¸ ë”°ë¡œë”°ë¡œ ì ìš© ì‹œí‚¤ê¸° ìœ„í•´ì„œ
-				// ë¹Œë³´ë“œëŠ” Diffuseë¥¼ vertex êµ¬ì¡°ì— ì¶”ê°€ì‹œì¼°ë‹¤. ì´ê²ƒìœ¼ë¡œ ì•ŒíŒŒë¥¼ ì ìš©.
+				// ë¹Œë³´?“œë¥? VBë¡? ?•©ì³ì„œ ê·¸ë¦¬?Š” ë°”ëŒ?— ë§¤í„°ë¦¬ì–¼ë¡? ?ˆ¬ëª…ë„ë¥? ì¡°ì ˆ?•´ë²„ë¦¬ë©? 
+				// ë¹Œë³´?“œ ?†µì§¸ë¡œ ? ?š©?œ?‹¤. ê·¸ë˜?„œ ?—˜ë¦¬ë¨¼?Š¸ ?”°ë¡œë”°ë¡? ? ?š© ?‹œ?‚¤ê¸? ?œ„?•´?„œ
+				// ë¹Œë³´?“œ?Š” Diffuseë¥? vertex êµ¬ì¡°?— ì¶”ê???‹œì¼°ë‹¤. ?´ê²ƒìœ¼ë¡? ?•Œ?ŒŒë¥? ? ?š©.
 				m_pDevice->SetMaterial( &BillboardMaterial );
 				g_Device.SetTexture(0, pElementRender->m_pTexture->m_pTexture);
 				//m_pDevice->SetTexture( 0, pElementRender->m_pTexture->m_pTexture );
@@ -2990,11 +2990,11 @@ XIAHGE_API void CEffect::RenderEffect(DWORD dTime)
 
 XIAHGE_API void CEffect::RenderOthers(DWORD dTime)
 {
-	//	Billow(2002.01.15) : Light Index ì´ˆê¸°í™”
+	//	Billow(2002.01.15) : Light Index ì´ˆê¸°?™”
 	for( int i=2; i < EFFECTLIGHT_INDEX_MAX; i++)
 		m_pDevice->LightEnable( i, FALSE );
 
-	// ì´í™íŠ¸ ë¼ì´íŒ…ì€ ì „ì²´ë¥¼ í†µí„¸ì–´ ì¸ë±ì‹±í•œë‹¤. => 2, 3, 4, 5, 6, 7, 8
+	// ?´?™?Š¸ ?¼?´?Œ…??? ? „ì²´ë?? ?†µ?„¸?–´ ?¸?±?‹±?•œ?‹¤. => 2, 3, 4, 5, 6, 7, 8
 	int nEffectLightIndex = 1;
 
 	EFFECTRENDERLIST::iterator eit;
@@ -3002,7 +3002,7 @@ XIAHGE_API void CEffect::RenderOthers(DWORD dTime)
 	{
 		_EFFECTRENDER* pEffectRender = *eit;
 
-		// ì´í™íŠ¸ëŠ” ìˆëŠ”ë° í™”ë©´ì— ì•ˆë³´ì´ë©´ ì•ˆê·¸ë¦°ë‹¤.
+		// ?´?™?Š¸?Š” ?ˆ?Š”?° ?™”ë©´ì— ?•ˆë³´ì´ë©? ?•ˆê·¸ë¦°?‹¤.
 		if( !pEffectRender->pPackagePair->bIsVisible ) 
 		{
 			continue;
@@ -3026,7 +3026,7 @@ XIAHGE_API void CEffect::RenderOthers(DWORD dTime)
 
 			if( pLight->m_bTurnOn && pLight->m_bPlay )
 			{
-				// ì´í™íŠ¸ ë¼ì´íŠ¸ê°€ ë§ìœ¼ë©´ ê³¼ê°íˆ ìƒëµí•œë‹¤.
+				// ?´?™?Š¸ ?¼?´?Š¸ê°? ë§ìœ¼ë©? ê³¼ê°?ˆ ?ƒ?µ?•œ?‹¤.
 				if( ++nEffectLightIndex >= EFFECTLIGHT_INDEX_MAX )
 					continue;
 
@@ -3040,7 +3040,7 @@ XIAHGE_API void CEffect::RenderOthers(DWORD dTime)
 		}// for( Light )
 
 
-		/*	ì•„ì§ ì‚¬ìš©ì€ í•˜ì§€ ë§ê¸°ë¥¼.
+		/*	?•„ì§? ?‚¬?š©??? ?•˜ì§? ë§ê¸°ë¥?.
 		// waterfall
 		nCount = pEffect->m_WaterfallList.size();
 		if( nCount > 0 )
@@ -3133,7 +3133,7 @@ void CEffect::DecMeshRefCount(MyString strFilename)
 	m_pEffectResPool->DecMeshRefCount( strFilename );
 }
 
-/*	ì§€ìš°ë©´ ì•ˆë˜
+/*	ì§??š°ë©? ?•ˆ?˜
 CWaterfall* CEffect::AddWaterfall(_EFFECT *pEffect)
 {
 	CWaterfall* pWaterfall = new CWaterfall;
@@ -3176,7 +3176,7 @@ CEffectLight* CEffect::AddLight(_EFFECT *pEffect)
 	return pLight;
 }
 
-/*ì§€ìš°ë©´ ì•ˆë˜
+/*ì§??š°ë©? ?•ˆ?˜
 void CEffect::DeleteWaterfall(_EFFECT *pEffect, CWaterfall *pWaterfall)
 {
 	WATERFALLLIST::iterator wit;
@@ -3233,7 +3233,7 @@ XIAHGE_API void CEffect::LoadEffectFromPackage()
 	MyString strEffectres	= strBasePath + _T("Effect_res.dat");
 	MyString strEffectmsh2	= strBasePath + _T("Effect_msh.idx");
 
-	// êµ³ì´ ì´ë ‡ê²Œ ì•ˆí•´ë„ ë˜ì§€ë§Œ, ë‚œ ì™„ë²½ì„ ì¢‹ì•„í•´~~  *^^*;
+	// êµ³ì´ ?´? ‡ê²? ?•ˆ?•´?„ ?˜ì§?ë§?, ?‚œ ?™„ë²½ì„ ì¢‹ì•„?•´~~  *^^*;
 	// open file and error check
 	FILE *Effect_ch = _tfopen( strEffectch.data(), _T("rb") );
 	if( !Effect_ch )
@@ -3352,36 +3352,36 @@ XIAHGE_API void CEffect::LoadEffectFromPackage()
 		else
 			delete pPackage;
 
-/*		ì¼ë‹¨ì€ ì´ê±¸ ì£¼ì„ì²˜ë¦¬í•˜ì ì ˆëŒ€ ì§€ìš°ë©´ ì•ˆë¨~~!!
+/*		?¼?‹¨??? ?´ê±? ì£¼ì„ì²˜ë¦¬?•˜? ? ˆ??? ì§??š°ë©? ?•ˆ?¨~~!!
 		//
-		// ì•„ë˜ ì½”ë“œëŠ” í•„ìš”í•œ í•˜ë“œ ì½”ë”©ì´ë‹¤.
+		// ?•„?˜ ì½”ë“œ?Š” ?•„?š”?•œ ?•˜?“œ ì½”ë”©?´?‹¤.
 		//
 
-		// 1. ìºë¦­í„°ì˜ 264 AniëŠ” ì´í™íŠ¸ë¥¼ ë¡œë”©í•˜ê¸° ìœ„í•œ ë”ë¯¸ ìºë¦­í„°ì´ë‹¤.
+		// 1. ìºë¦­?„°?˜ 264 Ani?Š” ?´?™?Š¸ë¥? ë¡œë”©?•˜ê¸? ?œ„?•œ ?”ë¯? ìºë¦­?„°?´?‹¤.
 		if( pPackage->nAniType == 264 )
 		{
-			if( pPackage->strEffectName == _T("Level UP") )	// ìºë¦­í„°ì˜ ê°‘ì ìƒìŠ¹ Level up ì´í™íŠ¸.
+			if( pPackage->strEffectName == _T("Level UP") )	// ìºë¦­?„°?˜ ê°‘ì ?ƒ?Š¹ Level up ?´?™?Š¸.
 				m_pLevelUpGapJaPackage = pPackage;
 			else
-			if( pPackage->strEffectName == _T("Level UP2") )// ìºë¦­í„°ì˜ ìˆ˜ë ¨ì¹˜ ìƒìŠ¹ Level up ì´í™íŠ¸.
+			if( pPackage->strEffectName == _T("Level UP2") )// ìºë¦­?„°?˜ ?ˆ˜? ¨ì¹? ?ƒ?Š¹ Level up ?´?™?Š¸.
 				m_pLevelUpTPPackage = pPackage;
 			else
-			if( pPackage->strEffectName == _T("ìˆ˜ë ¨ì™¸ê³µ") )	// ìºë¦­í„°ì˜ ì™¸ê³µ ìˆ˜ë ¨ Level up ì´í™íŠ¸.
+			if( pPackage->strEffectName == _T("?ˆ˜? ¨?™¸ê³?") )	// ìºë¦­?„°?˜ ?™¸ê³? ?ˆ˜? ¨ Level up ?´?™?Š¸.
 				m_pLevelUpOutGongPackage = pPackage;
 			else
-			if( pPackage->strEffectName == _T("ìˆ˜ë ¨ë‚´ê³µ") )	// ìºë¦­í„°ì˜ ë‚´ê³µ ìˆ˜ë ¨ Level up ì´í™íŠ¸.
+			if( pPackage->strEffectName == _T("?ˆ˜? ¨?‚´ê³?") )	// ìºë¦­?„°?˜ ?‚´ê³? ?ˆ˜? ¨ Level up ?´?™?Š¸.
 				m_pLevelUpInGongPackage = pPackage;
 			else
-			if( pPackage->strEffectName == _T("ì‚´") )		// í¬ë¦¬í‹°ì»¬ íƒ€ê²© 'ì‚´'
+			if( pPackage->strEffectName == _T("?‚´") )		// ?¬ë¦¬í‹°ì»? ???ê²? '?‚´'
 				m_pHitSalPackage = pPackage;
 			else
-			if( pPackage->strEffectName == _T("ê²½í—˜ì¹˜") )	// ê²½í—˜ì¹˜ íšë“ ì´í™íŠ¸.
+			if( pPackage->strEffectName == _T("ê²½í—˜ì¹?") )	// ê²½í—˜ì¹? ?š?“ ?´?™?Š¸.
 			{
 				pPackage->bRepeat = true;
 				m_pExpAcquirePackage = pPackage;
 			}
 			else
-			if( pPackage->strEffectName.GetLength() == 1 )	// ë°ë¯¸ì§€ ìˆ«ì 1, 2, ...
+			if( pPackage->strEffectName.GetLength() == 1 )	// ?°ë¯¸ì?? ?ˆ«? 1, 2, ...
 			{
 				CString strName;
 				for(int i=0; i<10; i++)
@@ -3397,27 +3397,27 @@ XIAHGE_API void CEffect::LoadEffectFromPackage()
 
 		}// if( nAniType == 264 )
 
-		// 2. Effect Editorì—ì„œ ë°˜ë³µ ì •ë³´ê°€ ì—†ì–´ì„œ í•˜ë“œ ì½”ë”©ìœ¼ë¡œ ë°˜ë³µ ì •ë³´ë¥¼ ë„£ì–´ë‘ì.
-		// ìºë¦­í„° ìˆ˜ì˜í• ë•Œ
+		// 2. Effect Editor?—?„œ ë°˜ë³µ ? •ë³´ê?? ?—†?–´?„œ ?•˜?“œ ì½”ë”©?œ¼ë¡? ë°˜ë³µ ? •ë³´ë?? ?„£?–´?‘?.
+		// ìºë¦­?„° ?ˆ˜?˜?• ?•Œ
 		if( pPackage->nAniType == 263 )
 			pPackage->bRepeat = true;
 		else
-		// NPC ì •ì§€, ê±·ê¸° ë™ì‘ ì´í™íŠ¸ ë°˜ë³µ.
-		if( pPackage->nCharID == 541 ||		//  ì‚¬ê°ˆ  
-			pPackage->nCharID == 546 ||		//  ìš”ë§ˆ 
+		// NPC ? •ì§?, ê±·ê¸° ?™?‘ ?´?™?Š¸ ë°˜ë³µ.
+		if( pPackage->nCharID == 541 ||		//  ?‚¬ê°?  
+			pPackage->nCharID == 546 ||		//  ?š”ë§? 
 			pPackage->nCharID == 593    )	//  ê´‘ê²¬
 		{
-			if( pPackage->nAniType == 1 ||	//  ì •ì§€ 
+			if( pPackage->nAniType == 1 ||	//  ? •ì§? 
 				pPackage->nAniType == 2   )	//  ê±·ê¸°
 				pPackage->bRepeat = true;
 		}
 		else
-		// ìœ íƒ„ ì´ë™í• ë•Œ ì´í™íŠ¸.
+		// ?œ ?ƒ„ ?´?™?• ?•Œ ?´?™?Š¸.
 		if( pPackage->nCharID == 590 && pPackage->nAniType == 1 )
 			pPackage->bRepeat = true;
 
 		//
-		// í•˜ë“œ ì½”ë”© ë.
+		// ?•˜?“œ ì½”ë”© ?.
 		//
 */
 
@@ -3450,7 +3450,7 @@ XIAHGE_API void CEffect::LoadEffectFromPackage()
 
 		strTexPath.assign( szTexPath );
 
-		// ì¤‘ë³µ ê²€ì‚¬ 
+		// ì¤‘ë³µ ê²??‚¬ 
 		bool bSameRes = false;
 		EPACKAGERESMAP::iterator eprit;
 		for(eprit=m_EffectPackageResMap.begin(); eprit!=m_EffectPackageResMap.end(); eprit++)
@@ -3497,7 +3497,7 @@ XIAHGE_API void CEffect::LoadEffectFromPackage()
 
 		pEPMesh->strMeshPath.assign( szMeshPath );
 
-		// ì¤‘ë³µ ê²€ì‚¬
+		// ì¤‘ë³µ ê²??‚¬
 		bool bSameMesh = false;
 		EPACKAGEMESHLIST::iterator epmit;
 		for(epmit=m_EffectPackageMeshList.begin(); epmit!=m_EffectPackageMeshList.end(); epmit++)
@@ -3788,7 +3788,7 @@ void CEffect::LoadTileEffectFromPackage()
 
 		strTexPath.assign( szTexPath );
 
-		// ì¤‘ë³µ ê²€ì‚¬ 
+		// ì¤‘ë³µ ê²??‚¬ 
 		bool bSameRes = false;
 		EPACKAGERESMAP::iterator eprit;
 		for(eprit=m_EffectPackageResMap.begin(); eprit!=m_EffectPackageResMap.end(); eprit++)
@@ -3838,7 +3838,7 @@ void CEffect::LoadTileEffectFromPackage()
 
 		pEPMesh->strMeshPath.assign( szMeshPath );
 
-		// ì¤‘ë³µ ê²€ì‚¬
+		// ì¤‘ë³µ ê²??‚¬
 		bool bSameMesh = false;
 		EPACKAGEMESHLIST::iterator epmit;
 		for(epmit=m_TileEffectPackageMeshList.begin(); epmit!=m_TileEffectPackageMeshList.end(); epmit++)
@@ -4036,20 +4036,20 @@ void CEffect::SetPackagePairMatrix(int nCharUniqID, MATRIX *CharMatrix)
 
 void CEffect::EnqLevelupEffect(BYTE nType, int nCharUniqID, int nCharID, int nAniType, D3DMATRIX* CharMatrix)
 {
-	// ì´ í•¨ìˆ˜ë„ ë”ì´ìƒ ì•ˆì“´ë‹¤. 
+	// ?´ ?•¨?ˆ˜?„ ?”?´?ƒ ?•ˆ?“´?‹¤. 
 	_EFFECTPACKAGE* pLevelUpPackage = NULL;
 	switch( nType )
 	{
-	case LEVELUP_GAPJA:		// ê°‘ì ìƒìŠ¹.
+	case LEVELUP_GAPJA:		// ê°‘ì ?ƒ?Š¹.
 		pLevelUpPackage = m_pLevelUpGapJaPackage;
 		break;
-	case LEVELUP_TP:		// ìˆ˜ë ¨ì¹˜ ìƒìŠ¹.
+	case LEVELUP_TP:		// ?ˆ˜? ¨ì¹? ?ƒ?Š¹.
 		pLevelUpPackage = m_pLevelUpTPPackage;
 		break;
-	case LEVELUP_OUTGONG:	// ì™¸ê³µ ìˆ˜ë ¨.
+	case LEVELUP_OUTGONG:	// ?™¸ê³? ?ˆ˜? ¨.
 		pLevelUpPackage = m_pLevelUpOutGongPackage;
 		break;
-	case LEVELUP_INGONG:	// ë‚´ê³µ ìˆ˜ë ¨.
+	case LEVELUP_INGONG:	// ?‚´ê³? ?ˆ˜? ¨.
 		pLevelUpPackage = m_pLevelUpInGongPackage;
 		break;
 	}// switch
@@ -4108,14 +4108,14 @@ void CEffect::EnqLevelupEffect(BYTE nType, int nCharUniqID, int nCharID, int nAn
 		StartEffectToRender( pEffectRender );
 		
 		// create effect sound
-		// í˜„ì¬ Level up ì´í™íŠ¸ì— ì—°ê²°ëœ ì‚¬ìš´ë“œê°€ ì—†ë‹¤.
+		// ?˜„?¬ Level up ?´?™?Š¸?— ?—°ê²°ëœ ?‚¬?š´?“œê°? ?—†?‹¤.
 		//m_EffectSound.CreateEffectSoundInstance(pPackagePair->nCharUniqID, pPackagePair->nCharID, pPackagePair->nAniType);
 	}//if(pEffect)
 }
 
 void CEffect::EnqExpAcquireEffect(VECTOR vStartPos, VECTOR vDestPos)
 {
-	// ì´ í•¨ìˆ˜ë„ ë”ì´ìƒ ì•ˆì“´ë‹¤.
+	// ?´ ?•¨?ˆ˜?„ ?”?´?ƒ ?•ˆ?“´?‹¤.
 	if( !m_pExpAcquirePackage ) return;
 
 	// make pack pair
@@ -4163,7 +4163,7 @@ void CEffect::EnqExpAcquireEffect(VECTOR vStartPos, VECTOR vDestPos)
 		pEffectRender->m_bTraceMoveTurn = false;
 		pEffectRender->TraceListIT = pEffectRender->pEffect->m_TraceList.begin();
 
-		// ê²½í—˜ì¹˜ íšë“ ì´í™íŠ¸ë¥¼ ê¸°ë³¸ì ìœ¼ë¡œ ë°˜ë³µì‹œí‚¨ë‹¤.
+		// ê²½í—˜ì¹? ?š?“ ?´?™?Š¸ë¥? ê¸°ë³¸? ?œ¼ë¡? ë°˜ë³µ?‹œ?‚¨?‹¤.
 		pNewPackage->nStartTime = pEffect->m_LifeTime;
 		pEffectRender->m_nStartTime = 0; //pNewPackage->nStartTime;
 
@@ -4181,7 +4181,7 @@ XIAHGE_API _EFFECTPACKAGE* CEffect::EnqEffectImmediately(_EFFECT* pEffect, int n
 {
 	if (pEffect == NULL) return NULL;
 
-	// í˜„ì¬ì˜ ì´í™íŠ¸ë¥¼ ê³§ë°”ë¡œ ë Œë”ë§ ë¦¬ìŠ¤íŠ¸ì— ë„£ì–´ì„œ ë Œë”ë§ì„ ì‹œì‘í•  ìˆ˜ ìˆê²Œ í•œë‹¤.
+	// ?˜„?¬?˜ ?´?™?Š¸ë¥? ê³§ë°”ë¡? ? Œ?”ë§? ë¦¬ìŠ¤?Š¸?— ?„£?–´?„œ ? Œ?”ë§ì„ ?‹œ?‘?•  ?ˆ˜ ?ˆê²? ?•œ?‹¤.
 	_EFFECTPACKAGEPAIR* pPackagePair;
 	if( !m_pSharedPackagePair )
 	{
@@ -4203,11 +4203,11 @@ XIAHGE_API _EFFECTPACKAGE* CEffect::EnqEffectImmediately(_EFFECT* pEffect, int n
 		pPackagePair->bIsVisible = true;
 	}
 	else	// In Character Studio2, Effect Play All
-	{		// ì¦‰, í•˜ë‚˜ì˜ PPì— ì—¬ëŸ¬ Pë¥¼ ì—°ê²°í•  ë•Œ ì‚¬ìš©.
+	{		// ì¦?, ?•˜?‚˜?˜ PP?— ?—¬?Ÿ¬ Pë¥? ?—°ê²°í•  ?•Œ ?‚¬?š©.
 		pPackagePair = m_pSharedPackagePair;
 	}
 
-	// ì›ë³¸ ë°ì´í„°ê°€ ì˜ëª» ë˜ì—ˆì„ ë•Œë¥¼ ìˆ˜ì •í•œë‹¤.
+	// ?›ë³? ?°?´?„°ê°? ?˜ëª? ?˜?—ˆ?„ ?•Œë¥? ?ˆ˜? •?•œ?‹¤.
 	if( nBoneIndex != -1 )
 		nX = nY = nZ = 0;
 
@@ -4286,7 +4286,7 @@ XIAHGE_API _EFFECTPACKAGE* CEffect::EnqHitEffectImmediately(int nType, int nSTim
 		return NULL;
 	}
 
-	// í˜„ì¬ì˜ ì´í™íŠ¸ë¥¼ ê³§ë°”ë¡œ ë Œë”ë§ ë¦¬ìŠ¤íŠ¸ì— ë„£ì–´ì„œ ë Œë”ë§ì„ ì‹œì‘í•  ìˆ˜ ìˆê²Œ í•œë‹¤.
+	// ?˜„?¬?˜ ?´?™?Š¸ë¥? ê³§ë°”ë¡? ? Œ?”ë§? ë¦¬ìŠ¤?Š¸?— ?„£?–´?„œ ? Œ?”ë§ì„ ?‹œ?‘?•  ?ˆ˜ ?ˆê²? ?•œ?‹¤.
 	_EFFECTPACKAGEPAIR* pPackagePair;
 
 	// make pack pair
@@ -4306,7 +4306,7 @@ XIAHGE_API _EFFECTPACKAGE* CEffect::EnqHitEffectImmediately(int nType, int nSTim
 	pPackagePair->bNowUsing = true;
 	pPackagePair->bIsVisible = true;
 
-	// ì›ë³¸ ë°ì´í„°ê°€ ì˜ëª» ë˜ì—ˆì„ ë•Œë¥¼ ìˆ˜ì •í•œë‹¤.
+	// ?›ë³? ?°?´?„°ê°? ?˜ëª? ?˜?—ˆ?„ ?•Œë¥? ?ˆ˜? •?•œ?‹¤.
 	if( nBoneIndex != -1 )
 		nX = nY = nZ = 0;
 
@@ -4380,7 +4380,7 @@ XIAHGE_API _EFFECTPACKAGE* CEffect::EnqLevelUpEffectImmediately(int nType, int n
 	_EFFECT* pEffect = m_pLevelUpEffect[nType];
 	if( pEffect == NULL ) return NULL;
 
-	// í˜„ì¬ì˜ ì´í™íŠ¸ë¥¼ ê³§ë°”ë¡œ ë Œë”ë§ ë¦¬ìŠ¤íŠ¸ì— ë„£ì–´ì„œ ë Œë”ë§ì„ ì‹œì‘í•  ìˆ˜ ìˆê²Œ í•œë‹¤.
+	// ?˜„?¬?˜ ?´?™?Š¸ë¥? ê³§ë°”ë¡? ? Œ?”ë§? ë¦¬ìŠ¤?Š¸?— ?„£?–´?„œ ? Œ?”ë§ì„ ?‹œ?‘?•  ?ˆ˜ ?ˆê²? ?•œ?‹¤.
 	_EFFECTPACKAGEPAIR* pPackagePair;
 
 	// make pack pair
@@ -4400,7 +4400,7 @@ XIAHGE_API _EFFECTPACKAGE* CEffect::EnqLevelUpEffectImmediately(int nType, int n
 	pPackagePair->bNowUsing = true;
 	pPackagePair->bIsVisible = true;
 
-	// ì›ë³¸ ë°ì´í„°ê°€ ì˜ëª» ë˜ì—ˆì„ ë•Œë¥¼ ìˆ˜ì •í•œë‹¤.
+	// ?›ë³? ?°?´?„°ê°? ?˜ëª? ?˜?—ˆ?„ ?•Œë¥? ?ˆ˜? •?•œ?‹¤.
 	if( nBoneIndex != -1 )
 		nX = nY = nZ = 0;
 
@@ -4475,7 +4475,7 @@ XIAHGE_API _EFFECTPACKAGE* CEffect::EnqAppearEffectImmediately(int nType, int nS
 	_EFFECT* pEffect = m_pAppearEffect[nType];
 	if( pEffect == NULL || (DWORD_PTR)pEffect < 0x10000 || IsBadReadPtr(pEffect, sizeof(_EFFECT)) ) return NULL;
 
-	// í˜„ì¬ì˜ ì´í™íŠ¸ë¥¼ ê³§ë°”ë¡œ ë Œë”ë§ ë¦¬ìŠ¤íŠ¸ì— ë„£ì–´ì„œ ë Œë”ë§ì„ ì‹œì‘í•  ìˆ˜ ìˆê²Œ í•œë‹¤.
+	// ?˜„?¬?˜ ?´?™?Š¸ë¥? ê³§ë°”ë¡? ? Œ?”ë§? ë¦¬ìŠ¤?Š¸?— ?„£?–´?„œ ? Œ?”ë§ì„ ?‹œ?‘?•  ?ˆ˜ ?ˆê²? ?•œ?‹¤.
 	_EFFECTPACKAGEPAIR* pPackagePair;
 
 	// make pack pair
@@ -4495,7 +4495,7 @@ XIAHGE_API _EFFECTPACKAGE* CEffect::EnqAppearEffectImmediately(int nType, int nS
 	pPackagePair->bNowUsing = true;
 	pPackagePair->bIsVisible = true;
 
-	// ì›ë³¸ ë°ì´í„°ê°€ ì˜ëª» ë˜ì—ˆì„ ë•Œë¥¼ ìˆ˜ì •í•œë‹¤.
+	// ?›ë³? ?°?´?„°ê°? ?˜ëª? ?˜?—ˆ?„ ?•Œë¥? ?ˆ˜? •?•œ?‹¤.
 	if( nBoneIndex != -1 )
 		nX = nY = nZ = 0;
 
@@ -4569,7 +4569,7 @@ XIAHGE_API _EFFECTPACKAGE* CEffect::EnqExpAcquireEffectImmediately(VECTOR vTarge
 	_EFFECT* pEffect = m_pExpAcquireEffect;
 	if( pEffect == NULL ) return NULL;
 
-	// í˜„ì¬ì˜ ì´í™íŠ¸ë¥¼ ê³§ë°”ë¡œ ë Œë”ë§ ë¦¬ìŠ¤íŠ¸ì— ë„£ì–´ì„œ ë Œë”ë§ì„ ì‹œì‘í•  ìˆ˜ ìˆê²Œ í•œë‹¤.
+	// ?˜„?¬?˜ ?´?™?Š¸ë¥? ê³§ë°”ë¡? ? Œ?”ë§? ë¦¬ìŠ¤?Š¸?— ?„£?–´?„œ ? Œ?”ë§ì„ ?‹œ?‘?•  ?ˆ˜ ?ˆê²? ?•œ?‹¤.
 	_EFFECTPACKAGEPAIR* pPackagePair;
 
 	// make pack pair
@@ -4589,7 +4589,7 @@ XIAHGE_API _EFFECTPACKAGE* CEffect::EnqExpAcquireEffectImmediately(VECTOR vTarge
 	pPackagePair->bNowUsing = true;
 	pPackagePair->bIsVisible = true;
 
-	// ì›ë³¸ ë°ì´í„°ê°€ ì˜ëª» ë˜ì—ˆì„ ë•Œë¥¼ ìˆ˜ì •í•œë‹¤.
+	// ?›ë³? ?°?´?„°ê°? ?˜ëª? ?˜?—ˆ?„ ?•Œë¥? ?ˆ˜? •?•œ?‹¤.
 	if( nBoneIndex != -1 )
 		nX = nY = nZ = 0;
 
@@ -4651,7 +4651,7 @@ XIAHGE_API _EFFECTPACKAGE* CEffect::EnqExpAcquireEffectImmediately(VECTOR vTarge
 	pEffectRender->pPackagePair = pPackagePair;
 	pEffectRender->pPackage = pNewPackage;
 
-	// elementì˜ ìµœì¢… ëª©í‘œ ìœ„ì¹˜.
+	// element?˜ ìµœì¢… ëª©í‘œ ?œ„ì¹?.
 	pEffectRender->m_vTargetMovePos = vTargetPos;
 
 	pNewPackage->pEffectRender = pEffectRender;
@@ -4670,7 +4670,7 @@ XIAHGE_API _EFFECTPACKAGE* CEffect::EnqOutGongPersistEffectImmediately(int nType
 
 	if( pEffect == NULL ) return NULL;
 
-	// í˜„ì¬ì˜ ì´í™íŠ¸ë¥¼ ê³§ë°”ë¡œ ë Œë”ë§ ë¦¬ìŠ¤íŠ¸ì— ë„£ì–´ì„œ ë Œë”ë§ì„ ì‹œì‘í•  ìˆ˜ ìˆê²Œ í•œë‹¤.
+	// ?˜„?¬?˜ ?´?™?Š¸ë¥? ê³§ë°”ë¡? ? Œ?”ë§? ë¦¬ìŠ¤?Š¸?— ?„£?–´?„œ ? Œ?”ë§ì„ ?‹œ?‘?•  ?ˆ˜ ?ˆê²? ?•œ?‹¤.
 	_EFFECTPACKAGEPAIR* pPackagePair;
 	if( !m_pSharedPackagePair )
 	{
@@ -4692,11 +4692,11 @@ XIAHGE_API _EFFECTPACKAGE* CEffect::EnqOutGongPersistEffectImmediately(int nType
 		pPackagePair->bIsVisible = true;
 	}
 	else	// In Character Studio2, Effect Play All
-	{		// ì¦‰, í•˜ë‚˜ì˜ PPì— ì—¬ëŸ¬ Pë¥¼ ì—°ê²°í•  ë•Œ ì‚¬ìš©.
+	{		// ì¦?, ?•˜?‚˜?˜ PP?— ?—¬?Ÿ¬ Pë¥? ?—°ê²°í•  ?•Œ ?‚¬?š©.
 		pPackagePair = m_pSharedPackagePair;
 	}
 
-	// ì›ë³¸ ë°ì´í„°ê°€ ì˜ëª» ë˜ì—ˆì„ ë•Œë¥¼ ìˆ˜ì •í•œë‹¤.
+	// ?›ë³? ?°?´?„°ê°? ?˜ëª? ?˜?—ˆ?„ ?•Œë¥? ?ˆ˜? •?•œ?‹¤.
 	if( nBoneIndex != -1 )
 		nX = nY = nZ = 0;
 
@@ -4795,7 +4795,7 @@ XIAHGE_API void CEffect::SetOutGongPersistEffect(int nType, _EFFECT* pEffect, in
 }
 
 void CEffect::DeqEffectImmediately(_EFFECT *pEffect)
-{	// ì—ë””í„°ì—ì„œ ì‚¬ìš©í•˜ëŠ” í•¨ìˆ˜ë¡œ, í˜„ì¬ì˜ ì´í™íŠ¸ë¥¼ ë°”ë¡œ ë©ˆì¶”ê²Œ í•˜ëŠ” í•¨ìˆ˜ì´ë‹¤.
+{	// ?—?””?„°?—?„œ ?‚¬?š©?•˜?Š” ?•¨?ˆ˜ë¡?, ?˜„?¬?˜ ?´?™?Š¸ë¥? ë°”ë¡œ ë©ˆì¶”ê²? ?•˜?Š” ?•¨?ˆ˜?´?‹¤.
 	EFFECTPACKAGEPAIRLIST::iterator eppit;
 	for(eppit=m_CurPackagePairList.begin(); eppit!=m_CurPackagePairList.end(); eppit++)
 	{
@@ -4821,17 +4821,21 @@ void CEffect::DeqEffectImmediately(_EFFECT *pEffect)
 
 XIAHGE_API void CEffect::DeqEffectPackagePair(_EFFECTPACKAGEPAIR* pPackagePair)
 {
-	// ì—¬ê¸°ì„œ ë°”ë¡œ ì§€ìš°ì§€ ë§ê³ , ì§€ì›Œì§ˆ ë¦¬ìŠ¤íŠ¸ì— ë„£ì–´ë‘”ë‹¤.
+	// Marker and NULL safety guard to prevent invalid memory dereferences/crashes
+	if (pPackagePair == NULL || pPackagePair == (_EFFECTPACKAGEPAIR*)1)
+		return;
 	m_DeleteEffectPackagePairList.push_back( pPackagePair );
 }
 
 void CEffect::DeleteEffectPackagePairList()
 {
-	// ì§€ì›Œì§ˆ ì´í™íŠ¸ë“¤ì€ ì—¬ê¸°ì„œ ëª½ë•… ì¼ê´„ì²˜ë¦¬í•´ì„œ ì‹±í¬ë¥¼ ë§ì¶°ì¤€ë‹¤.
+	// Áö¿öÁú ÀÌÆåÆ®µéÀ» ¿©±â¼­ ¸ğ¾Æ ÀÏ°ıÃ³¸®ÇØ¼­ ½ÌÅ©¸¦ ¸ÂÃçÁØ´Ù.
 	EFFECTPACKAGEPAIRLIST::iterator eppit;
 	for(eppit=m_DeleteEffectPackagePairList.begin(); eppit!=m_DeleteEffectPackagePairList.end(); eppit++)
 	{
 		_EFFECTPACKAGEPAIR* pPackagePair = *eppit;
+		if (pPackagePair == NULL || pPackagePair == (_EFFECTPACKAGEPAIR*)1)
+			continue;
 
 		EFFECTPACKAGELIST Deletelist;
 		// make list
@@ -4849,19 +4853,11 @@ void CEffect::DeleteEffectPackagePairList()
 		{
 			_EFFECTPACKAGE* pPackage = *epit2;
 
-			// DeqEffectFromRenderí˜¸ì¶œí•˜ì§€ ë§ê³ , ì—¬ê¸°ì„œ ë°”ë¡œ í•˜ì.
+			// DeqEffectFromRenderÈ£ÃâÇÏÁö ¸»°í, ¿©±â¼­ ¹Ù·Î ÇÏÀÚ.
 			//		DeqEffectFromRender( pPackage->pEffectRender );
 
 			m_PackagePool.push_back( pPackage );
 			pPackagePair->PackageList.remove( pPackage );
-
-			if( pPackagePair->PackageList.size() == 0 )
-			{
-				pPackagePair->bNowUsing = false;
-				// delete list
-				m_PackagePairPool.push_back( pPackagePair );
-				m_CurPackagePairList.remove( pPackagePair );
-			}
 
 			_EFFECTRENDER* pER = pPackage->pEffectRender;
 			if( pER != NULL && !IsBadReadPtr(pER, sizeof(_EFFECTRENDER)) )
@@ -4875,6 +4871,14 @@ void CEffect::DeleteEffectPackagePairList()
 				DBG_LogFile( _T("DeleteEffectPackagePairList: SKIPPED invalid pEffectRender!") );
 			}
 		}// for
+
+		if( pPackagePair->PackageList.size() == 0 )
+		{
+			pPackagePair->bNowUsing = false;
+			// delete list
+			m_PackagePairPool.push_back( pPackagePair );
+			m_CurPackagePairList.remove( pPackagePair );
+		}
 
 	}// for( m_DeleteEffectPackagePairList )
 
@@ -4892,7 +4896,7 @@ void CEffect::EffectPackagePairMemoryReturn(_EFFECTPACKAGEPAIR* pPackagePair)
 	if( m_pSharedPackagePair )
 		m_pSharedPackagePair = NULL;
 
-	// ì´í™íŠ¸ ë©”ëª¨ë¦¬ë¥¼ ëª¨ë‘ í•´ì œí•´ì•¼ í•˜ë¯€ë¡œ íŒ¨í‚¤ì§€ ë¦¬ìŠ¤íŠ¸ë¥¼ ê²€ìƒ‰í•œë‹¤.
+	// ?´?™?Š¸ ë©”ëª¨ë¦¬ë?? ëª¨ë‘ ?•´? œ?•´?•¼ ?•˜ë¯?ë¡? ?Œ¨?‚¤ì§? ë¦¬ìŠ¤?Š¸ë¥? ê²??ƒ‰?•œ?‹¤.
 	EFFECTPACKAGELIST::iterator eppit;
 	for(eppit=pPackagePair->PackageList.begin(); eppit!=pPackagePair->PackageList.end(); eppit++)
 	{
@@ -4914,19 +4918,19 @@ void CEffect::EffectPackagePairMemoryReturn(_EFFECTPACKAGEPAIR* pPackagePair)
 
 void CEffect::CopyEffect(_EFFECT* pSrcEffect, _EFFECT* pDestEffect)
 {
-	// í•„ìš”í•œ ë°ì´íƒ€ë¥¼ ë¯¸ë¦¬ ë³µì‚¬í•˜ê³ , ê¸°ì¡´ì˜ ì´í™íŠ¸ ë°ì´íƒ€ë“¤ì˜ ë©”ëª¨ë¦¬ í•´ì œ.
+	// ?•„?š”?•œ ?°?´???ë¥? ë¯¸ë¦¬ ë³µì‚¬?•˜ê³?, ê¸°ì¡´?˜ ?´?™?Š¸ ?°?´????“¤?˜ ë©”ëª¨ë¦? ?•´? œ.
 	DWORD dwOriDBID = pDestEffect->m_DBID;
 	DWORD dwOriEffectID = pDestEffect->m_EffectID;					// new effect info table id
-	DWORD dwOriEffectManagerID = pDestEffect->m_EffectManageID;		//m_EffectListì— ë“¤ì–´ê°€ëŠ” ê´€ë¦¬ ID 
+	DWORD dwOriEffectManagerID = pDestEffect->m_EffectManageID;		//m_EffectList?— ?“¤?–´ê°??Š” ê´?ë¦? ID 
 	MyString strOriEffectName = pDestEffect->m_EffectName;
 
-	// ì´ê±¸ ì‹¤í–‰í•´ë„ m_EffectManageIDëŠ” ì•„ì§ ì‚´ì•„ìˆë‹¤.
-	DeleteEffect( pDestEffect, false );// í¬ì¸í„°ëŠ” ì§€ìš°ì§€ ì•ŠëŠ”ë‹¤. 
+	// ?´ê±? ?‹¤?–‰?•´?„ m_EffectManageID?Š” ?•„ì§? ?‚´?•„?ˆ?‹¤.
+	DeleteEffect( pDestEffect, false );// ?¬?¸?„°?Š” ì§??š°ì§? ?•Š?Š”?‹¤. 
 
 	// copy effect data
 	*pDestEffect = *pSrcEffect;
 
-	// ë°ì´íƒ€ ë³µê·€.
+	// ?°?´??? ë³µê??.
 	pDestEffect->m_DBID = dwOriDBID;
 	pDestEffect->m_EffectID = dwOriEffectID;
 	pDestEffect->m_EffectManageID = dwOriEffectManagerID;
@@ -4969,7 +4973,7 @@ void CEffect::CopyEffect(_EFFECT* pSrcEffect, _EFFECT* pDestEffect)
 	}// for(pSrcEffect->m_ParticleList)
 
 
-/*			ì´ ë¶€ë¶„ì€ ì¶”í›„ì— ì¶”ê°€í•´ì•¼ë¨. ì ˆëŒ€ ì§€ìš°ì§€ ë§ˆì‹œìš”.
+/*			?´ ë¶?ë¶„ì?? ì¶”í›„?— ì¶”ê???•´?•¼?¨. ? ˆ??? ì§??š°ì§? ë§ˆì‹œ?š”.
 
 			// Waterfall
 			pEffect->m_WaterfallList.clear();
@@ -5003,7 +5007,7 @@ void CEffect::CopyEffect(_EFFECT* pSrcEffect, _EFFECT* pDestEffect)
 
 			// light
 			pEffect->m_EffectLightList.clear();
-			// ì—ëŸ¬ê°€ ë°œìƒí•¨.
+			// ?—?Ÿ¬ê°? ë°œìƒ?•¨.
 /*
 			for(elit=m_pCopyEffect->m_EffectLightList.begin(); elit!=m_pCopyEffect->m_EffectLightList.end(); elit++)
 			{
@@ -5041,11 +5045,11 @@ void CEffect::CopyParticle(_EFFECT *pEffect, _PARTICLE *pSrcParticle, _PARTICLE 
 		}
 	}// for(pEffect->m_ParticleList)
 
-	// íŒŒí‹°í´ê³¼ ì´í™íŠ¸ê°€ ì„œë¡œ ë§ì§€ ì•ŠëŠ”ë‹¤.
+	// ?ŒŒ?‹°?´ê³? ?´?™?Š¸ê°? ?„œë¡? ë§ì?? ?•Š?Š”?‹¤.
 	if( !bIsValid ) return;
 
-	// OK, ê¸°ì¡´ì˜ íŒŒí‹°í´ ì •ë³´ë¥¼ ì§€ìš°ê³  ìƒˆë¡œìš´ ë°ì´íƒ€ë¥¼ ë³µì‚¬í•œë‹¤.
-	DeleteParticle( pEffect, pDestParticle, false );// í¬ì¸í„°ëŠ” ì§€ìš°ì§€ ì•ŠëŠ”ë‹¤. 
+	// OK, ê¸°ì¡´?˜ ?ŒŒ?‹°?´ ? •ë³´ë?? ì§??š°ê³? ?ƒˆë¡œìš´ ?°?´???ë¥? ë³µì‚¬?•œ?‹¤.
+	DeleteParticle( pEffect, pDestParticle, false );// ?¬?¸?„°?Š” ì§??š°ì§? ?•Š?Š”?‹¤. 
 
 	// data copy
 	*pDestParticle = *pSrcParticle;
@@ -5089,8 +5093,8 @@ void CEffect::CopyElement(_PARTICLE *pParticle, _ELEMENT *pSrcElement, _ELEMENT 
 
 	if( !bIsValid ) return;
 
-	// OK, ê¸°ì¡´ ë°ì´íƒ€ë¥¼ ì§€ìš°ê³  ìƒˆë¡œìš´ ë°ì´íƒ€ ë³µì‚¬.
-	DeleteElement( pParticle, pDestElement, false );// í¬ì¸í„°ëŠ” ì§€ìš°ì§€ ì•ŠëŠ”ë‹¤. 
+	// OK, ê¸°ì¡´ ?°?´???ë¥? ì§??š°ê³? ?ƒˆë¡œìš´ ?°?´??? ë³µì‚¬.
+	DeleteElement( pParticle, pDestElement, false );// ?¬?¸?„°?Š” ì§??š°ì§? ?•Š?Š”?‹¤. 
 
 	// data copy
 	*pDestElement = *pSrcElement;
@@ -5222,9 +5226,9 @@ DWORD CEffect::GetTextureBlendArg(__int8 nType)
 	return dwValue;
 }
 
-// [12/10/2004] DB ì´í™íŠ¸ê°€ ë‚ ë¼ê°€ì„œ í•¨ìˆ˜ë¥¼ ë³€í˜•ì´ í•„ìš”í•˜ë‹¤.
+// [12/10/2004] DB ?´?™?Š¸ê°? ?‚ ?¼ê°??„œ ?•¨?ˆ˜ë¥? ë³??˜•?´ ?•„?š”?•˜?‹¤.
 
-// ë¡œë”© ë°©ì‹ ë¬¸ì œê°€ ë§êµ¬ë§Œ.
+// ë¡œë”© ë°©ì‹ ë¬¸ì œê°? ë§êµ¬ë§?.
 XIAHGE_API BOOL XiahGameEngine::CEffect::LoadXiahEffectPackage(LPCTSTR szFilename, int nFileType)
 {
 //	MyString strBasePath	= NEW_EFFECT_PATH;
@@ -5441,11 +5445,11 @@ void XiahGameEngine::CEffect::RealizeEffectInEffectPackage(DWORD dwEffOffset)
 
 void XiahGameEngine::CEffect::RealizeEffectInEffectPackage(_EFFECTPACKAGE* pPackage)
 {
-/*	ì•ˆì“´ë‹¤.
+/*	?•ˆ?“´?‹¤.
 	m_pCurEffectPackage = pPackage;
 	if( pPackage->pEffect == NULL )
 	{
-		// ìš°ì„  m_EffectList.ì— ì¡´ì¬í•˜ëŠ”ì§€ ê²€ì‚¬.
+		// ?š°?„  m_EffectList.?— ì¡´ì¬?•˜?Š”ì§? ê²??‚¬.
 		_EFFECT* pEffect = GetEffect( pPackage->nEffectID );
 		if( pEffect )
 		{
@@ -5453,7 +5457,7 @@ void XiahGameEngine::CEffect::RealizeEffectInEffectPackage(_EFFECTPACKAGE* pPack
 			return;
 		}
 
-		// ë©”ëª¨ë¦¬ì— ì—†ìœ¼ë‹ˆê¹ íŒŒì¼ì—ì„œ ì½ëŠ”ë‹¤.
+		// ë©”ëª¨ë¦¬ì— ?—†?œ¼?‹ˆê¹? ?ŒŒ?¼?—?„œ ?½?Š”?‹¤.
 		// move effect file data position in Package File
 		fseek( m_pFileHandle, pPackage->dwEffOffset, SEEK_SET );
 
@@ -5596,7 +5600,7 @@ void CEffectResPool::Create(LPDIRECT3DDEVICE9 pDevice, int nMaxTextureSize, int 
 }
 
 int CEffectResPool::CreateTextureFromFile(_EFFECTTEXTURE* pEffectTexture, LPCTSTR filename )
-{	// íŒŒì¼ì„ ì½ì–´ì„œ í…ìŠ¤ì³ë¥¼ ìƒì„±í•œë‹¤.  => .bmp, .dds, .dib, .jpg, .png, .tga
+{	// ?ŒŒ?¼?„ ?½?–´?„œ ?…?Š¤ì³ë?? ?ƒ?„±?•œ?‹¤.  => .bmp, .dds, .dib, .jpg, .png, .tga
 	pEffectTexture->m_strFileName = filename;
 	if( pEffectTexture->m_strFileName.empty() ) return 0;
 
@@ -5650,8 +5654,8 @@ _EFFECTMESH * CEffectResPool::GetMesh(LPCTSTR filename)
 		pEffectMesh->m_pMeshBuffer = NULL;
 
 /*
-		// ì–´ì°¨í”¼ íŒŒì¼ í¬ë©§ì€ BCF, HCHì´ë‹ˆê¹, B or H ë¡œ íŒë‹¨í•˜ì.
-		// ì•„ ê·¸ëŸ°ë°, ì´í™íŠ¸ ë©”ì‰¬ëŠ” HCHì´ë‹¤. ^^;
+		// ?–´ì°¨í”¼ ?ŒŒ?¼ ?¬ë©§ì?? BCF, HCH?´?‹ˆê¹?, B or H ë¡? ?Œ?‹¨?•˜?.
+		// ?•„ ê·¸ëŸ°?°, ?´?™?Š¸ ë©”ì‰¬?Š” HCH?´?‹¤. ^^;
 		LPCTSTR pstrFile = strFile.data();
 
 		char cType = pstrFile[ strFile.size()-1 - 2 ];
@@ -5685,7 +5689,7 @@ _EFFECTMESH * CEffectResPool::GetMesh(LPCTSTR filename)
 		pEffectMesh->m_nRefCount = 1;
 		m_MeshMap.insert( EFFECTMESHMAP::value_type( strFilename, pEffectMesh ) );
 
-/*		ì´ ë¶€ë¶„ì„ ì‚¬ìš©í• ì§€ ì•ˆí• ì§€ëŠ” ëª¨ë¥´ê² ë‹¤. ê·¸ë˜ì„œ ì£¼ì„ì´ë‹¤.
+/*		?´ ë¶?ë¶„ì„ ?‚¬?š©?• ì§? ?•ˆ?• ì§??Š” ëª¨ë¥´ê² ë‹¤. ê·¸ë˜?„œ ì£¼ì„?´?‹¤.
 		// Check current mesh allocated memory, so management unusage mesh memory
 		if( m_nCurMeshAllocated > m_nMaxMeshAllocated )
 		{
@@ -5752,7 +5756,7 @@ void CEffectResPool::RegisterMeshFromFile(MyString strName, MyString strFilename
 			DBG_LogFile( _T("CEffectResPool::RegisterMeshFromFile fail"));
 		}
 
-		// ì–´ì°¨í”¼ íŒŒì¼ í¬ë©§ì€ BCF, HCHì´ë‹ˆê¹, B or H ë¡œ íŒë‹¨í•˜ì.
+		// ?–´ì°¨í”¼ ?ŒŒ?¼ ?¬ë©§ì?? BCF, HCH?´?‹ˆê¹?, B or H ë¡? ?Œ?‹¨?•˜?.
 		LPCTSTR pstrFile = strName.data();
 
 		TCHAR cType = pstrFile[ strName.size()-1 - 2 ];
@@ -5930,7 +5934,7 @@ int CEffectResPool::LoadHCHFromFile(_EFFECTMESH *pEffectMesh, LPCTSTR filename)
 	pEffectMesh->m_nMeshCount = hchFile.m_HCHFile.nMeshCount;
 	pEffectMesh->m_nFrameCount= hchFile.m_HCHFile.nFrameCount;
 
-	// texture => no texture ë‚˜ì¤‘ì— í•„ìš”í•˜ë©´ ë„£ëŠ”ë‹¤. 
+	// texture => no texture ?‚˜ì¤‘ì— ?•„?š”?•˜ë©? ?„£?Š”?‹¤. 
 
 	// Mesh Buffer
 	pEffectMesh->m_pMeshBuffer = new _MESHBUFFER[ pEffectMesh->m_nMeshCount ];
@@ -6014,7 +6018,7 @@ int CEffectResPool::LoadHCHFromMemory(_EFFECTMESH* pEffectMesh, BYTE* pBuffer)
 	memcpy( &nBoneCount, &pBuffer[dwBufPos], sizeof(nBoneCount) );
 	dwBufPos += sizeof( nBoneCount );
 
-	// ì´ ë°ì´í„°ë“¤ì€ í•„ìš” ì—†ë‹¤.
+	// ?´ ?°?´?„°?“¤??? ?•„?š” ?—†?‹¤.
 	DWORD dwMaterialSize = sizeof(MATERIALm) * pEffectMesh->m_nMeshCount;
 	DWORD dwBoneSize = sizeof(D3DMATRIX) * nBoneCount * pEffectMesh->m_nFrameCount;
 	dwBufPos += ( dwMaterialSize + dwBoneSize );
@@ -6240,8 +6244,8 @@ _EFFECTTEXTURE* CEffectResPool::GetTexture(LPCTSTR filename)
 		pEffectTexture = it->second;
 
 #ifdef	_EDITOR
-		// ë°ì´íƒ€ê°€ ì—†ìœ¼ë©´ ì§ì ‘ íŒŒì¼ì—ì„œ ì½ì–´ì„œ ë§Œë“ ë‹¤.
-		// ì´ ì½”ë“œëŠ” í´ë¼ì´ì–¸íŠ¸ì—ì„œëŠ” í•„ìš” ì—†ê³ , ì—ë””í„°ì—ì„œëŠ” í•„ìš”í•˜ë‹¤.
+		// ?°?´???ê°? ?—†?œ¼ë©? ì§ì ‘ ?ŒŒ?¼?—?„œ ?½?–´?„œ ë§Œë“ ?‹¤.
+		// ?´ ì½”ë“œ?Š” ?´?¼?´?–¸?Š¸?—?„œ?Š” ?•„?š” ?—†ê³?, ?—?””?„°?—?„œ?Š” ?•„?š”?•˜?‹¤.
 		if( NULL == pEffectTexture->m_pTexture )
 			CreateTextureFromFile( pEffectTexture, filename );
 #endif
@@ -6250,7 +6254,7 @@ _EFFECTTEXTURE* CEffectResPool::GetTexture(LPCTSTR filename)
 	}
 	else	// No Found => register 
 	{
-		// í…ìŠ¤ì³ê°€ ì—†ìœ¼ë©´ NULLë¡œ ë§Œë“ ë‹¤. ì²¨ì— ë§Œë“  "" í…ìŠ¤ì³ë¥¼ ëŒë ¤ì¤€ë‹¤.
+		// ?…?Š¤ì³ê?? ?—†?œ¼ë©? NULLë¡? ë§Œë“ ?‹¤. ì²¨ì— ë§Œë“  "" ?…?Š¤ì³ë?? ?Œ? ¤ì¤??‹¤.
 		if( filename != _T("") )
 		{
 			MyString strFile = _T("");
@@ -6310,7 +6314,7 @@ _EFFECTTEXTURE* CEffectResPool::GetTexture(LPCTSTR filename)
 		m_TextureMap.insert( EFFECTTEXTUREMAP::value_type( strFile, pEffectTexture ) );
 */
 
-/*		ë‹¹ë¶„ê°„ì€ ì‚¬ìš©í•˜ì§€ ë§ì.
+/*		?‹¹ë¶„ê°„??? ?‚¬?š©?•˜ì§? ë§ì.
 		// Check current texture allocated memory, so management unusage texture memory
 		if( m_nCurTextureAllocated > m_nMaxTextureAllocated )
 		{
