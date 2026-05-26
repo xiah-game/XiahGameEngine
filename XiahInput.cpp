@@ -19,10 +19,10 @@ namespace XiahGameEngine
 		XIAHGE_API BOOL	  g_bLButtonUp = FALSE;
 		XIAHGE_API BOOL	  g_bRButtonUp = FALSE;
 
-		XIAHGE_API BOOL	  g_bLButtonOn = FALSE;		//¹öÆ°À» ´­·ÁÁ® ÀÖÀ¸¸é On(´©¸£°í ÀÖ¾îµµ °è¼Ó TRUE)
+		XIAHGE_API BOOL	  g_bLButtonOn = FALSE;		//ë²„íŠ¼ì„ ëˆŒë ¤ì ¸ ìˆìœ¼ë©´ On(ëˆ„ë¥´ê³  ìˆì–´ë„ ê³„ì† TRUE)
 		XIAHGE_API BOOL	  g_bRButtonOn = FALSE;
 
-		//HT_CHEAT : °ÔÀÓ ÆĞµå »èÁ¦
+		//HT_CHEAT : ê²Œì„ íŒ¨ë“œ ì‚­ì œ
 		XIAHGE_API  BOOL		g_Lock_Button_On= FALSE;
 		XIAHGE_API  BOOL		g_Lock_Button_Up= FALSE;
 
@@ -48,9 +48,9 @@ namespace XiahGameEngine
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-		// GAME PAD¿ë ÀÔ´Ï´Ù.
+		// GAME PADìš© ì…ë‹ˆë‹¤.
 
-		//XIAHGE_API DWORD		g_Pad_Mode = NONE_PAD_MODE;					// PAD ¼³Á¤¸ğµå
+		//XIAHGE_API DWORD		g_Pad_Mode = NONE_PAD_MODE;					// PAD ì„¤ì •ëª¨ë“œ
 
 		//XIAHGE_API BOOL			g_HP_Button_On = FALSE;
 		//XIAHGE_API BOOL			g_MP_Button_On = FALSE;
@@ -134,18 +134,18 @@ namespace XiahGameEngine
 		//XIAHGE_API BOOL	  g_Button11_Down = FALSE;
 		//XIAHGE_API BOOL	  g_Button11_Up = FALSE;
 
-		//// # Z-1Ãà
+		//// # Z-1ì¶•
 		//XIAHGE_API BOOL	  g_ButtonZ1_On = FALSE;
 		//XIAHGE_API BOOL	  g_ButtonZ1_Down = FALSE;
 		//XIAHGE_API BOOL	  g_ButtonZ1_Up = FALSE;
-		//// # Z-2Ãà
+		//// # Z-2ì¶•
 		//XIAHGE_API BOOL	  g_ButtonZ2_On = FALSE;
 		//XIAHGE_API BOOL	  g_ButtonZ2_Down = FALSE;
 		//XIAHGE_API BOOL	  g_ButtonZ2_Up = FALSE;
 
 		//XIAHGE_API sPoint		g_Axis1;		// Control Axis1
 
-		//// POV ¹öÆ°
+		//// POV ë²„íŠ¼
 		//XIAHGE_API BOOL		g_Pov_L_On = FALSE;
 		//XIAHGE_API BOOL		g_Pov_L_Down = FALSE;
 		//XIAHGE_API BOOL		g_Pov_L_Up = FALSE;
@@ -165,10 +165,10 @@ namespace XiahGameEngine
 		//	static long		t_D1 = 0;
 		//	static long		t_D2 = 0;
 
-			// GAME PADÀÇ °Ë»ç
+			// GAME PADì˜ ê²€ì‚¬
 		//	XiahGameEngine::g_cj->UpdateInputState();
 
-		//	// PADÀÇ ±âº» ¹öÆ°
+		//	// PADì˜ ê¸°ë³¸ ë²„íŠ¼
 		//	// # 0
 		//	if( (g_cj->g_js.rgbButtons[0] && !g_Button0_On))
 		//	{
@@ -187,7 +187,7 @@ namespace XiahGameEngine
 		//	}
 		//	g_Button0_On = g_cj->g_js.rgbButtons[0]?1:0;
 	
-		//	// # 1 Pad ¹«°ø »ç¿ë 
+		//	// # 1 Pad ë¬´ê³µ ì‚¬ìš© 
 		//	if( (g_cj->g_js.rgbButtons[1] && !g_Button1_On))
 		//	{
 		//		g_Button1_Down = TRUE;
@@ -391,7 +391,7 @@ namespace XiahGameEngine
 		//	g_Button11_On = g_cj->g_js.rgbButtons[11]?1:0;
 
 
-		//	// # Z-1Ãà
+		//	// # Z-1ì¶•
 		//	if( (g_cj->g_js.lZ > 500 && !g_ButtonZ1_On))
 		//	{
 		//		g_ButtonZ1_Down = TRUE;
@@ -409,7 +409,7 @@ namespace XiahGameEngine
 		//	}
 		//	g_ButtonZ1_On = g_cj->g_js.lZ > 500 ? 1:0;
 
-		//	// # Z-2Ãà
+		//	// # Z-2ì¶•
 		//	if( (g_cj->g_js.lRz > 500 && !g_ButtonZ2_On))
 		//	{
 		//		g_ButtonZ2_Down = TRUE;
@@ -472,7 +472,7 @@ namespace XiahGameEngine
 		//	/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		//	// X AXIS
-		//	// PADÀÇ ¸Ş´º¸ğµå´Â Ä¿¼­°¡ ¿òÁ÷ÀÌ¸é ¾ÈµÈ´Ù
+		//	// PADì˜ ë©”ë‰´ëª¨ë“œëŠ” ì»¤ì„œê°€ ì›€ì§ì´ë©´ ì•ˆëœë‹¤
 		//	if(h_Menu == TRUE || g_PadCamera_Button_On == TRUE)
 		//	{
 		//		// Nothing
@@ -484,14 +484,14 @@ namespace XiahGameEngine
 		//		{
 		//			if(g_cj->g_js.lX > 0)
 		//			{
-		//				// ¿À¸¥ÂÊ
+		//				// ì˜¤ë¥¸ìª½
 		//				g_ptMouse.x += (g_cj->g_js.lX * 28 / 1000);
 
 		//				if(g_ptMouse.x > 1024) g_ptMouse.x = 1024;
 		//			}
 		//			else
 		//			{
-		//				// ¿ŞÂÊ
+		//				// ì™¼ìª½
 		//				g_ptMouse.x += (g_cj->g_js.lX * 28 / 1000);
 		//				if(g_ptMouse.x < 0) g_ptMouse.x = 0;
 		//			}
@@ -502,13 +502,13 @@ namespace XiahGameEngine
 		//		{
 		//			if(g_cj->g_js.lY > 0)
 		//			{
-		//				// ¾Æ·¡
+		//				// ì•„ë˜
 		//				g_ptMouse.y += (g_cj->g_js.lY * 23 / 1000);
 		//				if(g_ptMouse.y > 768) g_ptMouse.y = 768;
 		//			}
 		//			else
 		//			{
-		//				// À§
+		//				// ìœ„
 		//				g_ptMouse.y += (g_cj->g_js.lY * 23 / 1000);
 		//				if(g_ptMouse.y < 0) g_ptMouse.y = 0;
 		//			}
@@ -517,7 +517,7 @@ namespace XiahGameEngine
 		//	g_Sel_Left_Down = g_Pov_L_Down;
 		//	g_Sel_Right_Down = g_Pov_R_Down;
 
-		//	// ¾Æ¹«·± º¯È­°¡ ¾øÀ¸¸é FALSE ¸®ÅÏ (»ç¿ëÁßÀÌ ¾Æ´Ï´Ù.) ±×·¸´Ù¸é ¸¶¿ì½º¸¦ »ç¿ëÇÑ´Ù
+		//	// ì•„ë¬´ëŸ° ë³€í™”ê°€ ì—†ìœ¼ë©´ FALSE ë¦¬í„´ (ì‚¬ìš©ì¤‘ì´ ì•„ë‹ˆë‹¤.) ê·¸ë ‡ë‹¤ë©´ ë§ˆìš°ìŠ¤ë¥¼ ì‚¬ìš©í•œë‹¤
 		//	if( g_ptMouse == g_Axis1 && 
 		//		t_Z1 == g_cj->g_js.lRx && t_Z2 == g_cj->g_js.lRy && 
 		//		t_D1 == g_cj->g_js.lZ && t_D2 == g_cj->g_js.lRz &&
@@ -536,16 +536,16 @@ namespace XiahGameEngine
 		//		h_Menu == FALSE) return FALSE;
 
 
-		//	// AXIS 1Ã³¸®
+		//	// AXIS 1ì²˜ë¦¬
 		//	g_Axis1 = g_ptMouse;
 		//	if(g_cj) SetCursorPos(g_Axis1.x,g_Axis1.y);
 
-		//	// ÆĞµå Å¬¸®¾î
+		//	// íŒ¨ë“œ í´ë¦¬ì–´
 		//	Clear_Pad();
 		//	// 
 		//	switch(g_Pad_Mode)
 		//	{
-		//		// ¾Æ¹«°ÍµÎ ¾ø´Ù
+		//		// ì•„ë¬´ê²ƒë‘ ì—†ë‹¤
 		//		case NONE_PAD_MODE :
 		//		break;
 
@@ -554,15 +554,15 @@ namespace XiahGameEngine
 		//		{
 		//			// Attack
 		//			g_Attack_Button_On = g_Button2_Down;
-		//			// ¹«°ø
+		//			// ë¬´ê³µ
 		//			g_Mugong_Button_On = g_Button1_Down;
-		//			// ¸Ş´º
+		//			// ë©”ë‰´
 		//			g_Menu_Button_On = g_Button0_Down;
-		//			// ¶ô¿Â
+		//			// ë½ì˜¨
 		//			g_Lock_Button_On = g_Button10_On;
 		//			g_Lock_Button_Up = g_Button10_Up;
 
-		//			// ³»·Â/Ã¼·Â ¹°¾à»ç¿ë
+		//			// ë‚´ë ¥/ì²´ë ¥ ë¬¼ì•½ì‚¬ìš©
 		//			g_HP_Button_On = g_Button5_Down;
 		//			g_MP_Button_On = g_Button4_Down;
 
@@ -594,15 +594,15 @@ namespace XiahGameEngine
 		//		{
 		//			// Attack
 		//			g_Attack_Button_On = g_Button0_Down;
-		//			// ¹«°ø
+		//			// ë¬´ê³µ
 		//			g_Mugong_Button_On = g_Button1_Down;
-		//			// ¸Ş´º
+		//			// ë©”ë‰´
 		//			g_Menu_Button_On = g_Button3_Down;
-		//			// ¶ô¿Â!
+		//			// ë½ì˜¨!
 		//			g_Lock_Button_On = g_Button6_On;
 		//			g_Lock_Button_Up = g_Button6_Up;					
 
-		//			// ³»·Â/Ã¼·Â ¹°¾à»ç¿ë
+		//			// ë‚´ë ¥/ì²´ë ¥ ë¬¼ì•½ì‚¬ìš©
 		//			g_HP_Button_On = g_ButtonZ2_Down;
 		//			g_MP_Button_On = g_ButtonZ1_Down;
 
@@ -636,14 +636,14 @@ namespace XiahGameEngine
 		//			g_Attack_Button_On = g_Button0_Down;
 		//			if(g_Attack_Button_On && h_Menu == TRUE) h_Menu = FALSE;
 
-		//			// ¹«°ø
+		//			// ë¬´ê³µ
 		//			g_Mugong_Button_On = g_Button1_Down;
-		//			// ¸Ş´º
+		//			// ë©”ë‰´
 		//			g_Menu_Button_On = g_Button3_Down;
-		//			// PAD¿ë Ä«¸Ş¶ó
+		//			// PADìš© ì¹´ë©”ë¼
 		//			g_PadCamera_Button_On = g_Button2_On;
 
-		//			// ³»·Â/Ã¼·Â ¹°¾à»ç¿ë
+		//			// ë‚´ë ¥/ì²´ë ¥ ë¬¼ì•½ì‚¬ìš©
 		//			g_HP_Button_On = g_Button5_Down;
 		//			g_MP_Button_On = g_Button4_Down;
 		//		
@@ -659,7 +659,7 @@ namespace XiahGameEngine
 		//				g_cj->g_js.lY = 0;
 		//			}
 		//			
-		//			// PAD ¿ë ¸Ş´º¹öÆ°¿¡´ëÇÑ ¹æÇâ Á¶ÀÛ
+		//			// PAD ìš© ë©”ë‰´ë²„íŠ¼ì—ëŒ€í•œ ë°©í–¥ ì¡°ì‘
 		//			if(g_Menu_Button_On) h_Menu = !h_Menu;
 		//			if(h_Menu)
 		//			{
@@ -702,7 +702,7 @@ namespace XiahGameEngine
 		//	return TRUE;
 		//}
 
-		//// »ç¿ëÇÏ´Â PAD°ü·Ã FLAG CLEAR
+		//// ì‚¬ìš©í•˜ëŠ” PADê´€ë ¨ FLAG CLEAR
 		//XIAHGE_API void	Clear_Pad()
 		//{
 		//	g_HP_Button_On = FALSE;
@@ -723,7 +723,7 @@ namespace XiahGameEngine
 		//	g_Sel_Right_Down = FALSE;
 		//}
 		//
-		//// PAD MODE¸¦ ¼³Á¤ÇÑ´Ù
+		//// PAD MODEë¥¼ ì„¤ì •í•œë‹¤
 		//XIAHGE_API void Setup_Pad(int mode)
 		//{
 		//	g_Pad_Mode = mode;
@@ -731,6 +731,26 @@ namespace XiahGameEngine
 
 		XIAHGE_API BOOL   UpdateInput()
 		{
+			// å¤±å»ç„¦ç‚¹æ—¶æ¸…é™¤æ‰€æœ‰è¾“å…¥çŠ¶æ€ï¼Œé˜²èŒƒæ‰€æœ‰åå°æˆ–é®æŒ¡ä¸‹çš„é”®é¼ è¾“å…¥å“åº”
+			if (GetForegroundWindow() != g_EngineInfo.m_hWnd)
+			{
+				g_bMouseMove = FALSE;
+				g_bLButtonDown = FALSE;
+				g_bRButtonDown = FALSE;
+				g_bLButtonUp = FALSE;
+				g_bRButtonUp = FALSE;
+				g_bLButtonOn = FALSE;
+				g_bRButtonOn = FALSE;
+
+				// å°†é¼ æ ‡åæ ‡è®¾åœ¨å®‰å…¨ä½ç½®ï¼ˆä¾‹å¦‚çª—å£ä¸­å¤® 512, 384ï¼‰ï¼Œé¿å…åœ¨å¤±å»ç„¦ç‚¹æ—¶åœ¨å±å¹•è¾¹ç¼˜è§¦å‘è¯¯æ“ä½œ
+				g_ptMouse.x = 512;
+				g_ptMouse.y = 384;
+				g_Axis1.x = 512;
+				g_Axis1.y = 384;
+
+				return TRUE;
+			}
+
 			sPoint pos;
 			GetCursorPos( (LPPOINT)&pos);
 			//ScreenToClient( g_EngineInfo.m_hWnd, (LPPOINT)&pos);
@@ -738,7 +758,7 @@ namespace XiahGameEngine
 			//HT_CHEAT : WINDOWSIZE
 			ScreenToClient( g_EngineInfo.m_hWnd, (LPPOINT)&pos);
 
-			// PAD°¡ »ç¿ëÁßÀÌ¸é °Ë»çÇÑ´Ù
+			// PADê°€ ì‚¬ìš©ì¤‘ì´ë©´ ê²€ì‚¬í•œë‹¤
 			//if(g_cj)
 			//{
 			//	if(UpdateInput_Pad() == TRUE) return TRUE;
@@ -759,7 +779,7 @@ namespace XiahGameEngine
 			BOOL bRButton = GetAsyncKeyState( VK_RBUTTON) < 0;
 
 
-			// MOUSE ¹öÆ° LEFT
+			// MOUSE ë²„íŠ¼ LEFT
 			if( (bLButton && !g_bLButtonOn))
 			{
 				g_bLButtonDown = TRUE;
@@ -776,7 +796,7 @@ namespace XiahGameEngine
 				g_bLButtonUp = FALSE;
 			}
 
-			// MOUSE ¹öÆ° RIGHT
+			// MOUSE ë²„íŠ¼ RIGHT
 			if( (bRButton && !g_bRButtonOn))
 			{
 				g_bRButtonDown = TRUE;
