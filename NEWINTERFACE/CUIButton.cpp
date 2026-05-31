@@ -1,8 +1,8 @@
 /****************************************************************************************************
-	ÆÄ ÀÏ ¸í:   CUIButton.cpp
-	¸¸µç³¯ÀÚ:	2004/02/24  15:52
-    ÄÚ µù ÀÚ:	
-	¼³    ¸í:   
+	íŒŒ ì¼ ëª…:   CUIButton.cpp
+	ë§Œë“ ë‚ ìž:	2004/02/24  15:52
+    ì½” ë”© ìž:	
+	ì„¤    ëª…:   
 ****************************************************************************************************/
 // Xiah New UI Engine
 
@@ -16,7 +16,7 @@ namespace XiahGameEngine
 {
 
 	/**
-	 * »ý¼ºÀÚ
+	 * ìƒì„±ìž
 	 * \param pMeditatorRef 
 	 * \param nID 
 	 * \param nParentID 
@@ -32,7 +32,7 @@ namespace XiahGameEngine
 
 	/**
 	* Create
-	* \param data »ý¼º Á¤º¸
+	* \param data ìƒì„± ì •ë³´
 	*/
 	void CUIButton::Create(sCtrlData& data)
 	{
@@ -48,7 +48,7 @@ namespace XiahGameEngine
 	}
 
 	/**
-	* ÇØÁ¦
+	* í•´ì œ
 	*/
 	void CUIButton::Destroy(void)
 	{
@@ -76,8 +76,8 @@ namespace XiahGameEngine
 	}
 
 	/**
-	* ¸¶¿ì½º °Ë»ç
-	* \param mouse ¸¶¿ì½º ÀÌº¥Æ® Á¤º¸
+	* ë§ˆìš°ìŠ¤ ê²€ì‚¬
+	* \param mouse ë§ˆìš°ìŠ¤ ì´ë²¤íŠ¸ ì •ë³´
 	*/
 	void CUIButton::MouseCheck(sMouseEvent& mouse)
 	{
@@ -99,10 +99,10 @@ namespace XiahGameEngine
 				{
 					if(m_nStep == HIGHLIGHT)
 					{
-						// [3/16/2004] ¾ÕÀ¸·Î °íÃÄ¾ß ÇÒ Çü½Ä
+						// [3/16/2004] ì•žìœ¼ë¡œ ê³ ì³ì•¼ í•  í˜•ì‹
 						LPARAM lParam;
 
-						// ÇöÀç ½Ã¾Æ ±¸Á¶»ó µé¾î°¡°Ô µÇ¾úÀ½.
+						// í˜„ìž¬ ì‹œì•„ êµ¬ì¡°ìƒ ë“¤ì–´ê°€ê²Œ ë˜ì—ˆìŒ.
 						if(g_nTempPostMessage)
 						{
 							lParam = MAKELPARAM(m_nID, g_nTempPostMessage);
@@ -186,14 +186,14 @@ namespace XiahGameEngine
 		//g_pDirect3DDevice->SetFVF( D3DFVF_TLVERTEX);
 		g_pDirect3DDevice->DrawPrimitive( D3DPT_TRIANGLESTRIP, 0, 2);
 
-		// ¹®ÀÚ¿­ Ãâ·Â
+		// ë¬¸ìžì—´ ì¶œë ¥
 		if(m_pText2D)
 			m_pText2D->Render();
 	}
 
 	/**
-	 * Á¤º¸ º¯°æ
-	 * \param &data º¯°æ ³»¿ë
+	 * ì •ë³´ ë³€ê²½
+	 * \param &data ë³€ê²½ ë‚´ìš©
 	 */
 	void CUIButton::DataChange(sChangeData &data)
 	{
@@ -213,7 +213,7 @@ namespace XiahGameEngine
 
 	/**
 	 * Get Data
-	 * \param &data °¡Á®¿Ã Á¤º¸
+	 * \param &data ê°€ì ¸ì˜¬ ì •ë³´
 	 */
 	void CUIButton::GetData(sGetData &data)
 	{
