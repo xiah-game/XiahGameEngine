@@ -1,4 +1,4 @@
-﻿#include "stdafx.h"
+#include "stdafx.h"
 #include "MapData.h"
 #include "MapRender.h"
 #include "MapObjectData.h"
@@ -56,10 +56,19 @@ namespace XiahGameEngine
 
 			if( m_pIndexBuffer)
 			{
-				m_pIndexBuffer->Release();
-				m_pIndexBuffer = NULL;
+				if( (DWORD_PTR)m_pIndexBuffer < 0x10000 || (DWORD_PTR)m_pIndexBuffer == 0x3F800000 )
+				{
+					DBG_LogFile( _T("CMapTileSubMesh::Clear - invalid m_pIndexBuffer: 0x%08X, skip Release"), (DWORD)m_pIndexBuffer );
+					m_pIndexBuffer = NULL;
+				}
+				else
+				{
+					m_pIndexBuffer->Release();
+					m_pIndexBuffer = NULL;
+				}
 			}
 		}
+
 
 		BOOL CMapTileSubMesh::Create(Map3DRes_TileMeshBlock* pMeshBlock)
 		{
@@ -262,6 +271,11 @@ namespace XiahGameEngine
 				if( m_pMesh)
 				{
 					m_nSubMesh = m_pMesh->m_nMeshBlock;
+					if( m_nSubMesh > MAPOBJECT_MAX_SUBMESH_COUNT )
+					{
+						DBG_LogFile( _T("CMapObjectRender::Realize - m_nMeshBlock(%d) exceeds limit(%d), clamped"), m_nSubMesh, MAPOBJECT_MAX_SUBMESH_COUNT );
+						m_nSubMesh = MAPOBJECT_MAX_SUBMESH_COUNT;
+					}
 					for(int i=0; i<m_nSubMesh; i++)
 					{
 						m_SubMesh[i].Create( &m_pMesh->m_pMeshBlockList[i] );

@@ -1107,30 +1107,30 @@ namespace XiahGameEngine
 		{
 		case NOTICETYPE_OK:
 			{
-				SetString(byType, 1, _T("확인"));
+				SetString(byType, 1, _T("确认"));
 				SetString(byType, 2, szText);
 			}			
 			break;
 		case NOTICETYPE_CANCEL:
 			{
-				SetString(byType, 1, _T("확인"));
-				SetString(byType, 2, _T("취소"));
+				SetString(byType, 1, _T("确认"));
+				SetString(byType, 2, _T("取消"));
 				SetString(byType, 3, szText);
 			}			
 			break;
 		case 60:
 			{
 				byType = NOTICETYPE_CANCEL;
-				SetString(byType, 1, _T("사부 사제"));
-				SetString(byType, 2, _T("연인"));
+				SetString(byType, 1, _T("师傅 徒弟"));
+				SetString(byType, 2, _T("恋人"));
 				SetString(byType, 3, szText);
 			}
 			break;
 		case 61:
 			{
 				byType = NOTICETYPE_CANCEL;
-				SetString(byType, 1, _T("관계 끊기"));
-				SetString(byType, 2, _T("취소"));
+				SetString(byType, 1, _T("断绝关系"));
+				SetString(byType, 2, _T("取消"));
 				SetString(byType, 3, szText);
 			}
 			break;

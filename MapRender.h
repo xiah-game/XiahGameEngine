@@ -18,16 +18,16 @@ namespace XiahGameEngine
 			unsigned short	m_CameraBoundSize;
 			float			m_fDetailMapRatio;
 
-			// ¾ÏÈæ¹« »óÅÂ°¡ µÇ¸é È­¸éÀÌ ¾îµÎ¿öÁø´Ù.
+			// ì•”í‘ë¬´ ìƒíƒœê°€ ë˜ë©´ í™”ë©´ì´ ì–´ë‘ì›Œì§„ë‹¤.
 			BOOL	m_bAmhukmuFog;
 		};
 
-		#define MAPOBJECT_MAX_SUBMESH_COUNT 10
+		#define MAPOBJECT_MAX_SUBMESH_COUNT 32
 		#define MAPOBJECT_MAX_COLLIDEBOX_COUNT 50
 
 		//---------------------------------------------------------------------------------------
-		// ³­Áß¿¡ ÀÌµû½ÄÀÌ SubMesh¸¦ °®°í ÀÖ¾î¼­ LODµµ µÇ¾ß °Í´Ù
-		// ¼Óµµ°¡ ¸¹ÀÌ ´À¸®´Ï±î. ÀÏ´Ü MeshÇÏ°í Texture´Â Partial·Î ÇØÁØ´Ù
+		// ë‚œì¤‘ì— ì´ë”°ì‹ì´ SubMeshë¥¼ ê°–ê³  ìˆì–´ì„œ LODë„ ë˜ì•¼ ê²ƒë‹¤
+		// ì†ë„ê°€ ë§ì´ ëŠë¦¬ë‹ˆê¹Œ. ì¼ë‹¨ Meshí•˜ê³  TextureëŠ” Partialë¡œ í•´ì¤€ë‹¤
 		class CMapTileSubMesh
 		{
 		public:
@@ -42,9 +42,9 @@ namespace XiahGameEngine
 
 			void Clear();
 
-			unsigned short			m_nLodVertex;	// Lod°¡ Àû¿ëµÈ Vertex¼ö
-			unsigned short			m_nLodFace;		// Lod°¡ Àû¿ëµÈ Face¼ö
-			IDirect3DIndexBuffer9*	m_pIndexBuffer;	// Lod°¡ Àû¿ëµÈ FaceList
+			unsigned short			m_nLodVertex;	// Lodê°€ ì ìš©ëœ Vertexìˆ˜
+			unsigned short			m_nLodFace;		// Lodê°€ ì ìš©ëœ Faceìˆ˜
+			IDirect3DIndexBuffer9*	m_pIndexBuffer;	// Lodê°€ ì ìš©ëœ FaceList
 		};
 
 		class CMapObjectRender : public CRenderObject
@@ -57,7 +57,7 @@ namespace XiahGameEngine
 			XIAHGE_API BOOL Create(sObjTileInstance* pObj);
 			XIAHGE_API BOOL Release();
 
-			// ÀÌÁ¦ ¸Ê ¿ÀºêÁ§Æ®¸¦ ¾Ö´Ï¸ŞÀÌ¼Ç ½ÃÅ³²¨´Ù.
+			// ì´ì œ ë§µ ì˜¤ë¸Œì íŠ¸ë¥¼ ì• ë‹ˆë©”ì´ì…˜ ì‹œí‚¬êº¼ë‹¤.
 			XIAHGE_API BOOL PrepareRender();
 
 			XIAHGE_API BOOL Render();
@@ -123,14 +123,14 @@ namespace XiahGameEngine
 			// effect
 			_EFFECTPACKAGEPAIR*		m_pEffectPackagePair;
 
-			// ¾Ö´Ï¸ŞÀÌ¼Ç¿¡ ÇÊ¿äÇÑ µ¥ÀÌÅ¸.
+			// ì• ë‹ˆë©”ì´ì…˜ì— í•„ìš”í•œ ë°ì´íƒ€.
 /*
 			float			m_CurFrame;
 			float			m_PreFrame;
 */
 			DWORD			m_LastUpdateTime;
 			DWORD			m_dwTimeSum;
-			Matrix4x4*		m_pMatrixList;	// ¾Ö´Ï¸ŞÀÌ¼Ç ¿ë ¸ÅÆ®¸¯½º
+			Matrix4x4*		m_pMatrixList;	// ì• ë‹ˆë©”ì´ì…˜ ìš© ë§¤íŠ¸ë¦­ìŠ¤
 /*
 			Quaternion*		m_pEvalBoneAni_Rot;
 			Vector3*		m_pEvalBoneAni_Pos;
@@ -202,7 +202,7 @@ namespace XiahGameEngine
 
 		typedef std::list<CGrass*> GRASSLIST;
 
-		#define	GRASSZONE_MAPMAX	50	// max of list. ÇÏ³ªÀÇ GrassZoneÀÌ °¡Áú¼ö ÀÖ´Â ¸®½ºÆ® ÃÖ´ë
+		#define	GRASSZONE_MAPMAX	50	// max of list. í•˜ë‚˜ì˜ GrassZoneì´ ê°€ì§ˆìˆ˜ ìˆëŠ” ë¦¬ìŠ¤íŠ¸ ìµœëŒ€
 
 		struct sGrassZoneInfo
 		{
@@ -216,14 +216,14 @@ namespace XiahGameEngine
 					GrassPosList[i].clear();
 			}
 
-			BYTE			byPositionByCamera;					// Ä«¸Ş¶ó¿Í Ç®°úÀÇ À§Ä¡ °ü°è
-			bool			bRender;							// ·»´õ¸µ ÇÒ±î?
-			BYTE			byGrassTextureIndex;				// 0-7 »çÀÌÀÇ °ª.
-			DFLOATMAP		GrassPosList[ GRASSZONE_MAPMAX ];	// Ç® À§Ä¡¸¦ ÀúÀåÇÏ´Â ¸®½ºÆ®
-			BYTE			byGrassPosListIndex;				// ¸®½ºÆ®ÀÇ °³¼ö
-			BYTE			byGrassZoneDensity;					// Ç® ¹ĞÁıµµ
+			BYTE			byPositionByCamera;					// ì¹´ë©”ë¼ì™€ í’€ê³¼ì˜ ìœ„ì¹˜ ê´€ê³„
+			bool			bRender;							// ë Œë”ë§ í• ê¹Œ?
+			BYTE			byGrassTextureIndex;				// 0-7 ì‚¬ì´ì˜ ê°’.
+			DFLOATMAP		GrassPosList[ GRASSZONE_MAPMAX ];	// í’€ ìœ„ì¹˜ë¥¼ ì €ì¥í•˜ëŠ” ë¦¬ìŠ¤íŠ¸
+			BYTE			byGrassPosListIndex;				// ë¦¬ìŠ¤íŠ¸ì˜ ê°œìˆ˜
+			BYTE			byGrassZoneDensity;					// í’€ ë°€ì§‘ë„
 
-			GRASSLIST		GrassZoneList;						// »ç¿ëÇÒ CGrass List
+			GRASSLIST		GrassZoneList;						// ì‚¬ìš©í•  CGrass List
 		};
 
 		//---------------------------------------------------------------------------------------
@@ -286,22 +286,22 @@ namespace XiahGameEngine
 				return m_MeshBlock[ meshblock_x + meshblock_y * 8].GetMapObjectList();
 			}
 
-			// ¹Ù¿îµå ¹Ú½º º¸ÀÌ±â
+			// ë°”ìš´ë“œ ë°•ìŠ¤ ë³´ì´ê¸°
 			XIAHGE_API void Show_BoundBox()
 			{
 				m_ShowBoundBox = !m_ShowBoundBox;
 			}
 
-			// ¸¶¿ì½º À§Ä¡ Ä¿¼­°¡ ¸Ê ¿ÀºêÁ§Æ®À§¿¡ ÀÖÀ»¶§ °Ë»ç
+			// ë§ˆìš°ìŠ¤ ìœ„ì¹˜ ì»¤ì„œê°€ ë§µ ì˜¤ë¸Œì íŠ¸ìœ„ì— ìˆì„ë•Œ ê²€ì‚¬
 			BOOL CheckMapObjectForMouseCursor(BBoxAABB3 MouseBound, float fCharHeight, float fCharPositionY);
 
-			// ¸¶¿ì½º À§Ä¡ Ä¿¼­°¡ ¸Ê ¿ÀºêÁ§Æ® À§¿¡ ÀÖÀ»¶§ ¹öÅØ½º¸¦ »õ·Ó°Ô °è»êÇØÁØ´Ù.
+			// ë§ˆìš°ìŠ¤ ìœ„ì¹˜ ì»¤ì„œê°€ ë§µ ì˜¤ë¸Œì íŠ¸ ìœ„ì— ìˆì„ë•Œ ë²„í…ìŠ¤ë¥¼ ìƒˆë¡­ê²Œ ê³„ì‚°í•´ì¤€ë‹¤.
 			BOOL MakeMouseCursorVertexOnObject(Vector2 vSmall, Vector2 vBig, D3DCOLOR dColor, VT_LVertex* pVertex, WORD* pFace, int& nVertex, int& nFace);
 
-			// µÎ°³ÀÇ Á÷»ç°¢ÇüÀÇ °ãÄ¡´Â Á¤Á¡À» ±¸ÇÑ´Ù. 2Â÷¿ø °è»ê.
+			// ë‘ê°œì˜ ì§ì‚¬ê°í˜•ì˜ ê²¹ì¹˜ëŠ” ì •ì ì„ êµ¬í•œë‹¤. 2ì°¨ì› ê³„ì‚°.
 			BOOL FindIntersectVector(Vector2 vSmall1, Vector2 vBig1, Vector2 vSmall2, Vector2 vBig2, int& nTotalX, int& nTotalY, float *fXArray, float *fYArray, float *fIXArray, float *fIYArray);
 
-			// ¸¶¿ì½º À§Ä¡ Ä¿¼­ µ¥Ä®À» Á÷Á¢ ÀúÀåÇÑ´Ù.
+			// ë§ˆìš°ìŠ¤ ìœ„ì¹˜ ì»¤ì„œ ë°ì¹¼ì„ ì§ì ‘ ì €ì¥í•œë‹¤.
 			BOOL SetDecalOnMouseCursor(CMapDecal* pDecal);
 
 		protected:
@@ -309,18 +309,18 @@ namespace XiahGameEngine
 
 			CMapCellRender_MeshBlock m_MeshBlock[ MAPCELL_MESHBLOCK_COUNT];
 
-			MAPRENDER_MESHBLOCK_LIST m_VisibleMeshBlockList_Level1;	// Bound¿¡ ÀÇÇØ
-			MAPRENDER_MESHBLOCK_LIST m_VisibleMeshBlockList_Level2; // Ä«¸Ş¶ó Frustum¿¡ ÀÇÇØ
+			MAPRENDER_MESHBLOCK_LIST m_VisibleMeshBlockList_Level1;	// Boundì— ì˜í•´
+			MAPRENDER_MESHBLOCK_LIST m_VisibleMeshBlockList_Level2; // ì¹´ë©”ë¼ Frustumì— ì˜í•´
 
 			MAPRENDER_MAPOBJECTLIST	m_VisibleObjectListNoAlpha;		// 1
 			MAPRENDER_MAPOBJECTLIST	m_VisibleObjectListAlphaTest;	// 2
 			MAPRENDER_MAPOBJECTLIST	m_VisibleObjectListAlpha;		// 3
 
-			// ¿ä³Ñ¸¸ µ¿Àû ÇÒ´ç ÇÏ°Ú´Ù
+			// ìš”ë„˜ë§Œ ë™ì  í• ë‹¹ í•˜ê² ë‹¤
 			int					 m_nMapObject;
 			CMapObjectRender	*m_pMapObject[ 1000];
 
-			// Á¹¶ó ¶±´ëÀïÀÌ ObjectµéÀº ¹®Á¦°¡ ÀÖ°Ú´Ù			
+			// ì¡¸ë¼ ë–¡ëŒ€ìŸì´ Objectë“¤ì€ ë¬¸ì œê°€ ìˆê² ë‹¤			
 //			MAPRENDER_MAPOBJECTLIST m_VisibleObjectList_Level2;
 			MAPRENDER_MAPOBJECT_VISIBLETEST_LIST	m_InvisibleObjectList;
 
@@ -334,8 +334,8 @@ namespace XiahGameEngine
 			// Misc
 			BOOL					m_ShowBoundBox;
 
-			CMapObjectRender*	m_pMapObjectWidthMouseCursor;	// ¸¶¿ì½º Ä¿¼­°¡ ÀÖ´Â ¸Ê ¿ÀºêÁ§Æ®
-			CMapDecal*			m_pDecalOnMapObject;			// ¸¶¿ì½º À§Ä¡ Ä¿¼­ Decal
+			CMapObjectRender*	m_pMapObjectWidthMouseCursor;	// ë§ˆìš°ìŠ¤ ì»¤ì„œê°€ ìˆëŠ” ë§µ ì˜¤ë¸Œì íŠ¸
+			CMapDecal*			m_pDecalOnMapObject;			// ë§ˆìš°ìŠ¤ ìœ„ì¹˜ ì»¤ì„œ Decal
 
 		};
 
@@ -344,8 +344,8 @@ namespace XiahGameEngine
 
 		#define MAX_MAPCELL_COUNT	64
 
-		// g_pCurrentCamera¿¡ ´ëÇØ¼­ ÇØÁØ´Ù
-		#define CAMERA_BOUND_GRID_SIZE	128	// ¹İ°æ 128
+		// g_pCurrentCameraì— ëŒ€í•´ì„œ í•´ì¤€ë‹¤
+		#define CAMERA_BOUND_GRID_SIZE	128	// ë°˜ê²½ 128
 		//---------------------------------------------------------------------------------------
 		
 		typedef std::vector<CMapDecal*> MAPDECAL_LIST;
@@ -414,7 +414,7 @@ namespace XiahGameEngine
 				return TRUE;
 			}
 
-			// Ãæµ¹ Ã³¸®¸¦ À§ÇØ¼­ Æ¯Á¤ À§Ä¡¿¡ ÇØ´çµÇ´Â MeshBlock¿¡ ¼ÓÇÑ ¸ğµç ObjectµéÀÇ list¸¦ ÁØ´Ù
+			// ì¶©ëŒ ì²˜ë¦¬ë¥¼ ìœ„í•´ì„œ íŠ¹ì • ìœ„ì¹˜ì— í•´ë‹¹ë˜ëŠ” MeshBlockì— ì†í•œ ëª¨ë“  Objectë“¤ì˜ listë¥¼ ì¤€ë‹¤
 			XIAHGE_API BOOL QueryMeshblockObjectList(WORD wPosX,WORD wPosY,MAPRENDER_MAPOBJECTLIST **ppList);
 
 		protected:
@@ -422,8 +422,8 @@ namespace XiahGameEngine
 			XIAHGE_API virtual BOOL UpdateMapCellRenderInfo();
 
 		protected:
-			sRect			m_CameraBound;	// Ä«¸Ş¶óÀÇ ÇöÀç À§Ä¡
-			sRect			m_MapBound;		// MapÀÇ ÇöÀç »çÀÌÁî (À§Ä¡°ªÀº 0,0)
+			sRect			m_CameraBound;	// ì¹´ë©”ë¼ì˜ í˜„ì¬ ìœ„ì¹˜
+			sRect			m_MapBound;		// Mapì˜ í˜„ì¬ ì‚¬ì´ì¦ˆ (ìœ„ì¹˜ê°’ì€ 0,0)
 			CMapCellRender	m_MapCellRender[ MAX_MAPCELL_COUNT];
 
 			MAPRENDER_MAPCELL_LIST m_VisibleMapCellList;
@@ -435,27 +435,27 @@ namespace XiahGameEngine
 
 			MAPDECAL_LIST	m_VisibleMapDecalList;
 
-			// ¹°, ¿ë¾Ï texture
+			// ë¬¼, ìš©ì•” texture
 			LPDIRECT3DTEXTURE9	m_pWaterTexture;
 			LPDIRECT3DTEXTURE9	m_pYongAmTexture;
 
-			// ´ËÁö´ë ¹°.
+			// ëŠªì§€ëŒ€ ë¬¼.
 			LPDIRECT3DTEXTURE9	m_pMarshTexture;
 
 		public:	// Grass Zone
-			// ÃÑ »ç¿ëÇÒ ¼ö ÀÖ´Â CGrass¸¦ ¸®½ºÆ®·Î °¡Áö°í ÀÖ°í, ÇÊ¿äÇÑ ¸¸Å­ ¸®½ºÆ®¿¡¼­ »©³»¼­ ¾´´Ù.
+			// ì´ ì‚¬ìš©í•  ìˆ˜ ìˆëŠ” CGrassë¥¼ ë¦¬ìŠ¤íŠ¸ë¡œ ê°€ì§€ê³  ìˆê³ , í•„ìš”í•œ ë§Œí¼ ë¦¬ìŠ¤íŠ¸ì—ì„œ ë¹¼ë‚´ì„œ ì“´ë‹¤.
 			GRASSLIST		m_GrassZoneList;
 			CGrass			m_GrassZonePool[ GRASSZONE_ARRAY_MAX ];
 
 			XIAHGE_API BOOL ReleaseGrassZoneArray();
 			XIAHGE_API BOOL CreateGrassZoneArray();
 
-			// ¸¶¿ì½º À§Ä¡ Ä¿¼­°¡ ¸Ê ¿ÀºêÁ§Æ®À§¿¡ ÀÖÀ»¶§ °Ë»ç
+			// ë§ˆìš°ìŠ¤ ìœ„ì¹˜ ì»¤ì„œê°€ ë§µ ì˜¤ë¸Œì íŠ¸ìœ„ì— ìˆì„ë•Œ ê²€ì‚¬
 			BOOL CheckMapObjectForMouseCursor(BBoxAABB3 MouseBound, float fCharHeight, float fCharPositionY);
-			// ¸¶¿ì½º À§Ä¡ Ä¿¼­°¡ ¸Ê ¿ÀºêÁ§Æ® À§¿¡ ÀÖÀ»¶§ ¹öÅØ½º¸¦ »õ·Ó°Ô °è»êÇØÁØ´Ù.
+			// ë§ˆìš°ìŠ¤ ìœ„ì¹˜ ì»¤ì„œê°€ ë§µ ì˜¤ë¸Œì íŠ¸ ìœ„ì— ìˆì„ë•Œ ë²„í…ìŠ¤ë¥¼ ìƒˆë¡­ê²Œ ê³„ì‚°í•´ì¤€ë‹¤.
 			BOOL MakeMouseCursorVertexOnObject(Vector2 vSmall, Vector2 vBig, D3DCOLOR dColor, VT_LVertex* pVertex, WORD* pFace, int& nVertex, int& nFace);
 
-			CMapCellRender*		m_pMapCellRenderWidthMouseCursor;// ¸¶¿ì½º À§Ä¡ Ä¿¼­°¡ ÀÖ´Â ¸Ê ¼¿
+			CMapCellRender*		m_pMapCellRenderWidthMouseCursor;// ë§ˆìš°ìŠ¤ ìœ„ì¹˜ ì»¤ì„œê°€ ìˆëŠ” ë§µ ì…€
 		};
 
 		XIAHGE_API extern CMapRender g_MapRender;

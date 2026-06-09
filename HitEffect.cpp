@@ -1,4 +1,4 @@
-﻿#include "stdafx.h"
+#include "stdafx.h"
 #include "HitEffect.h"
 #include "XiahPak.h"
 
@@ -202,33 +202,38 @@ namespace XiahGameEngine
 
 	BOOL CHitEffect::SeparateNumber(DWORD wNumber,int &nA, int *list)//HT_0907 : 공격력 맥스값 변경( 65000을 넘다니 ㅡㅡ; )
 	{
-		// 100만 보다 크면 안된다. 최대 99만까지 현재 계산된다.
-		// 65500(WORD)를 넘으면 안된다. 
-		// Removed 65500 cap
-
+		// 数字位数分离: m_Table[0..8] = {10,100,...,1000000000}
+		// 超出 m_Table 范围时截断，防止越界访问
 
 		int nTableIndex = 0;
 		nA = 0;
 
-		// 숫자의 자릿수를 계산하기 위해. 
+		// 计算数字的位数
 		while(1)
 		{
-			if( wNumber < m_Table[nTableIndex] ) break;
+			if( nTableIndex >= DAMAGE_MAX ) break; // 防止越界: m_Table 仅 0~DAMAGE_MAX-1
 
-			if( nTableIndex > DAMAGE_MAX ) break; //m_Table[] 값이 0으로 나오면 안되자낭.. 
+			if( wNumber < m_Table[nTableIndex] ) break;
 
 			nTableIndex++;
 		}
 
 		if( nTableIndex != 0 ) nTableIndex--;
 
-		//  숫자 분류
+		// 数字分离
 		while( nTableIndex != -1 )
 		{
+			// 防御性检查: 避免除零
+			if( m_Table[ nTableIndex ] == 0 )
+			{
+				nTableIndex--;
+				continue;
+			}
+
 			int biResult1 = wNumber / m_Table[ nTableIndex ];
 			int biResult2 = wNumber % m_Table[ nTableIndex ];
 
-			// 일 단위 숫자에서는 앞에 0을 없애준다.
+			// 个位数字前面的0不显示
 			if( biResult1 == 0 && nA == 0 )
 			{
 			}
