@@ -2909,6 +2909,7 @@ namespace XiahGameEngine
 				if(pMapCellRender == NULL)
 				{
 					DBG_LogFile( _T("CMapRender::Update fail"));
+					continue;
 				}
 
 				pMapCellRender->QueryVisibleMeshblock_Level2( g_pCurrentCamera, m_MapRenderInfo.m_CameraBoundSize);
@@ -2983,6 +2984,7 @@ namespace XiahGameEngine
 				if(pMapCellRender == NULL)
 				{
 					DBG_LogFile( _T("CMapRender::RenderTerrain fail"));
+					continue;
 				}
 
 				pMapCellRender->Render(0);
@@ -2999,6 +3001,7 @@ namespace XiahGameEngine
 				if(pDecal == NULL)
 				{
 					DBG_LogFile( _T("CMapRender::RenderTerrain decal fail"));
+					continue;
 				}
 
 				// 만약 맵 오브젝트위에 있는 거라면 안그린다. 이 녀석은 g_PickCursor 이다.
@@ -3044,6 +3047,7 @@ namespace XiahGameEngine
 				if(pMapCellRender == NULL)
 				{
 					DBG_LogFile( _T("CMapRender::RenderObject fail"));
+					continue;
 				}
 				pMapCellRender->Render(byType);
 			}
@@ -3260,6 +3264,7 @@ namespace XiahGameEngine
 				if(pMapCellRender == NULL)
 				{
 					DBG_LogFile( _T("CMapRender::PrepareMapCell fail"));
+					continue;
 				}
 
 				pMapCellRender->Release();
@@ -3325,6 +3330,7 @@ namespace XiahGameEngine
 				if(pMapCellRender == NULL)
 				{
 					DBG_LogFile( _T("CMapRender::UpdateMapCellRenderInfo fail"));
+					continue;
 				}
 
 				pMapCellRender->SetDiffuseColor( m_MapRenderInfo.m_DiffuseColor);
