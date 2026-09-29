@@ -11,8 +11,20 @@
 #include <set>
 #include <map>
 #include <string>
+#if _MSC_VER >= 1900
+#include <unordered_map>
+#include <unordered_set>
+namespace std {
+    template<class _Kty, class _Ty, class _Hasher = hash<_Kty>, class _Keyeq = equal_to<_Kty>, class _Alloc = allocator<pair<const _Kty, _Ty>>>
+    using hash_map = unordered_map<_Kty, _Ty, _Hasher, _Keyeq, _Alloc>;
+
+    template<class _Kty, class _Hasher = hash<_Kty>, class _Keyeq = equal_to<_Kty>, class _Alloc = allocator<_Kty>>
+    using hash_set = unordered_set<_Kty, _Hasher, _Keyeq, _Alloc>;
+}
+#else
 #include <hash_map>
 #include <hash_set>
+#endif
 
 #include "XiahDebug.h"
 
@@ -25,7 +37,7 @@
 
 #include "Trigger.h"
 
-// 이건 좀 복잡하다. 나중에 하자.
+// ??? ?? ???????. ????? ????.
 //#define	TL_ACCEL	1
 
 
@@ -55,34 +67,34 @@ namespace XiahGameEngine
 		char strInstallDir[_MAX_PATH];
 
 		/////////////////////////////////////////////////////////////////////////////////////////////////////
-		// 게임내의 옵션 창에서 설정하는 옵션
-		// 게임옵션
-		BOOL	m_bAllowWhisper;	// 귓말 거부
-		BOOL	m_bAllowRelation;	// 관계신청 거부 
-		BOOL	m_bAllowTrade;		// 거래신청 거부
-		BOOL	m_bHideChat;		// 대화 숨기기
-		BOOL	m_bShowNickname;	// 케렉터 별호보기
-		BOOL	m_bShowNPCname;		// 몬스터 이름보기
-		BOOL	m_bItemDropChoice;		// 아이템 드랍여부  //HO_0816_07 아이템 드랍시 확인
+		// ??????? ??? a???? ??????? ???
+		// ??????
+		BOOL	m_bAllowWhisper;	// ??? ???
+		BOOL	m_bAllowRelation;	// ?????u ??? 
+		BOOL	m_bAllowTrade;		// ?????u ???
+		BOOL	m_bHideChat;		// ??? ?????
+		BOOL	m_bShowNickname;	// ????? ???????
+		BOOL	m_bShowNPCname;		// ???? ???????
+		BOOL	m_bItemDropChoice;		// ?????? ???????  //HO_0816_07 ?????? ????? ???
 		BYTE	m_bSafeMode;
 
-		// 거래 옵션 (임시보관용)
-		// 나도 귀찮다. 그냥 여기다 임시로 넣어야지
-		DWORD	m_dwBuyLimit;				// 구매제한금액
-		BYTE	m_bRarityLimit;				// 판매제한 +
-		BYTE	m_bStxTypeLimit;			// 판매제한 성
+		// ??? ??? (??u?????)
+		// ???? ??????. ??? ????? ??÷? ??????
+		DWORD	m_dwBuyLimit;				// ??????????
+		BYTE	m_bRarityLimit;				// ??????? +
+		BYTE	m_bStxTypeLimit;			// ??????? ??
 		/////////////////////////////////////////////////////////////////////////////////////////////////////
 
-		// 영상 옵션
-		float			m_fViewDistance;	// 가시거리
-		float			m_fPolygonDetail;	// 폴리곤 디테일
+		// ???? ???
+		float			m_fViewDistance;	// ???ð??
+		float			m_fPolygonDetail;	// ?????? ??????
 
-		// 음향 옵션
-		unsigned long	m_dwBGMVolume;		// BGM볼륨
-		unsigned long	m_dwFXVolume;		// SOUND EFFECT 볼륨
-		int				m_version;			// 실행파일 버전		
+		// ???? ???
+		unsigned long	m_dwBGMVolume;		// BGM????
+		unsigned long	m_dwFXVolume;		// SOUND EFFECT ????
+		int				m_version;			// ???????? ????		
 
-		bool			m_bGameEnd;			//HT_TEST : 게임 종료
+		bool			m_bGameEnd;			//HT_TEST : ???? ????
 	};
 	
 	extern XIAHGE_API sXiahGameEngine_CreateInfo g_EngineInfo;	
@@ -94,9 +106,9 @@ namespace XiahGameEngine
 	extern XIAHGE_API BOOL ChangeXiahGameOption(sXiahGameEngine_CreateInfo *pInfo);
 
 	extern XIAHGE_API float GetPolyDetailXiahGameEngine();
-	extern XIAHGE_API BOOL SetPolyDetailXiahGameEngine(float detail);	// Polygon Detail 조정
-	extern XIAHGE_API BOOL UpdateXiahGameEngine();	// MainThread에서 매 프레임 호출해줘야됨
+	extern XIAHGE_API BOOL SetPolyDetailXiahGameEngine(float detail);	// Polygon Detail ????
+	extern XIAHGE_API BOOL UpdateXiahGameEngine();	// MainThread???? ?? ?????? ?????????
 	
-	// 아직 별로 하는것 없음
+	// ???? ???? ??°? ????
 	extern XIAHGE_API BOOL ProcessWindowMessage_XiahGameEngine(UINT uMsg,WPARAM wParam,LPARAM lParam);
 };

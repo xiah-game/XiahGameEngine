@@ -248,6 +248,21 @@ namespace XiahGameEngine
 
 						if( g_FreeResList.find( pRes->m_nID) != g_FreeResList.end())
 						{
+							CRes* pOldRes = g_FreeResList[pRes->m_nID];
+							LPCTSTR szOldFile = _T("Unknown");
+							for(unsigned long k = 0; k < i; ++k)
+							{
+								if(g_FileHandleList.size() > k && g_FileHandleList[k] == pOldRes->m_hFileHandle)
+								{
+									szOldFile = pPakFileList[k];
+									break;
+								}
+							}
+							if(pOldRes->m_hFileHandle == hFileHandle)
+							{
+								szOldFile = pPakFileList[i];
+							}
+							DBG_LogFile(_T("[Resource Clash] ID %d is duplicated! Already registered by '%s', skipped in '%s'"), pRes->m_nID, szOldFile ? szOldFile : _T("Unknown"), pPakFileList[i]);
 							DBG_Put(_T("Res ID 중복 에러 : %d"), pRes->m_nID);
 						}
 						else

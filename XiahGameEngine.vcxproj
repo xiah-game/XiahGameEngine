@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -85,7 +85,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>../FMOD\inc;\JPEGLIB;$(DXSDK_DIR)Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../FMOD\inc;\JPEGLIB;$(DXSDK_DIR)Include;$(ProjectDir)..\dxsdk\build\native\include;..\dxsdk\build\native\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;XIAHGAMEENGINE_EXPORTS;DETECT_LEAKS;_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -98,7 +98,7 @@
     </ClCompile>
     <Link>
       <OutputFile>..\Exe\XiahGameEngined.dll</OutputFile>
-      <AdditionalLibraryDirectories>../FMOD\lib;\jpeglib;$(DXSDK_DIR)Lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../FMOD\lib;\jpeglib;$(DXSDK_DIR)Lib\x86;$(ProjectDir)..\dxsdk\build\native\release\lib\x86;..\dxsdk\build\native\release\lib\x86;$(ProjectDir)..\dxsdk\build\native\debug\lib\x86;..\dxsdk\build\native\debug\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>libc.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -117,7 +117,7 @@
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <OmitFramePointers>true</OmitFramePointers>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
-      <AdditionalIncludeDirectories>../FMOD\inc;\JPEGLIB;$(DXSDK_DIR)Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../FMOD\inc;\JPEGLIB;$(DXSDK_DIR)Include;$(ProjectDir)..\dxsdk\build\native\include;..\dxsdk\build\native\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;XIAHGAMEENGINE_EXPORTS;_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
@@ -130,7 +130,7 @@
     </ClCompile>
     <Link>
       <OutputFile>..\Exe\XiahGameEngine.dll</OutputFile>
-      <AdditionalLibraryDirectories>../FMOD\lib;\jpeglib;$(DXSDK_DIR)Lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../FMOD\lib;\jpeglib;$(DXSDK_DIR)Lib\x86;$(ProjectDir)..\dxsdk\build\native\release\lib\x86;..\dxsdk\build\native\release\lib\x86;$(ProjectDir)..\dxsdk\build\native\debug\lib\x86;..\dxsdk\build\native\debug\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>..\Exe\XiahGameEngine.pdb</ProgramDatabaseFile>
@@ -152,7 +152,7 @@
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <OmitFramePointers>false</OmitFramePointers>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
-      <AdditionalIncludeDirectories>../\FMOD\inc;\jpeglib;$(DXSDK_DIR)Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../\FMOD\inc;\jpeglib;$(DXSDK_DIR)Include;$(ProjectDir)..\dxsdk\build\native\include;..\dxsdk\build\native\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;XIAHGAMEENGINE_EXPORTS;MASTER;_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
@@ -167,7 +167,7 @@
     </ClCompile>
     <Link>
       <OutputFile>..\Exe\XiahGameEngine.dll</OutputFile>
-      <AdditionalLibraryDirectories>../FMOD\lib;\jpeglib;$(DXSDK_DIR)Lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../FMOD\lib;\jpeglib;$(DXSDK_DIR)Lib\x86;$(ProjectDir)..\dxsdk\build\native\release\lib\x86;..\dxsdk\build\native\release\lib\x86;$(ProjectDir)..\dxsdk\build\native\debug\lib\x86;..\dxsdk\build\native\debug\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <ProgramDatabaseFile>..\Exe\XiahGameEngine.pdb</ProgramDatabaseFile>
